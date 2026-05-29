@@ -25,8 +25,8 @@
     "@netlify/plugin-nextjs": "latest"
   },
   "engines": {
-    "node": ">=20 <21",
-    "npm": ">=9 <10"
+    "node": ">=20",
+    "npm": ">=9"
   },
-  "packageManager": "npm@9.9.4"
+  "packageManager": "npm@10.8.2"
 }
