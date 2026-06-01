@@ -1,23 +1,61 @@
-export default function LogoMark({ compact = false, inverse = false }: { compact?: boolean; inverse?: boolean }) {
-  const textColor = inverse ? 'text-sand' : 'text-ink';
-  const subColor = inverse ? 'text-sand/62' : 'text-slate/75';
-  const stroke = inverse ? '#FBF0DE' : '#151616';
+type LogoMarkProps = {
+  compact?: boolean;
+  inverse?: boolean;
+  className?: string;
+};
+
+export default function LogoMark({ inverse = false, className = '' }: LogoMarkProps) {
+  const background = inverse ? '#293D48' : '#FBF0DE';
+  const primary = inverse ? '#FBF0DE' : '#293D48';
   const accent = '#EA9F43';
+
   return (
-    <div className="flex items-center gap-3">
-      <svg aria-hidden="true" viewBox="0 0 104 104" className={compact ? 'h-11 w-11' : 'h-12 w-12'}>
-        <rect x="8" y="8" width="88" height="88" rx="18" fill="none" stroke={stroke} strokeWidth="5" />
-        <rect x="16" y="16" width="72" height="72" rx="12" fill="none" stroke={accent} strokeWidth="2" opacity=".9" />
-        <path d="M30 35h44" stroke={stroke} strokeWidth="3" strokeLinecap="round" opacity=".78" />
-        <text x="52" y="62" textAnchor="middle" fontFamily="Montserrat, Arial, sans-serif" fontWeight="900" fontSize="25" fill={stroke} letterSpacing="1.5">CMC</text>
-        <path d="M31 73c7-4 14-4 21 0 7-4 14-4 21 0" fill="none" stroke={accent} strokeWidth="3" strokeLinecap="round" />
+    <div
+      className={`inline-flex items-center justify-center ${className}`}
+      aria-label="Church Multiplication Collective"
+    >
+      <svg
+        width="44"
+        height="44"
+        viewBox="0 0 512 512"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-11 w-11 shrink-0"
+        role="img"
+      >
+        <rect width="512" height="512" rx="96" fill={background} />
+        <rect
+          x="64"
+          y="64"
+          width="384"
+          height="384"
+          rx="64"
+          stroke={primary}
+          strokeWidth="28"
+        />
+        <line
+          x1="174"
+          y1="174"
+          x2="338"
+          y2="338"
+          stroke={primary}
+          strokeWidth="52"
+          strokeLinecap="round"
+        />
+        <line
+          x1="338"
+          y1="174"
+          x2="174"
+          y2="338"
+          stroke={primary}
+          strokeWidth="52"
+          strokeLinecap="round"
+        />
+        <rect x="239" y="111" width="34" height="34" transform="rotate(45 256 128)" fill={accent} />
+        <rect x="239" y="367" width="34" height="34" transform="rotate(45 256 384)" fill={accent} />
+        <rect x="111" y="239" width="34" height="34" transform="rotate(45 128 256)" fill={accent} />
+        <rect x="367" y="239" width="34" height="34" transform="rotate(45 384 256)" fill={accent} />
       </svg>
-      {!compact && (
-        <div className="leading-none">
-          <p className={`condensed-feel text-[16px] ${textColor}`}>Church Multiplication</p>
-          <p className={`mt-1 text-[10px] font-bold uppercase tracking-[0.28em] ${subColor}`}>Collective</p>
-        </div>
-      )}
     </div>
   );
 }
