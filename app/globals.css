@@ -4,10 +4,17 @@
 @tailwind components;
 @tailwind utilities;
 
-:root { color-scheme: light; }
+:root {
+  color-scheme: light;
+}
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -31,13 +38,59 @@ body::before {
   z-index: 50;
 }
 
-::selection { background: rgba(234,159,67,.32); color: #151616; }
+::selection {
+  background: rgba(234,159,67,.32);
+  color: #151616;
+}
 
 .brand-panel {
   background:
     linear-gradient(115deg, rgba(21,22,22,.96) 0%, rgba(41,61,72,.97) 52%, rgba(21,22,22,.98) 100%),
     radial-gradient(circle at 20% 0%, rgba(234,159,67,.18), transparent 30%);
   color: #FBF0DE;
+}
+
+/* 
+  Readability fix:
+  Anything sitting on the dark blue/slate brand panel should use cream text.
+  This catches headings/paragraphs and overrides accidental black text utilities.
+*/
+.brand-panel h1,
+.brand-panel h2,
+.brand-panel h3,
+.brand-panel h4,
+.brand-panel h5,
+.brand-panel h6,
+.brand-panel .poster-type,
+.brand-panel .condensed-feel,
+.brand-panel [class*="text-[#151616]"],
+.brand-panel [class*="text-black"],
+.brand-panel [class*="text-slate"] {
+  color: #FBF0DE !important;
+}
+
+.brand-panel p,
+.brand-panel li,
+.brand-panel [class*="text-[#151616]/"],
+.brand-panel [class*="text-black/"] {
+  color: rgba(251, 240, 222, .82) !important;
+}
+
+.brand-panel [class*="text-[#EA9F43]"] {
+  color: #EA9F43 !important;
+}
+
+/* Keep cream pill/cards readable when they appear inside dark sections. */
+.brand-panel .soft-panel,
+.brand-panel .texture-card,
+.brand-panel [class*="bg-[#FBF0DE]"] {
+  color: #151616 !important;
+}
+
+.brand-panel .soft-panel *,
+.brand-panel .texture-card *,
+.brand-panel [class*="bg-[#FBF0DE]"] * {
+  color: inherit;
 }
 
 .soft-panel {
@@ -53,7 +106,10 @@ body::before {
   box-shadow: 0 12px 28px rgba(234,159,67,.22);
 }
 
-.button-primary:hover { filter: brightness(.97); transform: translateY(-1px); }
+.button-primary:hover {
+  filter: brightness(.97);
+  transform: translateY(-1px);
+}
 
 .button-secondary {
   border: 1px solid rgba(251,240,222,.46);
@@ -61,7 +117,9 @@ body::before {
   background: rgba(251,240,222,.06);
 }
 
-.button-secondary:hover { background: rgba(251,240,222,.12); }
+.button-secondary:hover {
+  background: rgba(251,240,222,.12);
+}
 
 .accent-line {
   height: 4px;
@@ -101,5 +159,7 @@ body::before {
 }
 
 @media (min-width: 640px) {
-  .mission-stack { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .mission-stack {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
