@@ -49,30 +49,30 @@ const steps = [
 export default function PathwaysPage() {
   return (
     <>
-      <section className="px-5 py-24 lg:px-8">
+      <section className="px-5 py-20 lg:px-8">
         <div className="mx-auto max-w-6xl text-center">
           <div className="accent-line mx-auto" />
 
-          <p className="mt-7 text-sm font-extrabold uppercase tracking-[0.32em] text-ember">
+          <p className="mt-6 text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
             Pathways
           </p>
 
-          <h1 className="mx-auto mt-5 max-w-5xl text-5xl font-black leading-[0.88] tracking-[-0.06em] text-ink md:text-7xl">
+          <h1 className="mx-auto mt-5 max-w-5xl text-[42px] font-black leading-[0.94] tracking-[-0.052em] text-ink md:text-[68px]">
             Two entry points. One multiplication pathway.
           </h1>
 
-          <p className="mx-auto mt-7 max-w-3xl text-lg font-medium leading-8 text-slate">
+          <p className="mx-auto mt-6 max-w-3xl text-lg font-medium leading-8 text-slate">
             CMC helps pioneers and multiplying churches move from burden to clarity, from clarity to formation, and from formation to faithful action.
           </p>
         </div>
 
         <div className="mx-auto mt-14 grid max-w-6xl gap-6 lg:grid-cols-2">
-          <article className="texture-card rounded-[2rem] p-8 md:p-10">
-            <p className="text-sm font-extrabold uppercase tracking-[0.32em] text-ember">
+          <article className="texture-card rounded-[2rem] p-8">
+            <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
               I am a pioneer
             </p>
 
-            <h2 className="mt-5 text-4xl font-black leading-[0.94] tracking-[-0.045em] text-ink md:text-5xl">
+            <h2 className="mt-5 text-[34px] font-black leading-[0.96] tracking-[-0.045em] text-ink md:text-[50px]">
               I carry a burden for something new.
             </h2>
 
@@ -81,12 +81,12 @@ export default function PathwaysPage() {
             </p>
           </article>
 
-          <article className="brand-panel rounded-[2rem] p-8 md:p-10">
-            <p className="text-sm font-extrabold uppercase tracking-[0.32em] text-ember">
+          <article className="brand-panel rounded-[2rem] p-8">
+            <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
               We are a multiplying church
             </p>
 
-            <h2 className="mt-5 text-4xl font-black leading-[0.94] tracking-[-0.045em] md:text-5xl">
+            <h2 className="mt-5 text-[34px] font-black leading-[0.96] tracking-[-0.045em] md:text-[50px]">
               We want to become a sending church.
             </h2>
 
@@ -113,17 +113,17 @@ export default function PathwaysPage() {
         </div>
       </section>
 
-      <section id="pathway" className="brand-panel px-5 py-24 lg:px-8">
+      <section id="pathway" className="brand-panel px-5 py-20 lg:px-8">
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
             <div>
               <div className="accent-line" />
 
-              <p className="mt-7 text-sm font-extrabold uppercase tracking-[0.32em] text-ember">
+              <p className="mt-6 text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
                 The pathway
               </p>
 
-              <h2 className="mt-5 text-5xl font-black leading-[0.9] tracking-[-0.05em] md:text-7xl">
+              <h2 className="mt-5 text-[40px] font-black leading-[0.94] tracking-[-0.052em] md:text-[64px]">
                 Discover, Discern, Develop, Deploy.
               </h2>
             </div>
@@ -151,7 +151,7 @@ export default function PathwaysPage() {
             </div>
           </div>
 
-          <div className="relative mt-16 grid gap-9">
+          <div className="relative mt-14 grid gap-9">
             <div className="absolute left-12 top-10 hidden h-[calc(100%-5rem)] w-1 rounded-full bg-gradient-to-b from-ember via-[#FBF0DE]/25 to-sage lg:block" />
 
             {steps.map((step, index) => (
@@ -163,16 +163,16 @@ export default function PathwaysPage() {
                   {String(index + 1).padStart(2, "0")}
                 </div>
 
-                <div className="relative overflow-hidden rounded-[2rem] border border-[#FBF0DE]/15 bg-[#FBF0DE]/8 p-8 shadow-xl shadow-black/15 md:p-9">
+                <div className="relative overflow-hidden rounded-[2rem] border border-[#FBF0DE]/15 bg-[#FBF0DE]/8 p-8 shadow-xl shadow-black/15">
                   <div className="pointer-events-none absolute -bottom-20 -right-20 h-56 w-56 rounded-full bg-ember/15 blur-2xl" />
 
                   <div className="relative grid gap-8 lg:grid-cols-[0.68fr_1.32fr]">
                     <div>
-                      <p className="text-sm font-extrabold uppercase tracking-[0.32em] text-ember">
+                      <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
                         {step.phase}
                       </p>
 
-                      <h3 className="mt-3 text-3xl font-black leading-[0.96] tracking-[-0.045em] md:text-5xl">
+                      <h3 className="mt-3 text-[32px] font-black leading-[0.96] tracking-[-0.045em] md:text-[46px]">
                         {step.title}
                       </h3>
                     </div>
@@ -210,15 +210,15 @@ export default function PathwaysPage() {
         </div>
       </section>
 
-      <section className="px-5 py-24 lg:px-8">
-        <div className="mx-auto max-w-6xl rounded-[2rem] border border-slate/15 bg-white/55 p-8 shadow-xl shadow-black/5 md:p-10">
+      <section className="px-5 py-20 lg:px-8">
+        <div className="mx-auto max-w-6xl rounded-[2rem] border border-slate/15 bg-white/55 p-8 shadow-xl shadow-black/5">
           <div className="grid gap-8 lg:grid-cols-[1fr_.55fr] lg:items-center">
             <div>
-              <p className="text-sm font-extrabold uppercase tracking-[0.32em] text-ember">
+              <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
                 Begin here
               </p>
 
-              <h2 className="mt-4 text-4xl font-black leading-[0.96] tracking-[-0.045em] text-ink md:text-5xl">
+              <h2 className="mt-4 text-[34px] font-black leading-[0.96] tracking-[-0.045em] text-ink md:text-[50px]">
                 Start with Discover.
               </h2>
 
