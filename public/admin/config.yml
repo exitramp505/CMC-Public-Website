@@ -1,0 +1,62 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+site_url: "https://cmcopenbible.netlify.app"
+display_url: "https://cmcopenbible.netlify.app"
+logo_url: ""
+
+collections:
+  - name: "site_content"
+    label: "Site Content"
+    files:
+      - name: "team"
+        label: "About Page Team"
+        file: "content/team.json"
+        format: "json"
+        fields:
+          - label: "Team Members"
+            name: "team"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.region}}"
+            fields:
+              - { label: "Region", name: "region", widget: "string" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Picture", name: "image", widget: "image", required: false }
+
+      - name: "events"
+        label: "Events Page"
+        file: "content/events.json"
+        format: "json"
+        fields:
+          - label: "Events"
+            name: "events"
+            widget: "list"
+            summary: "{{fields.title}} — {{fields.date}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Date", name: "date", widget: "string" }
+              - { label: "Location", name: "location", widget: "string", required: false }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Button Text", name: "buttonText", widget: "string", default: "Learn More" }
+              - { label: "Button URL", name: "buttonUrl", widget: "string", required: false }
+              - { label: "Featured", name: "featured", widget: "boolean", default: false }
+
+      - name: "discern"
+        label: "Discernment Center"
+        file: "content/discern.json"
+        format: "json"
+        fields:
+          - { label: "Application Button Link", name: "applicationUrl", widget: "string" }
+          - { label: "Dates", name: "dates", widget: "string" }
+          - { label: "Location", name: "location", widget: "string" }
+          - { label: "Hero Eyebrow", name: "heroEyebrow", widget: "string" }
+          - { label: "Hero Title", name: "heroTitle", widget: "string" }
+          - { label: "Hero Description", name: "heroDescription", widget: "text" }
+          - { label: "What to Expect Title", name: "whatToExpectTitle", widget: "string" }
+          - { label: "What to Expect Paragraph One", name: "whatToExpectParagraphOne", widget: "text" }
+          - { label: "What to Expect Paragraph Two", name: "whatToExpectParagraphTwo", widget: "text" }
