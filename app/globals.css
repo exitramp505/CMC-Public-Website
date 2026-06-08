@@ -4,17 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  color-scheme: light;
-}
+:root { color-scheme: light; }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -50,133 +44,58 @@ body::before {
   color: #FBF0DE;
 }
 
-/* READABILITY FIX
-   Any text placed on dark slate/blue sections needs to be cream, not black.
-   This overrides accidental Tailwind classes like text-ink, text-black, or text-[#151616].
+/*
+  Readability fix:
+  Text directly inside dark brand panels should be cream, not black.
+  Do NOT target all bg-[#FBF0DE] utilities, because translucent panels like
+  bg-[#FBF0DE]/8 are used inside dark sections and should still have cream text.
 */
-.brand-panel,
 .brand-panel h1,
 .brand-panel h2,
 .brand-panel h3,
 .brand-panel h4,
 .brand-panel h5,
 .brand-panel h6,
-.brand-panel p,
-.brand-panel li,
-.brand-panel span,
-.brand-panel a,
-.brand-panel div {
-  color: #FBF0DE;
-}
-
-.brand-panel p,
-.brand-panel li {
-  color: rgba(251, 240, 222, .82);
-}
-
-.brand-panel .text-ink,
-.brand-panel .text-black,
-.brand-panel .text-slate,
-.brand-panel .text-navy,
+.brand-panel .poster-type,
+.brand-panel .condensed-feel,
 .brand-panel [class*="text-[#151616]"],
-.brand-panel [class*="text-\\[\\#151616\\]"],
 .brand-panel [class*="text-black"],
-.brand-panel [class*="text-slate"],
-.brand-panel [class*="text-ink"],
-.brand-panel [class*="text-navy"] {
+.brand-panel [class*="text-slate"] {
   color: #FBF0DE !important;
 }
 
+.brand-panel p,
+.brand-panel li,
 .brand-panel [class*="text-[#151616]/"],
-.brand-panel [class*="text-\\[\\#151616\\]\\/"],
-.brand-panel [class*="text-black/"],
-.brand-panel [class*="text-slate/"],
-.brand-panel [class*="text-ink/"],
-.brand-panel [class*="text-navy/"] {
+.brand-panel [class*="text-black/"] {
   color: rgba(251, 240, 222, .82) !important;
 }
 
-.brand-panel .text-ember,
-.brand-panel [class*="text-ember"],
-.brand-panel [class*="text-[#EA9F43]"],
-.brand-panel [class*="text-\\[\\#EA9F43\\]"] {
+.brand-panel [class*="text-[#EA9F43]"] {
   color: #EA9F43 !important;
 }
 
-/* Keep cream cards and pills readable when they sit inside a dark section. */
+/*
+  Only force dark text on true light cards inside dark sections.
+  The old version used [class*="bg-[#FBF0DE]"], which accidentally matched
+  bg-[#FBF0DE]/8 and caused black text on the Pathways cards.
+*/
 .brand-panel .soft-panel,
 .brand-panel .texture-card,
-.brand-panel [class*="bg-[#FBF0DE]"],
-.brand-panel [class*="bg-\\[\\#FBF0DE\\]"],
-.brand-panel [class*="bg-white"] {
+.brand-panel .light-panel,
+.brand-panel [class~="bg-[#FBF0DE]"],
+.brand-panel [class~="bg-white"],
+.brand-panel [class*="bg-white/"] {
   color: #151616 !important;
 }
 
 .brand-panel .soft-panel *,
 .brand-panel .texture-card *,
-.brand-panel [class*="bg-[#FBF0DE]"] *,
-.brand-panel [class*="bg-\\[\\#FBF0DE\\]"] *,
-.brand-panel [class*="bg-white"] * {
+.brand-panel .light-panel *,
+.brand-panel [class~="bg-[#FBF0DE]"] *,
+.brand-panel [class~="bg-white"] *,
+.brand-panel [class*="bg-white/"] * {
   color: inherit;
-}
-
-/* Specific page-level fix for sections that use slate background but forgot brand-panel.
-   This catches the Models hero section shown in the screenshot. */
-section.bg-slate,
-section.bg-navy,
-section[class*="bg-slate"],
-section[class*="bg-navy"],
-section[class*="bg-[#293D48]"],
-section[class*="bg-\\[\\#293D48\\]"],
-section[class*="bg-[#3E4A56]"],
-section[class*="bg-\\[\\#3E4A56\\]"] {
-  color: #FBF0DE;
-}
-
-section.bg-slate h1,
-section.bg-slate h2,
-section.bg-slate h3,
-section.bg-slate p,
-section.bg-navy h1,
-section.bg-navy h2,
-section.bg-navy h3,
-section.bg-navy p,
-section[class*="bg-slate"] h1,
-section[class*="bg-slate"] h2,
-section[class*="bg-slate"] h3,
-section[class*="bg-slate"] p,
-section[class*="bg-navy"] h1,
-section[class*="bg-navy"] h2,
-section[class*="bg-navy"] h3,
-section[class*="bg-navy"] p,
-section[class*="bg-[#293D48]"] h1,
-section[class*="bg-[#293D48]"] h2,
-section[class*="bg-[#293D48]"] h3,
-section[class*="bg-[#293D48]"] p,
-section[class*="bg-\\[\\#293D48\\]"] h1,
-section[class*="bg-\\[\\#293D48\\]"] h2,
-section[class*="bg-\\[\\#293D48\\]"] h3,
-section[class*="bg-\\[\\#293D48\\]"] p {
-  color: #FBF0DE !important;
-}
-
-section.bg-slate p,
-section.bg-navy p,
-section[class*="bg-slate"] p,
-section[class*="bg-navy"] p,
-section[class*="bg-[#293D48]"] p,
-section[class*="bg-\\[\\#293D48\\]"] p {
-  color: rgba(251, 240, 222, .82) !important;
-}
-
-/* Cream pills/buttons inside dark/slate sections need dark text. */
-section.bg-slate [class*="bg-[#FBF0DE]"],
-section.bg-navy [class*="bg-[#FBF0DE]"],
-section[class*="bg-slate"] [class*="bg-[#FBF0DE]"],
-section[class*="bg-navy"] [class*="bg-[#FBF0DE]"],
-section[class*="bg-[#293D48]"] [class*="bg-[#FBF0DE]"],
-section[class*="bg-\\[\\#293D48\\]"] [class*="bg-\\[\\#FBF0DE\\]"] {
-  color: #293D48 !important;
 }
 
 .soft-panel {
@@ -203,9 +122,7 @@ section[class*="bg-\\[\\#293D48\\]"] [class*="bg-\\[\\#FBF0DE\\]"] {
   background: rgba(251,240,222,.06);
 }
 
-.button-secondary:hover {
-  background: rgba(251,240,222,.12);
-}
+.button-secondary:hover { background: rgba(251,240,222,.12); }
 
 .accent-line {
   height: 4px;
