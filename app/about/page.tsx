@@ -114,39 +114,51 @@ export default function AboutPage() {
       </section>
 
       <section className="px-5 pb-20 lg:px-8">
-        <div className="brand-panel relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] p-8 shadow-2xl shadow-black/10 md:p-12">
+        <div className="brand-panel relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] px-8 py-10 shadow-2xl shadow-black/10 md:px-12 md:py-14">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_45%,rgba(234,159,67,0.14),transparent_34%),radial-gradient(circle_at_12%_90%,rgba(77,167,156,0.12),transparent_32%)]" />
+
           <img
-            src="/open-bible-about-background-watermark.png"
+            src="/open-bible-mark-white-transparent.png"
             alt=""
             aria-hidden="true"
-            className="pointer-events-none absolute -right-16 -top-24 hidden w-[520px] max-w-none opacity-[0.11] mix-blend-screen lg:block"
+            className="pointer-events-none absolute -right-24 top-1/2 hidden w-[620px] max-w-none -translate-y-1/2 opacity-[0.09] lg:block"
           />
 
-          <div className="relative z-[1] grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-            <div>
-              <img
-                src="/open-bible-logo-lockup-white-transparent.png"
-                alt="Open Bible Churches"
-                className="h-auto w-64"
-              />
+          <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 bg-gradient-to-l from-[#151616]/15 via-transparent to-transparent lg:block" />
 
-              <p className="mt-10 text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
+          <div className="relative z-[1] grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
+            <div>
+              <div className="accent-line" />
+
+              <p className="mt-8 text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
                 Part of Open Bible
               </p>
 
-              <h2 className="mt-5 text-[34px] font-black leading-[0.96] tracking-[-0.045em] md:text-[50px]">
+              <h2 className="mt-5 max-w-xl text-[36px] font-black leading-[0.96] tracking-[-0.045em] md:text-[54px]">
                 Rooted in a shared mission.
               </h2>
+
+              <p className="mt-6 max-w-md text-base font-semibold leading-8 text-[#FBF0DE]/72">
+                CMC serves within Open Bible, connected to local churches, regional relationships, and accountable leadership.
+              </p>
             </div>
 
-            <div className="space-y-7 text-lg font-medium leading-8 text-[#FBF0DE]/84">
-              <p>
-                CMC serves inside the wider mission of Open Bible Churches: to globally make disciples, develop leaders, and multiply churches. That shared mission gives the Collective its direction and keeps multiplication connected to local churches, regional relationships, and accountable leadership.
+            <div className="rounded-[1.75rem] border border-[#FBF0DE]/12 bg-[#151616]/18 p-6 backdrop-blur-[2px] md:p-8">
+              <p className="text-xl font-bold leading-9 text-[#FBF0DE]/90">
+                Open Bible Churches exist to globally make disciples, develop leaders, and multiply churches.
               </p>
 
-              <p>
-                The Collective is not a separate movement competing with Open Bible. It is a practical pathway that helps Open Bible pastors and pioneers take next steps toward disciple-making communities, new churches, and sending churches across every region.
-              </p>
+              <div className="my-7 h-px w-full bg-[#FBF0DE]/14" />
+
+              <div className="space-y-5 text-base font-medium leading-8 text-[#FBF0DE]/78">
+                <p>
+                  That shared mission gives the Collective its direction and keeps multiplication connected to the church, not detached from it.
+                </p>
+
+                <p>
+                  CMC is a practical pathway that helps Open Bible pastors and pioneers take next steps toward disciple-making communities, new churches, and sending churches across every region.
+                </p>
+              </div>
             </div>
           </div>
         </div>
