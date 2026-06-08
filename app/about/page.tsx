@@ -116,13 +116,13 @@ export default function AboutPage() {
       <section className="px-5 pb-20 lg:px-8">
         <div className="brand-panel relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] px-8 py-10 shadow-2xl shadow-black/10 md:px-12 md:py-14">
           <img
-            src="/open-bible-about-background-watermark.png"
+            src="/open-bible-mark-white-transparent.png"
             alt=""
             aria-hidden="true"
-            className="pointer-events-none absolute -right-36 top-[40%] z-0 hidden w-[920px] max-w-none -translate-y-1/2 opacity-[0.10] lg:block"
+            className="pointer-events-none absolute -right-20 top-1/2 z-0 w-[520px] max-w-none -translate-y-1/2 opacity-[0.18] md:-right-24 md:w-[680px] lg:-right-28 lg:w-[760px]"
           />
 
-          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 hidden w-1/2 bg-gradient-to-l from-[#151616]/20 via-transparent to-transparent lg:block" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-2/3 bg-gradient-to-l from-[#151616]/30 via-[#151616]/10 to-transparent" />
 
           <div className="relative z-20 grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
             <div>
