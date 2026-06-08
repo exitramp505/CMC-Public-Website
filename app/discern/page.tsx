@@ -11,14 +11,7 @@ import {
   Users,
 } from "lucide-react";
 
-const APPLICATION_URL = "https://www.openbible.org/connect/credentials";
-
-const outcomes = [
-  "Clarify your call to pioneering ministry",
-  "Receive feedback from experienced multiplication leaders",
-  "Discern your current readiness for next steps",
-  "Identify areas of strength, growth, and support",
-];
+import discernContent from "@/content/discern.json";
 
 const process = [
   {
@@ -62,6 +55,13 @@ const categories = [
   },
 ];
 
+const outcomes = [
+  "Clarify your call to pioneering ministry",
+  "Receive feedback from experienced multiplication leaders",
+  "Discern your current readiness for next steps",
+  "Identify areas of strength, growth, and support",
+];
+
 export default function DiscernPage() {
   return (
     <>
@@ -72,15 +72,15 @@ export default function DiscernPage() {
         <div className="relative mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[1.05fr_.95fr]">
           <div>
             <p className="text-sm font-extrabold uppercase tracking-[0.34em] text-ember">
-              Discernment Center
+              {discernContent.heroEyebrow}
             </p>
 
             <h1 className="poster-type mt-6 text-[4.25rem] text-[#FBF0DE] md:text-[6rem] lg:text-[7.25rem]">
-              Discern your next faithful step.
+              {discernContent.heroTitle}
             </h1>
 
             <p className="mt-8 max-w-3xl text-lg font-medium leading-8 text-[#FBF0DE] md:text-xl">
-              The Discernment Center helps potential pioneers clarify calling, assess readiness, and receive wise feedback before taking the next step toward church multiplication.
+              {discernContent.heroDescription}
             </p>
 
             <div className="mt-8 grid max-w-3xl gap-3 sm:grid-cols-2">
@@ -90,7 +90,7 @@ export default function DiscernPage() {
                   <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#FBF0DE] opacity-60">
                     Dates
                   </p>
-                  <p className="mt-1 text-base font-black">May 25–27, 2027</p>
+                  <p className="mt-1 text-base font-black">{discernContent.dates}</p>
                 </div>
               </div>
 
@@ -100,14 +100,14 @@ export default function DiscernPage() {
                   <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#FBF0DE] opacity-60">
                     Location
                   </p>
-                  <p className="mt-1 text-base font-black">Des Moines, Iowa</p>
+                  <p className="mt-1 text-base font-black">{discernContent.location}</p>
                 </div>
               </div>
             </div>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Link
-                href={APPLICATION_URL}
+                href={discernContent.applicationUrl}
                 className="button-primary inline-flex items-center justify-center gap-2 rounded-full px-7 py-4 text-sm font-extrabold transition"
               >
                 Start Your Application <ArrowRight size={18} />
@@ -162,17 +162,12 @@ export default function DiscernPage() {
           </p>
 
           <h2 className="mx-auto mt-5 max-w-4xl text-[40px] font-black leading-[0.94] tracking-[-0.052em] text-ink md:text-[64px]">
-            A multi-day gathering built for real discernment.
+            {discernContent.whatToExpectTitle}
           </h2>
 
           <div className="mx-auto mt-7 max-w-4xl space-y-5 text-lg font-medium leading-9 text-slate">
-            <p>
-              The Discernment Center is a two-and-a-half-day interactive gathering taking place May 25–27, 2027, in Des Moines, Iowa. It is designed for leaders who are exploring a call to church pioneering and helps candidates and regional leaders listen carefully, assess honestly, and identify the wisest next step.
-            </p>
-
-            <p>
-              The experience is highly participatory. Candidates do not simply sit through lectures. They engage in church pioneering exercises, interviews, presentations, group interaction, and guided reflection. You will be with other leaders who are in a similar place of discernment, along with coaches and multiplication leaders who are there to observe, encourage, ask questions, and offer feedback.
-            </p>
+            <p>{discernContent.whatToExpectParagraphOne}</p>
+            <p>{discernContent.whatToExpectParagraphTwo}</p>
           </div>
         </div>
 
@@ -254,7 +249,7 @@ export default function DiscernPage() {
 
           <div className="mt-10">
             <Link
-              href={APPLICATION_URL}
+              href={discernContent.applicationUrl}
               className="button-primary inline-flex items-center justify-center gap-2 rounded-full px-7 py-4 text-sm font-extrabold transition"
             >
               Get Started on Your Application <ArrowRight size={18} />
