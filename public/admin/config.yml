@@ -39,7 +39,9 @@ collections:
             summary: "{{fields.title}} — {{fields.date}}"
             fields:
               - { label: "Title", name: "title", widget: "string" }
-              - { label: "Date", name: "date", widget: "string" }
+              - { label: "Display Date", name: "date", widget: "string", hint: "This is what visitors see, for example: May 25–27, 2027." }
+              - { label: "Start Date", name: "startDate", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD", hint: "Used for sorting events." }
+              - { label: "End Date", name: "endDate", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD", hint: "The event automatically disappears after this date." }
               - { label: "Location", name: "location", widget: "string", required: false }
               - { label: "Description", name: "description", widget: "text" }
               - { label: "Button Text", name: "buttonText", widget: "string", default: "Learn More" }
