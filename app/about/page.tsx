@@ -117,12 +117,25 @@ export default function AboutPage() {
         <div className="brand-panel relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] px-8 py-10 shadow-2xl shadow-black/10 md:px-12 md:py-14">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_45%,rgba(234,159,67,0.14),transparent_34%),radial-gradient(circle_at_12%_90%,rgba(77,167,156,0.12),transparent_32%)]" />
 
-          <img
-            src="/open-bible-mark-white-transparent.png"
-            alt=""
-            aria-hidden="true"
-            className="pointer-events-none absolute -right-24 top-1/2 hidden w-[620px] max-w-none -translate-y-1/2 opacity-[0.09] lg:block"
-          />
+    <section className="px-5 pb-20 lg:px-8">
+  <div className="brand-panel relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] px-8 py-10 shadow-2xl shadow-black/10 md:px-12 md:py-14">
+    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_45%,rgba(234,159,67,0.14),transparent_34%),radial-gradient(circle_at_12%_90%,rgba(77,167,156,0.12),transparent_32%)]" />
+
+    {/* UPDATED Open Bible background logo */}
+    <img
+      src="/open-bible-about-background-watermark.png"
+      alt=""
+      aria-hidden="true"
+      className="pointer-events-none absolute -right-52 top-[42%] hidden w-[1100px] max-w-none -translate-y-1/2 opacity-[0.06] lg:block"
+    />
+
+    <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 bg-gradient-to-l from-[#151616]/15 via-transparent to-transparent lg:block" />
+
+    <div className="relative z-[1] grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
+      {/* ... rest of your content stays exactly the same ... */}
+    </div>
+  </div>
+</section>
 
           <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 bg-gradient-to-l from-[#151616]/15 via-transparent to-transparent lg:block" />
 
