@@ -87,7 +87,7 @@ export default function DiscernPage() {
               <div className="flex items-center gap-3 rounded-2xl border border-[#FBF0DE]/14 bg-[#151616]/24 px-5 py-4 text-[#FBF0DE]">
                 <CalendarDays className="shrink-0 text-ember" size={24} />
                 <div>
-                  <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#FBF0DE]/58">
+                  <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#FBF0DE] opacity-60">
                     Dates
                   </p>
                   <p className="mt-1 text-base font-black">May 25–27, 2027</p>
@@ -97,7 +97,7 @@ export default function DiscernPage() {
               <div className="flex items-center gap-3 rounded-2xl border border-[#FBF0DE]/14 bg-[#151616]/24 px-5 py-4 text-[#FBF0DE]">
                 <MapPin className="shrink-0 text-ember" size={24} />
                 <div>
-                  <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#FBF0DE]/58">
+                  <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#FBF0DE] opacity-60">
                     Location
                   </p>
                   <p className="mt-1 text-base font-black">Des Moines, Iowa</p>
@@ -227,7 +227,7 @@ export default function DiscernPage() {
                   {category.title}
                 </h3>
 
-                <p className="mt-4 text-base font-medium leading-8 text-[#FBF0DE]/78">
+                <p className="mt-4 text-base font-medium leading-8 text-[#FBF0DE] opacity-80">
                   {category.text}
                 </p>
               </article>
