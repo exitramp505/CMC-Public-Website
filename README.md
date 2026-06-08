@@ -1,30 +1,19 @@
-# Church Multiplication Collective
+# Netlify Identity Fix
 
-A Next.js + Tailwind site configured for Netlify.
+Upload these files to the matching paths in your repo:
 
-## Local setup
+app/layout.tsx
+public/admin/index.html
 
-```bash
-npm install
-npm run dev
-```
+This adds the Netlify Identity widget to the main site and the admin page.
 
-Then open `http://localhost:3000`.
+After deploy, password reset links like:
 
-## Netlify setup
+https://cmcopenbible.netlify.app/#recovery_token=...
 
-Use these settings:
+should open the Netlify password reset modal instead of just showing the homepage.
 
-```txt
-Build command: npm run build
-Publish directory: .next
-```
+You can also try:
 
-This repo includes:
+https://cmcopenbible.netlify.app/admin/#recovery_token=...
 
-- `.nvmrc` set to Node 20
-- `netlify.toml` with `NODE_VERSION = "20"`
-- `netlify.toml` with `NPM_VERSION = "9.9.4"`
-- `.gitignore` excluding `node_modules`, `.next`, and Netlify folders
-
-Do not upload `node_modules` or `.next` to GitHub.
