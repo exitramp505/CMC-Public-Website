@@ -119,12 +119,12 @@ export default function AboutPage() {
             src="/open-bible-about-background-watermark.png"
             alt=""
             aria-hidden="true"
-            className="pointer-events-none absolute -right-56 top-1/2 hidden w-[1050px] max-w-none -translate-y-1/2 opacity-[0.055] lg:block"
+            className="pointer-events-none absolute -right-36 top-[40%] z-0 hidden w-[920px] max-w-none -translate-y-1/2 opacity-[0.10] lg:block"
           />
 
-          <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 bg-gradient-to-l from-[#151616]/20 via-transparent to-transparent lg:block" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 hidden w-1/2 bg-gradient-to-l from-[#151616]/20 via-transparent to-transparent lg:block" />
 
-          <div className="relative z-[1] grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
+          <div className="relative z-20 grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
             <div>
               <div className="accent-line" />
 
@@ -141,7 +141,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="rounded-[1.75rem] border border-[#FBF0DE]/12 bg-[#151616]/20 p-6 md:p-8">
+            <div className="rounded-[1.75rem] border border-[#FBF0DE]/12 bg-[#151616]/30 p-6 md:p-8">
               <p className="text-xl font-bold leading-9 text-[#FBF0DE]/90">
                 Open Bible Churches exist to globally make disciples, develop leaders, and multiply churches.
               </p>
