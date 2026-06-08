@@ -1,0 +1,13 @@
+{
+  "events": [
+    {
+      "title": "Discernment Center",
+      "date": "May 25\u201327, 2027",
+      "location": "Des Moines, Iowa",
+      "description": "A two-and-a-half-day interactive gathering for leaders exploring a call to church pioneering.",
+      "buttonText": "Learn More",
+      "buttonUrl": "/discern",
+      "featured": true
+    }
+  ]
+}
