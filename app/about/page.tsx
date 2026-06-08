@@ -1,228 +1,58 @@
-import CTA from "@/components/CTA";
+import Link from "next/link";
 
-const leaders = [
-  {
-    name: "Michael Nortune",
-    role: "President",
-    region: "Open Bible Churches",
-  },
-  {
-    name: "Mike Dickey",
-    role: "Director of Multiplication",
-    region: "Southeast Region",
-  },
-  {
-    name: "Aaron Sutherland",
-    role: "Director of Multiplication",
-    region: "Pacific Region",
-  },
-  {
-    name: "Terry Dreyer",
-    role: "Director of Multiplication",
-    region: "Central Region",
-  },
-  {
-    name: "Rob Bray",
-    role: "Director of Multiplication",
-    region: "Mountain Plains Region",
-  },
-  {
-    name: "George Williams",
-    role: "Director of Multiplication",
-    region: "East Region",
-  },
-];
+import { ArrowRight } from "lucide-react";
 
-function PlaceholderPortrait({ name }: { name: string }) {
-  const initials = name
-    .split(" ")
-    .map((part) => part[0])
-    .join("");
+import SectionHeader from "@/components/SectionHeader";
 
+const discoverLink =
+  "https://acquire.pathwright.com/library/discover-church-multiplication-101-238879/register/725954/?ic=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbnZpdGVfdHlwZSI6MSwic2VuZGVyX2lkIjoxOTM0MjI5LCJzY2hvb2xfaWQiOjEzOTk3LCJvZmZlcmluZ19pZCI6NzI1OTU0LCJyb2xlIjo1LCJpYXQiOjE3ODA2MTMzMzh9.l14elqh19_R804wFNo_kAOknqOFEVtNNpwidthjWVeY";
+
+export default function DiscoverPage() {
   return (
-    <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-[1.5rem] border border-slate/15 bg-gradient-to-br from-[#FBF0DE] to-[#F1D2AC] text-2xl font-black tracking-[-0.06em] text-slate shadow-lg shadow-black/5">
-      {initials}
-    </div>
-  );
-}
+    <section className="px-5 py-24 lg:px-8">
+      <SectionHeader eyebrow="Discover" title="Church Multiplication 101">
+        The first step for pastors and potential pioneers who want to explore the call, theology, models, and practical pathway of church multiplication.
+      </SectionHeader>
 
-export default function AboutPage() {
-  return (
-    <>
-      <section className="px-5 py-20 lg:px-8">
-        <div className="mx-auto max-w-6xl text-center">
-          <div className="accent-line mx-auto" />
-
-          <p className="mt-6 text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
-            About CMC
-          </p>
-
-          <h1 className="mx-auto mt-5 max-w-5xl text-[42px] font-black leading-[0.94] tracking-[-0.052em] text-ink md:text-[68px]">
-            A pathway for pastors and pioneers who carry a multiplication burden.
-          </h1>
-
-          <p className="mx-auto mt-6 max-w-3xl text-lg font-medium leading-8 text-slate">
-            The Church Multiplication Collective helps leaders recover a sending imagination, form disciple-making communities, and multiply churches into new places.
-          </p>
-        </div>
-      </section>
-
-      <section className="px-5 pb-20 lg:px-8">
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-3">
-          <article className="texture-card rounded-[2rem] p-8">
-            <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
-              Mission
-            </p>
-
-            <h2 className="mt-5 text-[34px] font-black leading-[0.96] tracking-[-0.045em] text-ink md:text-[44px]">
-              Make disciples.
+      <div className="mx-auto mt-14 max-w-5xl texture-card rounded-[2rem] p-8 md:p-12">
+        <div className="grid gap-10 md:grid-cols-[1.2fr_.8fr] md:items-center">
+          <div>
+            <h2 className="text-4xl font-black tracking-[-.035em] text-ink md:text-5xl">
+              Start with clarity.
             </h2>
 
-            <p className="mt-5 font-medium leading-8 text-slate">
-              Multiplication begins with disciples who hear Jesus, obey Jesus, and help others follow Jesus.
-            </p>
-          </article>
-
-          <article className="texture-card rounded-[2rem] p-8">
-            <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
-              Formation
+            <p className="mt-5 leading-8 text-slate">
+              Discover is designed to help leaders understand multiplication language, identify possible models, evaluate next steps, and begin discerning whether they are being invited into a pioneering or sending role.
             </p>
 
-            <h2 className="mt-5 text-[34px] font-black leading-[0.96] tracking-[-0.045em] text-ink md:text-[44px]">
-              Develop leaders.
-            </h2>
-
-            <p className="mt-5 font-medium leading-8 text-slate">
-              Healthy multiplication requires leaders who are called, formed, trained, and supported.
-            </p>
-          </article>
-
-          <article className="texture-card rounded-[2rem] p-8">
-            <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
-              Multiplication
-            </p>
-
-            <h2 className="mt-5 text-[34px] font-black leading-[0.96] tracking-[-0.045em] text-ink md:text-[44px]">
-              Multiply churches.
-            </h2>
-
-            <p className="mt-5 font-medium leading-8 text-slate">
-              The goal is not activity alone. The goal is faithful new works that worship Jesus, make disciples, and expand the Kingdom.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section className="px-5 pb-20 lg:px-8">
-        <div className="brand-panel relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] px-8 py-10 shadow-2xl shadow-black/10 md:px-12 md:py-14">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_45%,rgba(234,159,67,0.14),transparent_34%),radial-gradient(circle_at_12%_90%,rgba(77,167,156,0.12),transparent_32%)]" />
-
-    <section className="px-5 pb-20 lg:px-8">
-  <div className="brand-panel relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] px-8 py-10 shadow-2xl shadow-black/10 md:px-12 md:py-14">
-    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_45%,rgba(234,159,67,0.14),transparent_34%),radial-gradient(circle_at_12%_90%,rgba(77,167,156,0.12),transparent_32%)]" />
-
-    {/* UPDATED Open Bible background logo */}
-    <img
-      src="/open-bible-about-background-watermark.png"
-      alt=""
-      aria-hidden="true"
-      className="pointer-events-none absolute -right-52 top-[42%] hidden w-[1100px] max-w-none -translate-y-1/2 opacity-[0.06] lg:block"
-    />
-
-    <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 bg-gradient-to-l from-[#151616]/15 via-transparent to-transparent lg:block" />
-
-    <div className="relative z-[1] grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
-      {/* ... rest of your content stays exactly the same ... */}
-    </div>
-  </div>
-</section>
-
-          <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 bg-gradient-to-l from-[#151616]/15 via-transparent to-transparent lg:block" />
-
-          <div className="relative z-[1] grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
-            <div>
-              <div className="accent-line" />
-
-              <p className="mt-8 text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
-                Part of Open Bible
-              </p>
-
-              <h2 className="mt-5 max-w-xl text-[36px] font-black leading-[0.96] tracking-[-0.045em] md:text-[54px]">
-                Rooted in a shared mission.
-              </h2>
-
-              <p className="mt-6 max-w-md text-base font-semibold leading-8 text-[#FBF0DE]/72">
-                CMC serves within Open Bible, connected to local churches, regional relationships, and accountable leadership.
-              </p>
-            </div>
-
-            <div className="rounded-[1.75rem] border border-[#FBF0DE]/12 bg-[#151616]/18 p-6 backdrop-blur-[2px] md:p-8">
-              <p className="text-xl font-bold leading-9 text-[#FBF0DE]/90">
-                Open Bible Churches exist to globally make disciples, develop leaders, and multiply churches.
-              </p>
-
-              <div className="my-7 h-px w-full bg-[#FBF0DE]/14" />
-
-              <div className="space-y-5 text-base font-medium leading-8 text-[#FBF0DE]/78">
-                <p>
-                  That shared mission gives the Collective its direction and keeps multiplication connected to the church, not detached from it.
-                </p>
-
-                <p>
-                  CMC is a practical pathway that helps Open Bible pastors and pioneers take next steps toward disciple-making communities, new churches, and sending churches across every region.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="px-5 pb-20 lg:px-8">
-        <div className="mx-auto max-w-6xl">
-          <div className="text-center">
-            <div className="accent-line mx-auto" />
-
-            <p className="mt-6 text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
-              CMC Leadership
-            </p>
-
-            <h2 className="mx-auto mt-5 max-w-4xl text-[40px] font-black leading-[0.94] tracking-[-0.052em] text-ink md:text-[64px]">
-              Led through Open Bible regions.
-            </h2>
-
-            <p className="mx-auto mt-6 max-w-3xl text-lg font-medium leading-8 text-slate">
-              The Church Multiplication Collective is guided by national and regional leaders who serve pastors, pioneers, and multiplying churches.
-            </p>
+            <ul className="mt-8 grid gap-3 text-sm text-slate">
+              <li>• Explore a biblical framework for multiplication</li>
+              <li>• Learn different models of church multiplication</li>
+              <li>• Discern personal and church-level next steps</li>
+              <li>• Prepare for deeper discernment and development</li>
+            </ul>
           </div>
 
-          <div className="mt-14 grid gap-5 md:grid-cols-2">
-            {leaders.map((leader) => (
-              <article
-                key={leader.name}
-                className="texture-card flex gap-5 rounded-[2rem] p-6"
-              >
-                <PlaceholderPortrait name={leader.name} />
+          <div className="rounded-3xl border border-slate/15 bg-slate p-7">
+            <p className="text-sm font-extrabold uppercase tracking-[0.32em] text-ember">
+              Next step
+            </p>
 
-                <div className="flex flex-col justify-center">
-                  <p className="text-sm font-extrabold uppercase tracking-[0.22em] text-ember">
-                    {leader.region}
-                  </p>
+            <p className="mt-4 text-sm leading-7 text-[#FBF0DE]/80">
+              Begin the Discover track and take the first step into the Church Multiplication Collective pathway.
+            </p>
 
-                  <h3 className="mt-2 text-2xl font-black tracking-[-0.035em] text-ink">
-                    {leader.name}
-                  </h3>
-
-                  <p className="mt-1 font-semibold leading-7 text-slate">
-                    {leader.role}
-                  </p>
-                </div>
-              </article>
-            ))}
+            <Link
+              href={discoverLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button-primary mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-bold transition"
+            >
+              Start Discover <ArrowRight size={18} />
+            </Link>
           </div>
         </div>
-      </section>
-
-      <CTA />
-    </>
+      </div>
+    </section>
   );
 }
