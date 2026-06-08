@@ -48,6 +48,28 @@ collections:
               - { label: "Button URL", name: "buttonUrl", widget: "string", required: false }
               - { label: "Featured", name: "featured", widget: "boolean", default: false }
 
+      - name: "resources"
+        label: "Resources Page"
+        file: "content/resources.json"
+        format: "json"
+        fields:
+          - { label: "Hero Eyebrow", name: "heroEyebrow", widget: "string" }
+          - { label: "Hero Title", name: "heroTitle", widget: "string" }
+          - { label: "Hero Description", name: "heroDescription", widget: "text" }
+          - { label: "Featured Section Title", name: "featuredTitle", widget: "string" }
+          - { label: "Featured Section Description", name: "featuredDescription", widget: "text" }
+          - label: "Resource Cards"
+            name: "resources"
+            widget: "list"
+            summary: "{{fields.title}} — {{fields.category}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Category", name: "category", widget: "string", required: false, hint: "Examples: Guide, Pathway, Video, Download, Assessment." }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Button Text", name: "buttonText", widget: "string", default: "View Resource" }
+              - { label: "Button URL", name: "buttonUrl", widget: "string", required: false }
+              - { label: "Featured", name: "featured", widget: "boolean", default: false, hint: "Featured cards appear in the larger Start Here section." }
+
       - name: "discern"
         label: "Discernment Center"
         file: "content/discern.json"
