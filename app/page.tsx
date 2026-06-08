@@ -218,7 +218,7 @@ export default function Home() {
             <Link
               key={model}
               href="/models"
-              className="rounded-full border border-sand/25 bg-sand px-5 py-3 text-sm font-bold text-slate transition hover:bg-ember hover:text-ink"
+              className="rounded-full border border-[#FBF0DE]/20 bg-[#151616]/40 px-5 py-3 text-sm font-bold text-[#FBF0DE] transition hover:bg-ember hover:text-ink"
             >
               {model}
             </Link>
