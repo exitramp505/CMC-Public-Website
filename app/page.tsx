@@ -71,7 +71,7 @@ export default function Home() {
               Mission to Multiply.
             </h1>
 
-            <p className="mt-8 max-w-3xl text-lg leading-8 text-[#FBF0DE]/82 md:text-xl">
+            <p className="mt-8 max-w-3xl text-lg font-medium leading-8 text-[#FBF0DE] [text-shadow:0_1px_2px_rgba(0,0,0,0.35)] md:text-xl">
               The Church Multiplication Collective helps pastors and pioneers recover a sending imagination, form disciple-making communities, and multiply churches into new places.
             </p>
 
@@ -208,7 +208,7 @@ export default function Home() {
             Multiplication has more than one shape.
           </h2>
 
-          <p className="mx-auto mt-6 max-w-3xl text-lg font-medium leading-8 text-[#FBF0DE]/82">
+          <p className="mx-auto mt-6 max-w-3xl text-lg font-medium leading-8 text-[#FBF0DE] [text-shadow:0_1px_2px_rgba(0,0,0,0.35)]">
             The Collective helps leaders discern the right model for their calling, context, and capacity.
           </p>
         </div>
