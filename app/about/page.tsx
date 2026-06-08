@@ -1,37 +1,14 @@
 import CTA from "@/components/CTA";
+import teamContent from "@/content/team.json";
 
-const leaders = [
-  {
-    name: "Michael Nortune",
-    role: "President",
-    region: "Open Bible Churches",
-  },
-  {
-    name: "Mike Dickey",
-    role: "Director of Multiplication",
-    region: "Southeast Region",
-  },
-  {
-    name: "Aaron Sutherland",
-    role: "Director of Multiplication",
-    region: "Pacific Region",
-  },
-  {
-    name: "Terry Dreyer",
-    role: "Director of Multiplication",
-    region: "Central Region",
-  },
-  {
-    name: "Rob Bray",
-    role: "Director of Multiplication",
-    region: "Mountain Plains Region",
-  },
-  {
-    name: "George Williams",
-    role: "Director of Multiplication",
-    region: "East Region",
-  },
-];
+type TeamMember = {
+  name: string;
+  title: string;
+  region: string;
+  image?: string;
+};
+
+const leaders = teamContent.team as TeamMember[];
 
 function PlaceholderPortrait({ name }: { name: string }) {
   const initials = name
@@ -44,6 +21,20 @@ function PlaceholderPortrait({ name }: { name: string }) {
       {initials}
     </div>
   );
+}
+
+function TeamPortrait({ leader }: { leader: TeamMember }) {
+  if (leader.image) {
+    return (
+      <img
+        src={leader.image}
+        alt={leader.name}
+        className="h-24 w-24 shrink-0 rounded-[1.5rem] object-cover shadow-lg shadow-black/5"
+      />
+    );
+  }
+
+  return <PlaceholderPortrait name={leader.name} />;
 }
 
 export default function AboutPage() {
@@ -107,7 +98,7 @@ export default function AboutPage() {
             </h2>
 
             <p className="mt-5 font-medium leading-8 text-slate">
-              The goal is not activity alone. The goal is faithful new works that worship Jesus, make disciples, and expand the Kingdom.
+              The goal is faithful new works that worship Jesus, make disciples, and expand the Kingdom.
             </p>
           </article>
         </div>
@@ -136,21 +127,21 @@ export default function AboutPage() {
                 Rooted in a shared mission.
               </h2>
 
-              <p className="mt-6 max-w-md text-base font-semibold leading-8 text-[#FBF0DE]/72">
+              <p className="mt-6 max-w-md text-base font-semibold leading-8 text-[#FBF0DE] opacity-75">
                 CMC serves within Open Bible, connected to local churches, regional relationships, and accountable leadership.
               </p>
             </div>
 
             <div className="rounded-[1.75rem] border border-[#FBF0DE]/12 bg-[#151616]/30 p-6 md:p-8">
-              <p className="text-xl font-bold leading-9 text-[#FBF0DE]/90">
+              <p className="text-xl font-bold leading-9 text-[#FBF0DE] opacity-90">
                 Open Bible Churches exist to globally make disciples, develop leaders, and multiply churches.
               </p>
 
               <div className="my-7 h-px w-full bg-[#FBF0DE]/14" />
 
-              <div className="space-y-5 text-base font-medium leading-8 text-[#FBF0DE]/78">
+              <div className="space-y-5 text-base font-medium leading-8 text-[#FBF0DE] opacity-80">
                 <p>
-                  That shared mission gives the Collective its direction and keeps multiplication connected to the church, not detached from it.
+                  That shared mission gives the Collective its direction and keeps multiplication connected to the church.
                 </p>
 
                 <p>
@@ -183,10 +174,10 @@ export default function AboutPage() {
           <div className="mt-14 grid gap-5 md:grid-cols-2">
             {leaders.map((leader) => (
               <article
-                key={leader.name}
+                key={`${leader.name}-${leader.region}`}
                 className="texture-card flex gap-5 rounded-[2rem] p-6"
               >
-                <PlaceholderPortrait name={leader.name} />
+                <TeamPortrait leader={leader} />
 
                 <div className="flex flex-col justify-center">
                   <p className="text-sm font-extrabold uppercase tracking-[0.22em] text-ember">
@@ -198,7 +189,7 @@ export default function AboutPage() {
                   </h3>
 
                   <p className="mt-1 font-semibold leading-7 text-slate">
-                    {leader.role}
+                    {leader.title}
                   </p>
                 </div>
               </article>
