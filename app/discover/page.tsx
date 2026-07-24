@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-
-import { ArrowUpRight } from "lucide-react";
-
-import SectionHeader from "@/components/SectionHeader";
+import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Discover: Church Multiplication 101",
@@ -15,52 +13,243 @@ export const metadata: Metadata = {
 const discoverLink =
   "https://acquire.pathwright.com/library/discover-church-multiplication-101-238879/register/725954/?ic=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbnZpdGVfdHlwZSI6MSwic2VuZGVyX2lkIjoxOTM0MjI5LCJzY2hvb2xfaWQiOjEzOTk3LCJvZmZlcmluZ19pZCI6NzI1OTU0LCJyb2xlIjo1LCJpYXQiOjE3ODA2MTMzMzh9.l14elqh19_R804wFNo_kAOknqOFEVtNNpwidthjWVeY";
 
+const questions = [
+  {
+    number: "01",
+    question: "What does church multiplication actually mean?",
+    answer:
+      "Build shared language around disciples, leaders, churches, sending, and multiplication.",
+  },
+  {
+    number: "02",
+    question: "Where might I—or my church—fit?",
+    answer:
+      "Compare multiplication models and recognize the roles of pioneers and sending churches.",
+  },
+  {
+    number: "03",
+    question: "What should the next step be?",
+    answer:
+      "Identify the questions that need deeper discernment before moving into preparation or deployment.",
+  },
+];
+
+const topics = [
+  "A biblical framework for multiplication",
+  "Shared language for leaders and churches",
+  "Different models of church multiplication",
+  "The roles of pioneers and sending churches",
+  "Personal and church-level next steps",
+  "Preparation for deeper discernment",
+];
+
 export default function DiscoverPage() {
   return (
-    <section className="px-5 py-24 lg:px-8">
-      <SectionHeader eyebrow="Discover" title="Church Multiplication 101" headingLevel={1}>
-        The first step for pastors and potential pioneers who want to explore the call, theology, models, and practical pathway of church multiplication.
-      </SectionHeader>
+    <>
+      <section className="brand-panel relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_16%,rgba(234,159,67,0.19),transparent_28%),radial-gradient(circle_at_90%_82%,rgba(77,167,156,0.17),transparent_30%)]" />
 
-      <div className="mx-auto mt-14 max-w-5xl texture-card rounded-[2rem] p-8 md:p-12">
-        <div className="grid gap-10 md:grid-cols-[1.2fr_.8fr] md:items-center">
-          <div>
-            <h2 className="text-4xl font-black tracking-[-.035em] text-ink md:text-5xl">
-              Start with clarity.
-            </h2>
+        <div className="relative mx-auto grid min-h-[650px] max-w-[1440px] lg:grid-cols-[1.03fr_.97fr]">
+          <div className="flex items-center px-5 py-20 lg:px-16 lg:py-28 xl:pl-24">
+            <div className="max-w-3xl">
+              <div className="accent-line" />
+              <p className="mt-7 text-sm font-extrabold uppercase tracking-[0.32em] text-ember">
+                Discover · Church Multiplication 101
+              </p>
+              <h1 className="mt-6 text-[4.1rem] font-black uppercase leading-[0.82] tracking-[-0.075em] text-[#FBF0DE] sm:text-[5.7rem] xl:text-[7rem]">
+                Start with
+                <span className="block text-ember">clarity.</span>
+              </h1>
+              <p className="mt-8 max-w-2xl text-lg font-medium leading-8 text-[#FBF0DE]/82">
+                Discover gives pastors, pioneers, and churches a biblical foundation, shared language, and a practical first step into church multiplication.
+              </p>
 
-            <p className="mt-5 leading-8 text-slate">
-              Discover is designed to help leaders understand multiplication language, identify possible models, evaluate next steps, and begin discerning whether they are being invited into a pioneering or sending role.
-            </p>
-
-            <ul className="mt-8 grid gap-3 text-sm text-slate">
-              <li>• Explore a biblical framework for multiplication</li>
-              <li>• Learn different models of church multiplication</li>
-              <li>• Discern personal and church-level next steps</li>
-              <li>• Prepare for deeper discernment and development</li>
-            </ul>
+              <a
+                href={discoverLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button-primary mt-10 inline-flex items-center gap-2 rounded-full px-7 py-4 text-sm font-extrabold transition"
+              >
+                Open the Discover course
+                <ArrowUpRight size={18} aria-hidden="true" />
+              </a>
+              <p className="mt-3 text-xs font-semibold text-[#FBF0DE]/60">
+                Opens the course registration page in Pathwright.
+              </p>
+            </div>
           </div>
 
-          <div className="rounded-3xl border border-slate/15 bg-slate p-7">
-            <p className="text-sm font-extrabold uppercase tracking-[0.32em] text-ember">
-              Next step
+          <div className="relative min-h-[420px] overflow-hidden lg:min-h-full">
+            <Image
+              src="/discover-pastor-reflection.webp"
+              alt="A pastor reflecting and writing notes at a desk"
+              fill
+              priority
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover grayscale"
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,#293D48_0%,rgba(41,61,72,0.25)_26%,transparent_58%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(21,22,22,0.48),transparent_44%)]" />
+            <p className="absolute bottom-7 left-7 max-w-sm text-sm font-bold leading-6 text-[#FBF0DE]/85 lg:left-10">
+              Begin by understanding the invitation before deciding where it may lead.
             </p>
+          </div>
+        </div>
+      </section>
 
-            <p className="mt-4 text-sm leading-7 text-[#FBF0DE]/80">
-              Begin the Discover track and take the first step into the Church Multiplication Collective pathway.
+      <section className="px-5 py-20 lg:px-8 lg:py-24">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid gap-10 lg:grid-cols-[.78fr_1.22fr] lg:items-end">
+            <div>
+              <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
+                The purpose
+              </p>
+              <h2 className="mt-4 text-[42px] font-black leading-[0.94] tracking-[-0.052em] text-ink md:text-[62px]">
+                Three questions Discover helps you answer.
+              </h2>
+            </div>
+            <p className="max-w-2xl text-lg font-medium leading-8 text-slate">
+              Discover is orientation—not an assessment and not a commitment to launch. It helps you understand the landscape and decide whether deeper discernment is warranted.
             </p>
+          </div>
 
-            <Link
+          <div className="mt-14 grid gap-5 lg:grid-cols-3">
+            {questions.map((item) => (
+              <article
+                key={item.number}
+                className="rounded-[2rem] border border-slate/15 bg-white/55 p-8 shadow-xl shadow-black/5"
+              >
+                <span className="text-5xl font-black tracking-[-0.07em] text-ember">
+                  {item.number}
+                </span>
+                <h3 className="mt-7 text-[27px] font-black leading-[1.02] tracking-[-0.04em] text-ink">
+                  {item.question}
+                </h3>
+                <p className="mt-5 text-sm font-medium leading-7 text-slate">
+                  {item.answer}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#F3E4CC] px-5 py-20 lg:px-8 lg:py-24">
+        <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[.88fr_1.12fr] lg:items-start">
+          <div>
+            <div className="accent-line" />
+            <p className="mt-6 text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
+              What you will explore
+            </p>
+            <h2 className="mt-5 text-[42px] font-black leading-[0.94] tracking-[-0.052em] text-ink md:text-[60px]">
+              A foundation for the conversations ahead.
+            </h2>
+            <p className="mt-6 max-w-xl font-medium leading-8 text-slate">
+              The course introduces the ideas and vocabulary that pioneers, pastors, and churches need before entering a more personal discernment process.
+            </p>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            {topics.map((topic, index) => (
+              <div
+                key={topic}
+                className="flex min-h-32 gap-4 rounded-[1.5rem] border border-slate/15 bg-[#FBF0DE]/70 p-6"
+              >
+                <span
+                  className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full ${
+                    index % 2 === 0
+                      ? "bg-ember text-ink"
+                      : "bg-sage text-[#FBF0DE]"
+                  }`}
+                >
+                  <Check size={16} strokeWidth={3} aria-hidden="true" />
+                </span>
+                <p className="text-sm font-bold leading-6 text-slate">{topic}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-5 py-20 lg:px-8 lg:py-24">
+        <div className="mx-auto max-w-6xl">
+          <div className="text-center">
+            <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
+              Who should begin
+            </p>
+            <h2 className="mx-auto mt-4 max-w-4xl text-[42px] font-black leading-[0.94] tracking-[-0.052em] text-ink md:text-[60px]">
+              One course. Two important perspectives.
+            </h2>
+          </div>
+
+          <div className="mt-12 grid gap-5 lg:grid-cols-2">
+            <article className="rounded-[2rem] border border-ember/35 border-t-4 bg-white/55 p-8 shadow-xl shadow-black/5 md:p-10">
+              <p className="text-xs font-black uppercase tracking-[0.28em] text-ember">
+                Pioneer · Orange
+              </p>
+              <h3 className="mt-5 text-[32px] font-black leading-[0.98] tracking-[-0.045em] text-ink md:text-[42px]">
+                You sense a call toward something new.
+              </h3>
+              <p className="mt-5 font-medium leading-8 text-slate">
+                Discover helps you name that burden, understand the available models, and decide whether to enter a deeper process of discerning calling and fit.
+              </p>
+            </article>
+
+            <article className="relative overflow-hidden rounded-[2rem] border border-sage/45 border-t-4 bg-slate p-8 text-[#FBF0DE] shadow-xl shadow-black/10 md:p-10">
+              <div className="pointer-events-none absolute -right-16 -top-16 h-52 w-52 rounded-full bg-sage/20 blur-2xl" />
+              <div className="relative">
+                <p className="text-xs font-black uppercase tracking-[0.28em] text-sage">
+                  Church · Teal
+                </p>
+                <h3 className="mt-5 text-[32px] font-black leading-[0.98] tracking-[-0.045em] md:text-[42px]">
+                  Your church wants to multiply and send.
+                </h3>
+                <p className="mt-5 font-medium leading-8 text-[#FBF0DE]/80">
+                  Discover helps leaders build shared language, compare models, and identify what becoming a healthy sending church could require.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="brand-panel px-5 py-20 lg:px-8 lg:py-24">
+        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_.72fr] lg:items-center">
+          <div>
+            <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
+              Begin Discover
+            </p>
+            <h2 className="mt-5 text-[42px] font-black leading-[0.94] tracking-[-0.052em] text-[#FBF0DE] md:text-[62px]">
+              Ready to explore church multiplication?
+            </h2>
+            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-[#FBF0DE]/82">
+              Continue to Pathwright to register for Discover: Church Multiplication 101. Completing Discover prepares you to decide whether Discern should be your next stage.
+            </p>
+          </div>
+
+          <div className="rounded-[2rem] border border-[#FBF0DE]/15 bg-[#FBF0DE]/8 p-7">
+            <a
               href={discoverLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="button-primary mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-bold transition"
+              className="button-primary inline-flex w-full items-center justify-center gap-2 rounded-full px-7 py-4 text-sm font-extrabold transition"
             >
-              Start the Course <ArrowUpRight size={18} aria-hidden="true" />
+              Open the Discover course
+              <ArrowUpRight size={18} aria-hidden="true" />
+            </a>
+            <p className="mt-4 text-center text-xs font-semibold leading-6 text-[#FBF0DE]/65">
+              This button opens the external Pathwright registration page.
+            </p>
+            <Link
+              href="/pathways"
+              className="mt-5 inline-flex w-full items-center justify-center gap-2 text-sm font-bold text-[#FBF0DE]/80 transition hover:text-[#FBF0DE]"
+            >
+              Review the full CMC pathway
+              <ArrowRight size={17} aria-hidden="true" />
             </Link>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
