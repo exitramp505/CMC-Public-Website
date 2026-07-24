@@ -58,7 +58,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="relative z-10 mx-auto grid min-h-[calc(100vh-79px)] max-w-7xl items-center px-5 py-20 sm:py-24 lg:px-8 lg:py-32">
+        <div className="relative z-10 mx-auto grid min-h-[calc(100vh-79px)] max-w-7xl items-center px-5 py-20 sm:py-24 lg:min-h-[calc(88vh-79px)] lg:items-start lg:px-8 lg:pb-24 lg:pt-24 xl:pt-28">
           <div className="max-w-[860px]">
             <div className="h-1 w-[86px] rounded-full bg-[linear-gradient(90deg,#EA9F43,#4DA79C)]" />
 
@@ -66,7 +66,7 @@ export default function HomePage() {
               A ministry pathway of Open Bible Churches
             </p>
 
-            <h1 className="mt-5 max-w-5xl text-[4.55rem] font-black uppercase leading-[0.78] tracking-[-0.095em] text-[#FBF0DE] sm:text-[6.4rem] md:text-[8rem] lg:text-[10.5rem] xl:text-[12rem]">
+            <h1 className="mt-5 max-w-5xl text-[4.55rem] font-black uppercase leading-[0.78] tracking-[-0.095em] text-[#FBF0DE] sm:text-[6.4rem] md:text-[7.4rem] lg:text-[9.25rem] xl:text-[10.5rem]">
               Mission to Multiply.
             </h1>
 
