@@ -109,7 +109,7 @@ export default function PathwaysPage() {
             <div className="absolute inset-0 bg-[linear-gradient(90deg,#293D48_0%,rgba(41,61,72,0.28)_26%,transparent_58%)] lg:block" />
             <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(21,22,22,0.52),transparent_45%)]" />
             <p className="absolute bottom-7 left-7 max-w-sm text-sm font-bold leading-6 text-[#FBF0DE]/85 lg:left-10">
-              Clarity grows in conversation, prayer, practice, and community.
+              Discernment happens through prayer, honest questions, trusted leaders, and a clear next step.
             </p>
           </div>
         </div>
@@ -120,19 +120,19 @@ export default function PathwaysPage() {
           <div className="grid gap-10 lg:grid-cols-[.72fr_1.28fr] lg:items-end">
             <div>
               <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
-                Start where you are
+                Choose your role
               </p>
               <h2 className="mt-4 text-[40px] font-black leading-[0.94] tracking-[-0.052em] text-ink md:text-[58px]">
-                Two entry points. One pathway.
+                Are you pioneering—or preparing to send?
               </h2>
             </div>
             <p className="max-w-2xl text-lg font-medium leading-8 text-slate">
-              You do not need a finished plan to begin. CMC helps you name where you are, discern what is next, and move at a faithful pace.
+              The same four-stage pathway serves two different roles. Pioneers discern and prepare for a new work. Churches develop, release, and support the people they send.
             </p>
           </div>
 
           <div className="mt-12 grid gap-5 lg:grid-cols-2">
-            <article className="group rounded-[2rem] border border-slate/15 bg-white/55 p-8 shadow-xl shadow-black/5 md:p-10">
+            <article className="group rounded-[2rem] border border-ember/35 border-t-4 bg-white/55 p-8 shadow-xl shadow-black/5 md:p-10">
               <p className="text-xs font-black uppercase tracking-[0.28em] text-ember">
                 For the pioneer
               </p>
@@ -144,10 +144,10 @@ export default function PathwaysPage() {
               </p>
             </article>
 
-            <article className="relative overflow-hidden rounded-[2rem] bg-slate p-8 text-[#FBF0DE] shadow-xl shadow-black/10 md:p-10">
+            <article className="relative overflow-hidden rounded-[2rem] border border-sage/45 border-t-4 bg-slate p-8 text-[#FBF0DE] shadow-xl shadow-black/10 md:p-10">
               <div className="pointer-events-none absolute -right-16 -top-16 h-52 w-52 rounded-full bg-sage/20 blur-2xl" />
               <div className="relative">
-                <p className="text-xs font-black uppercase tracking-[0.28em] text-ember">
+                <p className="text-xs font-black uppercase tracking-[0.28em] text-sage">
                   For the church
                 </p>
                 <h3 className="mt-5 text-[32px] font-black leading-[0.98] tracking-[-0.045em] md:text-[42px]">
@@ -167,13 +167,13 @@ export default function PathwaysPage() {
           <div className="max-w-4xl">
             <div className="accent-line" />
             <p className="mt-6 text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
-              Four movements
+              How the pathway works
             </p>
             <h2 className="mt-5 text-[44px] font-black leading-[0.9] tracking-[-0.06em] text-ink md:text-[72px]">
-              A clear path. A faithful pace.
+              Four stages from first questions to supported launch.
             </h2>
             <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-slate">
-              The pathway is directional, not mechanical. Each movement creates space to listen, learn, practice, and decide what faithfulness requires next.
+              Each stage has a specific purpose and a decision point. Leaders and churches move forward when they are ready—not simply because a calendar says it is time.
             </p>
           </div>
 
@@ -229,9 +229,9 @@ export default function PathwaysPage() {
 
           <div className="mt-12 grid gap-5 md:grid-cols-3">
             {[
-              ["No pressure", "Discern the right next step without forcing the timing."],
-              ["No formula", "Choose a model that fits the leader, church, and context."],
-              ["Never alone", "Move with coaching, covering, prayer, and regional support."],
+              ["Discern before deciding", "Test calling, readiness, context, and timing before making a commitment."],
+              ["Choose the right model", "Shape the approach around the leader, sending church, and community being served."],
+              ["Continue with support", "Stay connected to coaching, covering, prayer, and regional relationships after launch."],
             ].map(([title, copy]) => (
               <div key={title} className="border-l-4 border-ember pl-5">
                 <h3 className="text-lg font-black text-ink">{title}</h3>
