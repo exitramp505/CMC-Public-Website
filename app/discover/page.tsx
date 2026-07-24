@@ -6,7 +6,7 @@ import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
 export const metadata: Metadata = {
   title: "Discover: Church Multiplication 101",
   description:
-    "Explore the biblical foundation, shared language, models, and practical first steps of church multiplication.",
+    "Take a short online introductory course exploring the biblical foundation, shared language, models, and practical first steps of church multiplication.",
   alternates: { canonical: "/discover" },
 };
 
@@ -61,7 +61,9 @@ export default function DiscoverPage() {
                 <span className="block text-ember">clarity.</span>
               </h1>
               <p className="mt-8 max-w-2xl text-lg font-medium leading-8 text-[#FBF0DE]/82">
-                Discover gives pastors, pioneers, and churches a biblical foundation, shared language, and a practical first step into church multiplication.
+                Discover is a short online course for pastors, pioneers, and
+                churches. It offers a biblical foundation, shared language,
+                and a practical introduction to church multiplication.
               </p>
 
               <a
@@ -81,8 +83,8 @@ export default function DiscoverPage() {
 
           <div className="relative min-h-[420px] overflow-hidden lg:min-h-full">
             <Image
-              src="/discover-pastor-reflection.webp"
-              alt="A pastor reflecting and writing notes at a desk"
+              src="/discover-online-course.webp"
+              alt="A pastor taking notes beside a laptop while completing an online course"
               fill
               priority
               sizes="(min-width: 1024px) 50vw, 100vw"
@@ -109,7 +111,10 @@ export default function DiscoverPage() {
               </h2>
             </div>
             <p className="max-w-2xl text-lg font-medium leading-8 text-slate">
-              Discover is orientation—not an assessment and not a commitment to launch. It helps you understand the landscape and decide whether deeper discernment is warranted.
+              This short online course is orientation—not an assessment and
+              not a commitment to launch. It gives you enough substance to
+              understand the landscape and decide whether deeper discernment
+              is warranted.
             </p>
           </div>
 
@@ -145,7 +150,10 @@ export default function DiscoverPage() {
               A foundation for the conversations ahead.
             </h2>
             <p className="mt-6 max-w-xl font-medium leading-8 text-slate">
-              The course introduces the ideas and vocabulary that pioneers, pastors, and churches need before entering a more personal discernment process.
+              You will work through an accessible online introduction to the
+              biblical “why,” the people involved, the major multiplication
+              models, and the decisions that come next. The goal is not merely
+              inspiration; it is a clearer framework for a real conversation.
             </p>
           </div>
 
@@ -223,7 +231,9 @@ export default function DiscoverPage() {
               Ready to explore church multiplication?
             </h2>
             <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-[#FBF0DE]/82">
-              Continue to Pathwright to register for Discover: Church Multiplication 101. Completing Discover prepares you to decide whether Discern should be your next stage.
+              Continue to Pathwright to register for the short online course,
+              Discover: Church Multiplication 101. Completing it prepares you
+              to decide whether Discern should be your next stage.
             </p>
           </div>
 
