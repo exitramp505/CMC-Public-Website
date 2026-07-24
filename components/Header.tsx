@@ -12,7 +12,7 @@ const navItems = [
   { label: "Resources", href: "/resources" },
 ];
 
-const discoverHref = "/pathways";
+const discoverHref = "/discover";
 
 function LogoMark() {
   return (
