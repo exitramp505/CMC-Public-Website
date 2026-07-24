@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -12,6 +13,12 @@ import {
 } from "lucide-react";
 
 import discernContent from "@/content/discern.json";
+
+export const metadata: Metadata = {
+  title: "Discernment Center",
+  description:
+    "Learn about the CMC Discernment Center for leaders exploring a call to church pioneering.",
+};
 
 const process = [
   {
