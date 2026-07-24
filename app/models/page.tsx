@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
+
 import CTA from "@/components/CTA";
+
+export const metadata: Metadata = {
+  title: "Models and Essentials",
+  description:
+    "Explore faithful models of church multiplication and the essential qualities shared by every Open Bible church expression.",
+};
 
 const essentials = [
   "Jesus is worshiped and obeyed",
