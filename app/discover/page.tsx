@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Discover: Church Multiplication 101",
   description:
     "Explore the biblical foundation, shared language, models, and practical first steps of church multiplication.",
+  alternates: { canonical: "/discover" },
 };
 
 const discoverLink =
