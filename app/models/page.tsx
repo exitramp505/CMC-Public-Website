@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Models and Essentials",
   description:
     "Explore faithful models of church multiplication and the essential qualities shared by every Open Bible church expression.",
+  alternates: { canonical: "/models" },
 };
 
 const essentials = [
