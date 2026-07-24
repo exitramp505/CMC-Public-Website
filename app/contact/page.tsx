@@ -1,10 +1,17 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import SectionHeader from "@/components/SectionHeader";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Contact the Church Multiplication Collective to ask a question or explore your next step in church multiplication.",
+};
 
 export default function ContactPage() {
   return (
     <section className="px-5 py-24 lg:px-8">
-      <SectionHeader eyebrow="Contact" title="Start a conversation.">
+      <SectionHeader eyebrow="Contact" title="Start a conversation." headingLevel={1}>
         Interested in Discover, a workshop, training, or a multiplication pathway for your church? This is the place to begin.
       </SectionHeader>
       <div className="mx-auto mt-14 max-w-3xl texture-card rounded-[2rem] p-8 text-center md:p-12">
