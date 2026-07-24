@@ -49,7 +49,7 @@ export default function HomePage() {
     <>
       <section className="relative overflow-hidden bg-[linear-gradient(135deg,#293D48_0%,#23343D_48%,#151616_100%)] text-[#FBF0DE]">
         <img
-          src="/hero-community-gathering.webp"
+          src="/hero-community-gathering-v2.webp"
           alt=""
           aria-hidden="true"
           fetchPriority="high"
