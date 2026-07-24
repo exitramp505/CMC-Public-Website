@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Mission to Multiply",
   description:
     "CMC equips pastors, pioneers, and sending churches to form new works and multiply churches through a clear ministry pathway.",
+  alternates: { canonical: "/" },
 };
 
 const pathwaySteps = [

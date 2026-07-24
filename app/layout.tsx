@@ -25,11 +25,23 @@ export const metadata: Metadata = {
     url: "/",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Church Multiplication Collective",
     description:
       "A ministry pathway helping pastors, pioneers, and sending churches make disciples, develop leaders, and multiply churches.",
   },
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Church Multiplication Collective",
+  alternateName: "CMC",
+  url: "https://cmcopenbible.netlify.app",
+  logo: "https://cmcopenbible.netlify.app/cmc-logo-mark.svg",
+  description:
+    "A ministry pathway helping pastors, pioneers, and sending churches make disciples, develop leaders, and multiply churches.",
+  email: "george@openbibleeast.org",
 };
 
 export default function RootLayout({
@@ -40,6 +52,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <Script
+          id="organization-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+
         <Header />
 
         {children}
