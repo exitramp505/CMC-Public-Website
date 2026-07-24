@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 import SectionHeader from "@/components/SectionHeader";
 
@@ -48,7 +48,7 @@ export default function DiscoverPage() {
               rel="noopener noreferrer"
               className="button-primary mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-bold transition"
             >
-              Start Discover <ArrowRight size={18} />
+              Start the Course <ArrowUpRight size={18} aria-hidden="true" />
             </Link>
           </div>
         </div>
