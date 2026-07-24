@@ -1,7 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, CalendarDays, MapPin } from "lucide-react";
 
 import eventsContent from "@/content/events.json";
+
+export const metadata: Metadata = {
+  title: "Events",
+  description:
+    "Find CMC gatherings and discernment opportunities for pioneers, pastors, and multiplying churches.",
+};
 
 type EventItem = {
   title: string;
