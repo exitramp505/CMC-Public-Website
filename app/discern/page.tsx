@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   title: "Discernment Center",
   description:
     "Learn about the CMC Discernment Center for leaders exploring a call to church pioneering.",
+  alternates: { canonical: "/discern" },
 };
 
 const process = [
