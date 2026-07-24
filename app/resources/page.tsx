@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -10,6 +11,12 @@ import {
 } from "lucide-react";
 
 import resourcesContent from "@/content/resources.json";
+
+export const metadata: Metadata = {
+  title: "Resources",
+  description:
+    "Explore practical CMC courses, guides, assessments, and tools for pastors, pioneers, and multiplying churches.",
+};
 
 type ResourceItem = {
   title: string;
