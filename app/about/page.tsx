@@ -1,5 +1,13 @@
+import type { Metadata } from "next";
+
 import CTA from "@/components/CTA";
 import teamContent from "@/content/team.json";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Learn how the Church Multiplication Collective serves Open Bible pastors and pioneers through disciple-making, leadership development, and church multiplication.",
+};
 
 type TeamMember = {
   name: string;
