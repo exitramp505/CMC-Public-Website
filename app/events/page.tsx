@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Events",
   description:
     "Find CMC gatherings and discernment opportunities for pioneers, pastors, and multiplying churches.",
+  alternates: { canonical: "/events" },
 };
 
 type EventItem = {
@@ -58,12 +59,41 @@ const upcomingEvents = (eventsContent.events as EventItem[])
     return aDate.getTime() - bDate.getTime();
   });
 
+const eventSchema = upcomingEvents.map((event) => ({
+  "@context": "https://schema.org",
+  "@type": "Event",
+  name: event.title,
+  startDate: event.startDate,
+  endDate: event.endDate,
+  eventStatus: "https://schema.org/EventScheduled",
+  eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+  location: event.location
+    ? {
+        "@type": "Place",
+        name: event.location,
+        address: event.location,
+      }
+    : undefined,
+  description: event.description,
+  url: `https://cmcopenbible.netlify.app${event.buttonUrl || "/events"}`,
+  organizer: {
+    "@type": "Organization",
+    name: "Church Multiplication Collective",
+    url: "https://cmcopenbible.netlify.app",
+  },
+}));
+
 export default function EventsPage() {
   const featured = upcomingEvents.filter((event) => event.featured);
   const regular = upcomingEvents.filter((event) => !event.featured);
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }}
+      />
+
       <section className="px-5 py-20 lg:px-8">
         <div className="mx-auto max-w-6xl text-center">
           <div className="accent-line mx-auto" />
