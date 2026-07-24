@@ -1,7 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import CTA from "@/components/CTA";
+
+export const metadata: Metadata = {
+  title: "Pathways",
+  description:
+    "Explore the CMC pathway from Discover and Discern through Develop and Deploy for pioneers and multiplying churches.",
+};
 
 const steps = [
   {
