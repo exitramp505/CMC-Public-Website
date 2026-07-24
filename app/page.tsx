@@ -63,7 +63,7 @@ export default function HomePage() {
 
         <div className="pointer-events-none absolute inset-0 opacity-35 [background-image:linear-gradient(rgba(251,240,222,0.048)_1px,transparent_1px),linear-gradient(90deg,rgba(251,240,222,0.038)_1px,transparent_1px)] [background-size:42px_42px]" />
 
-        <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-35">
+        <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-40">
           <div className="hero-light-orb hero-light-orb-one" />
           <div className="hero-light-orb hero-light-orb-two" />
 
@@ -224,8 +224,8 @@ export default function HomePage() {
 
         .hero-small-mark {
           position: relative;
-          width: 36px;
-          height: 36px;
+          width: 45px;
+          height: 45px;
           margin: auto;
           border: 2px solid rgba(251, 240, 222, 0.12);
           border-radius: 12px;
@@ -239,7 +239,7 @@ export default function HomePage() {
           left: 50%;
           top: 50%;
           width: 3px;
-          height: 20px;
+          height: 25px;
           border-radius: 99px;
           background: rgba(251, 240, 222, 0.16);
           transform-origin: center;
@@ -305,8 +305,8 @@ export default function HomePage() {
           }
 
           .hero-small-mark {
-            width: 32px;
-            height: 32px;
+            width: 40px;
+            height: 40px;
           }
 
           .hero-light-orb {
