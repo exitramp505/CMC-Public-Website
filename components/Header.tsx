@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const navItems = [
@@ -10,6 +11,7 @@ const navItems = [
   { label: "Models", href: "/models" },
   { label: "Events", href: "/events" },
   { label: "Resources", href: "/resources" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const discoverHref = "/discover";
@@ -36,9 +38,14 @@ function LogoMark() {
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   function closeMenu() {
     setOpen(false);
+  }
+
+  function isActive(href: string) {
+    return pathname === href || pathname.startsWith(`${href}/`);
   }
 
   return (
@@ -46,33 +53,44 @@ export default function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8">
         <LogoMark />
 
-        <nav className="hidden items-center gap-7 md:flex">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-sm font-extrabold text-slate transition hover:text-ember"
-            >
-              {item.label}
-            </Link>
-          ))}
+        <nav className="hidden items-center gap-6 lg:flex" aria-label="Main navigation">
+          {navItems.map((item) => {
+            const active = isActive(item.href);
+
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                aria-current={active ? "page" : undefined}
+                className={`relative py-2 text-sm font-extrabold transition after:absolute after:inset-x-0 after:-bottom-1 after:h-0.5 after:rounded-full after:bg-ember after:transition-transform ${
+                  active
+                    ? "text-ink after:scale-x-100"
+                    : "text-slate after:scale-x-0 hover:text-ember hover:after:scale-x-100"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-3 lg:flex">
           <Link
             href={discoverHref}
+            aria-current={pathname === discoverHref ? "page" : undefined}
             className="button-primary inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-extrabold transition"
           >
-            Start Discover
+            Start Discover →
           </Link>
         </div>
 
-        <div className="flex items-center gap-3 md:hidden">
+        <div className="flex items-center gap-3 lg:hidden">
           <Link
             href={discoverHref}
+            aria-current={pathname === discoverHref ? "page" : undefined}
             className="button-primary inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-extrabold leading-none transition"
           >
-            Start Discover
+            Start Discover →
           </Link>
 
           <button
@@ -88,18 +106,27 @@ export default function Header() {
       </div>
 
       {open && (
-        <div className="border-t border-slate/10 bg-sand px-5 pb-5 pt-2 shadow-2xl shadow-black/10 md:hidden">
-          <nav className="mx-auto grid max-w-7xl gap-2">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={closeMenu}
-                className="rounded-2xl border border-slate/10 bg-white/70 px-5 py-4 text-base font-black text-slate transition hover:border-ember/40 hover:bg-white"
-              >
-                {item.label}
-              </Link>
-            ))}
+        <div className="border-t border-slate/10 bg-sand px-5 pb-5 pt-2 shadow-2xl shadow-black/10 lg:hidden">
+          <nav className="mx-auto grid max-w-7xl gap-2" aria-label="Mobile navigation">
+            {navItems.map((item) => {
+              const active = isActive(item.href);
+
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={closeMenu}
+                  aria-current={active ? "page" : undefined}
+                  className={`rounded-2xl border px-5 py-4 text-base font-black transition ${
+                    active
+                      ? "border-ember/50 bg-ember/12 text-ink"
+                      : "border-slate/10 bg-white/70 text-slate hover:border-ember/40 hover:bg-white"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </nav>
         </div>
       )}

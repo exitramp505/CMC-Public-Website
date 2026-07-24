@@ -10,7 +10,7 @@ export default function CTA() {
           <h2 className="mt-4 text-4xl font-black tracking-[-.04em] text-sand md:text-6xl">Start Discover: Church Multiplication 101.</h2>
           <p className="mt-6 text-lg leading-8 text-sand/80">Explore the biblical foundation, shared language, and practical first steps for multiplying churches.</p>
           <Link href="/discover" className="button-primary mt-8 inline-flex items-center gap-2 rounded-full px-7 py-4 text-sm font-extrabold transition">
-            Start the track <ArrowRight size={18} />
+            Start Discover <ArrowRight size={18} />
           </Link>
         </div>
       </div>
