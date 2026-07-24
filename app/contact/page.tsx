@@ -10,11 +10,14 @@ export default function ContactPage() {
       <div className="mx-auto mt-14 max-w-3xl texture-card rounded-[2rem] p-8 text-center md:p-12">
         <h2 className="text-4xl font-black tracking-[-.035em] text-ink md:text-5xl">Ready to explore next steps?</h2>
         <p className="mt-5 leading-8 text-slate">
-          Add your preferred contact email, form, or scheduling link here. For now, this button can be replaced with a mailto link or external form.
+          Email George to ask a question, learn more about Discover, or begin a conversation about church multiplication. He will help you identify the right next step.
         </p>
-        <Link href="mailto:info@example.com" className="button-primary mt-8 inline-flex rounded-full px-7 py-4 text-sm font-bold transition">
-          Email the Collective
+        <Link href="mailto:george@openbibleeast.org" className="button-primary mt-8 inline-flex rounded-full px-7 py-4 text-sm font-bold transition">
+          Email George
         </Link>
+        <p className="mt-4 text-sm font-semibold text-slate/75">
+          george@openbibleeast.org
+        </p>
       </div>
     </section>
   );
