@@ -76,7 +76,7 @@ export default function HomePage() {
 
             <div className="mt-9 grid gap-3 sm:flex sm:flex-wrap">
               <Link
-                href="/pathways"
+                href="/discover"
                 className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#EA9F43] px-6 text-sm font-black text-[#151616] shadow-[0_16px_34px_rgba(234,159,67,0.22)] transition hover:-translate-y-0.5 hover:brightness-105"
               >
                 Start Discover →
