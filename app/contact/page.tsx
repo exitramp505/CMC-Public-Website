@@ -13,11 +13,8 @@ export default function ContactPage() {
           Email George to ask a question, learn more about Discover, or begin a conversation about church multiplication. He will help you identify the right next step.
         </p>
         <Link href="mailto:george@openbibleeast.org" className="button-primary mt-8 inline-flex rounded-full px-7 py-4 text-sm font-bold transition">
-          Email George
+          Send an Email
         </Link>
-        <p className="mt-4 text-sm font-semibold text-slate/75">
-          george@openbibleeast.org
-        </p>
       </div>
     </section>
   );
