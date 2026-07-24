@@ -6,9 +6,30 @@ import Footer from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Church Multiplication Collective",
+  metadataBase: new URL("https://cmcopenbible.netlify.app"),
+  title: {
+    default: "Church Multiplication Collective",
+    template: "%s | Church Multiplication Collective",
+  },
   description:
-    "A ministry pathway helping pastors and pioneers multiply churches.",
+    "A ministry pathway helping pastors, pioneers, and sending churches make disciples, develop leaders, and multiply churches.",
+  icons: {
+    icon: "/cmc-logo-mark.svg",
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Church Multiplication Collective",
+    title: "Church Multiplication Collective",
+    description:
+      "A ministry pathway helping pastors, pioneers, and sending churches make disciples, develop leaders, and multiply churches.",
+    url: "/",
+  },
+  twitter: {
+    card: "summary",
+    title: "Church Multiplication Collective",
+    description:
+      "A ministry pathway helping pastors, pioneers, and sending churches make disciples, develop leaders, and multiply churches.",
+  },
 };
 
 export default function RootLayout({

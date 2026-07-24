@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Mission to Multiply",
+  description:
+    "CMC equips pastors, pioneers, and sending churches to form new works and multiply churches through a clear ministry pathway.",
+};
 
 const pathwaySteps = [
   {
