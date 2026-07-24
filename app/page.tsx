@@ -53,7 +53,7 @@ export default function HomePage() {
           alt=""
           aria-hidden="true"
           fetchPriority="high"
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover object-[68%_center] opacity-55 lg:object-center lg:opacity-65"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover object-[68%_center] opacity-55 grayscale lg:object-center lg:opacity-65"
         />
 
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(21,22,22,0.98)_0%,rgba(35,52,61,0.92)_42%,rgba(35,52,61,0.46)_72%,rgba(21,22,22,0.28)_100%)]" />
