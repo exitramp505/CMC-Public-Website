@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import { ArrowUpRight } from "lucide-react";
 
 import SectionHeader from "@/components/SectionHeader";
+
+export const metadata: Metadata = {
+  title: "Discover: Church Multiplication 101",
+  description:
+    "Explore the biblical foundation, shared language, models, and practical first steps of church multiplication.",
+};
 
 const discoverLink =
   "https://acquire.pathwright.com/library/discover-church-multiplication-101-238879/register/725954/?ic=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbnZpdGVfdHlwZSI6MSwic2VuZGVyX2lkIjoxOTM0MjI5LCJzY2hvb2xfaWQiOjEzOTk3LCJvZmZlcmluZ19pZCI6NzI1OTU0LCJyb2xlIjo1LCJpYXQiOjE3ODA2MTMzMzh9.l14elqh19_R804wFNo_kAOknqOFEVtNNpwidthjWVeY";
@@ -10,7 +17,7 @@ const discoverLink =
 export default function DiscoverPage() {
   return (
     <section className="px-5 py-24 lg:px-8">
-      <SectionHeader eyebrow="Discover" title="Church Multiplication 101">
+      <SectionHeader eyebrow="Discover" title="Church Multiplication 101" headingLevel={1}>
         The first step for pastors and potential pioneers who want to explore the call, theology, models, and practical pathway of church multiplication.
       </SectionHeader>
 
