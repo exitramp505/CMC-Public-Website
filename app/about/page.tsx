@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Learn how the Church Multiplication Collective serves Open Bible pastors and pioneers through disciple-making, leadership development, and church multiplication.",
+  alternates: { canonical: "/about" },
 };
 
 type TeamMember = {
