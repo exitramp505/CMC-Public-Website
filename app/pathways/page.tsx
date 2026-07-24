@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Pathways",
   description:
     "Explore the CMC pathway from Discover and Discern through Develop and Deploy for pioneers and multiplying churches.",
+  alternates: { canonical: "/pathways" },
 };
 
 const steps = [
