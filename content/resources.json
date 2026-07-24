@@ -9,16 +9,16 @@
       "title": "Discover: Church Multiplication 101",
       "category": "Pathway",
       "description": "A first-step track for pastors and pioneers exploring the biblical, practical, and strategic foundations of church multiplication.",
-      "buttonText": "Start Discover",
-      "buttonUrl": "#",
+      "buttonText": "Learn More",
+      "buttonUrl": "/discover",
       "featured": true
     },
     {
       "title": "Church Pioneer Vision Guide",
       "category": "Guide",
       "description": "A planning guide for pioneers and sending churches to clarify vision, mission, disciple-making approach, timeline, budget, and partnership.",
-      "buttonText": "View Resource",
-      "buttonUrl": "#",
+      "buttonText": "Coming Soon",
+      "buttonUrl": "",
       "featured": true
     },
     {
