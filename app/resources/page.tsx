@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   title: "Resources",
   description:
     "Explore practical CMC courses, guides, assessments, and tools for pastors, pioneers, and multiplying churches.",
+  alternates: { canonical: "/resources" },
 };
 
 type ResourceItem = {
