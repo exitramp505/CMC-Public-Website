@@ -85,6 +85,12 @@ function ResourceCard({
           {resource.buttonText || "View Resource"} <ArrowRight size={17} />
         </Link>
       )}
+
+      {!resource.buttonUrl && resource.buttonText && (
+        <span className="mt-7 inline-flex rounded-full border border-slate/15 bg-white/45 px-5 py-3 text-xs font-extrabold uppercase tracking-[0.18em] text-slate/70">
+          {resource.buttonText}
+        </span>
+      )}
     </article>
   );
 }
@@ -123,7 +129,7 @@ export default function ResourcesPage() {
               </h2>
 
               <p className="mt-4 text-base font-medium leading-8 text-slate">
-                Add guides, links, downloads, training pages, applications, videos, or partner tools from the admin portal.
+                Explore practical guides, courses, assessments, and training opportunities for every stage of the multiplication pathway.
               </p>
             </div>
           </div>
@@ -175,7 +181,7 @@ export default function ResourcesPage() {
             </div>
 
             <p className="max-w-md text-base font-medium leading-7 text-slate">
-              Keep this page current by adding, removing, and reordering cards in the admin portal.
+              Browse additional tools for discerning calling, developing leaders, and preparing to multiply.
             </p>
           </div>
 
@@ -196,7 +202,7 @@ export default function ResourcesPage() {
               </p>
 
               <h2 className="mt-5 text-[36px] font-black leading-[0.96] tracking-[-0.045em] text-ink md:text-[52px]">
-                Add more cards from the admin portal.
+                More tools are on the way.
               </h2>
             </div>
           )}
