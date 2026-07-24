@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowDown, ArrowRight } from "lucide-react";
 
 import CTA from "@/components/CTA";
 
@@ -14,19 +15,21 @@ export const metadata: Metadata = {
 const steps = [
   {
     phase: "Discover",
+    kicker: "Name the invitation",
     title: "Shared language and first clarity.",
     summary:
-      "Discover introduces the biblical foundation, core language, and practical models of church multiplication.",
+      "Explore the biblical foundation, core language, and practical models of church multiplication.",
     pioneer:
-      "Clarify your burden and begin asking whether pioneering ministry may be your next faithful step.",
+      "Clarify your burden and ask whether pioneering ministry may be your next faithful step.",
     church:
       "Recover a sending imagination and identify how your church could participate in new works.",
   },
   {
     phase: "Discern",
+    kicker: "Test the calling",
     title: "Calling, readiness, and fit.",
     summary:
-      "Discernment clarifies whether the leader, church, context, and timing are aligned for the next step.",
+      "Clarify whether the leader, church, context, and timing are aligned for a wise next step.",
     pioneer:
       "Discern calling, character, capacity, support needs, and the kind of assignment that may fit.",
     church:
@@ -34,213 +37,207 @@ const steps = [
   },
   {
     phase: "Develop",
+    kicker: "Prepare for the work",
     title: "Formation before movement.",
     summary:
-      "Development prepares leaders and churches through disciple-making practice, leadership formation, team development, and strategy.",
+      "Build disciple-making practice, leadership capacity, healthy teams, and a grounded ministry plan.",
     pioneer:
-      "Build a ministry plan, form a team, practice disciple-making rhythms, and prepare for the work.",
+      "Form a team, establish disciple-making rhythms, and prepare a ministry plan for the work ahead.",
     church:
       "Develop leaders, strengthen disciple-making systems, and prepare to release people well.",
   },
   {
     phase: "Deploy",
-    title: "Sending with support.",
+    kicker: "Move with support",
+    title: "Sending without going alone.",
     summary:
-      "Deployment moves leaders and churches from preparation into action with coaching, covering, and accountability.",
+      "Move from preparation into faithful action with coaching, covering, accountability, and prayer.",
     pioneer:
-      "Move into the field with prayer, coaching, support, and regional relationships.",
+      "Enter the field with coaching, support, prayer, and strong regional relationships.",
     church:
-      "Send well, support well, and stay connected as the new work matures.",
+      "Send well, support well, and remain connected as the new work takes root and matures.",
   },
 ];
 
 export default function PathwaysPage() {
   return (
     <>
-      <section className="px-5 py-20 lg:px-8">
-        <div className="mx-auto max-w-6xl text-center">
-          <div className="accent-line mx-auto" />
+      <section className="brand-panel relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgba(234,159,67,0.18),transparent_26%),radial-gradient(circle_at_88%_80%,rgba(77,167,156,0.18),transparent_30%)]" />
 
-          <p className="mt-6 text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
-            Pathways
-          </p>
-
-          <h1 className="mx-auto mt-5 max-w-5xl text-[42px] font-black leading-[0.94] tracking-[-0.052em] text-ink md:text-[68px]">
-            Two entry points. One multiplication pathway.
-          </h1>
-
-          <p className="mx-auto mt-6 max-w-3xl text-lg font-medium leading-8 text-slate">
-            CMC helps pioneers and multiplying churches move from burden to clarity, from clarity to formation, and from formation to faithful action.
-          </p>
-        </div>
-
-        <div className="mx-auto mt-14 grid max-w-6xl gap-6 lg:grid-cols-2">
-          <article className="texture-card rounded-[2rem] p-8">
-            <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
-              I am a pioneer
-            </p>
-
-            <h2 className="mt-5 text-[34px] font-black leading-[0.96] tracking-[-0.045em] text-ink md:text-[50px]">
-              I carry a burden for something new.
-            </h2>
-
-            <p className="mt-5 font-medium leading-8 text-slate">
-              You may be sensing a call to reach a people, form a disciple-making community, or pioneer a new work. The pathway helps you test that burden and prepare wisely.
-            </p>
-          </article>
-
-          <article className="brand-panel rounded-[2rem] p-8">
-            <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
-              We are a multiplying church
-            </p>
-
-            <h2 className="mt-5 text-[34px] font-black leading-[0.96] tracking-[-0.045em] md:text-[50px]">
-              We want to become a sending church.
-            </h2>
-
-            <p className="mt-5 font-medium leading-8">
-              Your church may be ready to develop leaders, bless new works, and recover a sending imagination. The pathway helps you discern readiness and next steps.
-            </p>
-          </article>
-        </div>
-
-        <div className="mx-auto mt-8 flex max-w-6xl flex-wrap items-center justify-center gap-4">
-          <Link
-            href="/discover"
-            className="button-primary inline-flex items-center justify-center gap-2 rounded-full px-7 py-4 text-sm font-bold transition"
-          >
-            Start Discover <ArrowRight size={18} />
-          </Link>
-
-          <a
-            href="#pathway"
-            className="inline-flex items-center justify-center rounded-full border border-slate/25 bg-white/35 px-7 py-4 text-sm font-extrabold text-slate transition hover:bg-white/55"
-          >
-            View the pathway below
-          </a>
-        </div>
-      </section>
-
-      <section id="pathway" className="brand-panel px-5 py-20 lg:px-8">
-        <div className="mx-auto max-w-6xl">
-          <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
-            <div>
+        <div className="relative mx-auto grid min-h-[680px] max-w-[1440px] lg:grid-cols-[1.02fr_.98fr]">
+          <div className="flex items-center px-5 py-20 lg:px-16 lg:py-28 xl:pl-24">
+            <div className="max-w-3xl">
               <div className="accent-line" />
-
-              <p className="mt-6 text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
-                The pathway
+              <p className="mt-7 text-sm font-extrabold uppercase tracking-[0.32em] text-ember">
+                The CMC pathway
+              </p>
+              <h1 className="mt-6 text-[4.2rem] font-black uppercase leading-[0.82] tracking-[-0.075em] text-[#FBF0DE] sm:text-[5.8rem] xl:text-[7.1rem]">
+                From calling
+                <span className="block text-ember">to sending.</span>
+              </h1>
+              <p className="mt-8 max-w-2xl text-lg font-medium leading-8 text-[#FBF0DE]/82">
+                A guided journey for pioneers and churches moving from a burden for something new to a healthy, supported work in the field.
               </p>
 
-              <h2 className="mt-5 text-[40px] font-black leading-[0.94] tracking-[-0.052em] md:text-[64px]">
-                Discover, Discern, Develop, Deploy.
-              </h2>
-            </div>
-
-            <div>
-              <p className="max-w-2xl text-lg font-medium leading-8 text-[#FBF0DE]/85">
-                CMC is a guided pathway for pioneers and multiplying churches, built around discernment, formation, sending, and support.
-              </p>
-
-              <div className="mt-6 grid gap-3">
-                {[
-                  ["Not pressure.", "Discern the right next step without forcing timing or model."],
-                  ["Not one-size-fits-all.", "Different models can fit different contexts."],
-                  ["Not alone.", "Move with coaching, covering, and regional support."],
-                ].map(([lead, copy]) => (
-                  <div key={lead} className="flex items-start gap-3 text-sm font-semibold leading-7 text-[#FBF0DE]/82">
-                    <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-ember shadow-[0_0_0_4px_rgba(234,159,67,0.14)]" />
-                    <p>
-                      <strong className="font-black text-[#FBF0DE]">{lead}</strong>{" "}
-                      {copy}
-                    </p>
-                  </div>
-                ))}
+              <div className="mt-10 flex flex-wrap gap-4">
+                <Link
+                  href="/discover"
+                  className="button-primary inline-flex items-center gap-2 rounded-full px-7 py-4 text-sm font-extrabold transition"
+                >
+                  Start Discover <ArrowRight size={18} aria-hidden="true" />
+                </Link>
+                <a
+                  href="#pathway"
+                  className="button-secondary inline-flex items-center gap-2 rounded-full px-7 py-4 text-sm font-extrabold transition"
+                >
+                  See the pathway <ArrowDown size={17} aria-hidden="true" />
+                </a>
               </div>
             </div>
           </div>
 
-          <div className="relative mt-14 grid gap-9">
-            <div className="absolute left-12 top-10 hidden h-[calc(100%-5rem)] w-1 rounded-full bg-gradient-to-b from-ember via-[#FBF0DE]/25 to-sage lg:block" />
+          <div className="relative min-h-[420px] overflow-hidden lg:min-h-full">
+            <Image
+              src="/pathways-planning-conversation.webp"
+              alt="Ministry leaders having a thoughtful planning conversation"
+              fill
+              priority
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover grayscale"
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,#293D48_0%,rgba(41,61,72,0.28)_26%,transparent_58%)] lg:block" />
+            <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(21,22,22,0.52),transparent_45%)]" />
+            <p className="absolute bottom-7 left-7 max-w-sm text-sm font-bold leading-6 text-[#FBF0DE]/85 lg:left-10">
+              Clarity grows in conversation, prayer, practice, and community.
+            </p>
+          </div>
+        </div>
+      </section>
 
+      <section className="px-5 py-20 lg:px-8 lg:py-24">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid gap-10 lg:grid-cols-[.72fr_1.28fr] lg:items-end">
+            <div>
+              <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
+                Start where you are
+              </p>
+              <h2 className="mt-4 text-[40px] font-black leading-[0.94] tracking-[-0.052em] text-ink md:text-[58px]">
+                Two entry points. One pathway.
+              </h2>
+            </div>
+            <p className="max-w-2xl text-lg font-medium leading-8 text-slate">
+              You do not need a finished plan to begin. CMC helps you name where you are, discern what is next, and move at a faithful pace.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-5 lg:grid-cols-2">
+            <article className="group rounded-[2rem] border border-slate/15 bg-white/55 p-8 shadow-xl shadow-black/5 md:p-10">
+              <p className="text-xs font-black uppercase tracking-[0.28em] text-ember">
+                For the pioneer
+              </p>
+              <h3 className="mt-5 text-[32px] font-black leading-[0.98] tracking-[-0.045em] text-ink md:text-[42px]">
+                “I carry a burden for something new.”
+              </h3>
+              <p className="mt-5 font-medium leading-8 text-slate">
+                Test the calling, understand your context, and prepare for the kind of work God may be inviting you to begin.
+              </p>
+            </article>
+
+            <article className="relative overflow-hidden rounded-[2rem] bg-slate p-8 text-[#FBF0DE] shadow-xl shadow-black/10 md:p-10">
+              <div className="pointer-events-none absolute -right-16 -top-16 h-52 w-52 rounded-full bg-sage/20 blur-2xl" />
+              <div className="relative">
+                <p className="text-xs font-black uppercase tracking-[0.28em] text-ember">
+                  For the church
+                </p>
+                <h3 className="mt-5 text-[32px] font-black leading-[0.98] tracking-[-0.045em] md:text-[42px]">
+                  “We want to become a sending church.”
+                </h3>
+                <p className="mt-5 font-medium leading-8 text-[#FBF0DE]/80">
+                  Develop leaders, discern your multiplication model, and learn to release and support people well.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="pathway" className="bg-[#F3E4CC] px-5 py-20 lg:px-8 lg:py-28">
+        <div className="mx-auto max-w-6xl">
+          <div className="max-w-4xl">
+            <div className="accent-line" />
+            <p className="mt-6 text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
+              Four movements
+            </p>
+            <h2 className="mt-5 text-[44px] font-black leading-[0.9] tracking-[-0.06em] text-ink md:text-[72px]">
+              A clear path. A faithful pace.
+            </h2>
+            <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-slate">
+              The pathway is directional, not mechanical. Each movement creates space to listen, learn, practice, and decide what faithfulness requires next.
+            </p>
+          </div>
+
+          <div className="mt-16 border-t-2 border-slate/15">
             {steps.map((step, index) => (
               <article
                 key={step.phase}
-                className="relative grid gap-5 lg:grid-cols-[104px_1fr] lg:gap-7"
+                className="grid gap-7 border-b-2 border-slate/15 py-12 md:grid-cols-[120px_.82fr_1.18fr] md:gap-10 lg:py-16"
               >
-                <div className="relative z-[1] flex h-16 w-16 items-center justify-center rounded-[1.1rem] border-4 border-ember bg-[#FBF0DE] text-2xl font-black tracking-[-0.06em] text-[#151616] shadow-xl shadow-black/20 lg:h-[100px] lg:w-[100px] lg:rounded-[1.75rem] lg:border-[6px] lg:text-4xl">
-                  {String(index + 1).padStart(2, "0")}
+                <div className="flex items-start gap-4 md:block">
+                  <span className="text-[54px] font-black leading-none tracking-[-0.08em] text-ember md:text-[72px]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span className="mt-2 block h-1 w-10 rounded-full bg-sage md:mt-5" />
                 </div>
 
-                <div className="relative overflow-hidden rounded-[2rem] border border-[#FBF0DE]/15 bg-[#FBF0DE]/8 p-8 shadow-xl shadow-black/15">
-                  <div className="pointer-events-none absolute -bottom-20 -right-20 h-56 w-56 rounded-full bg-ember/15 blur-2xl" />
+                <div>
+                  <p className="text-xs font-black uppercase tracking-[0.27em] text-sage">
+                    {step.kicker}
+                  </p>
+                  <p className="mt-3 text-sm font-extrabold uppercase tracking-[0.22em] text-ember">
+                    {step.phase}
+                  </p>
+                  <h3 className="mt-4 text-[30px] font-black leading-[0.98] tracking-[-0.045em] text-ink md:text-[38px]">
+                    {step.title}
+                  </h3>
+                  <p className="mt-5 font-medium leading-7 text-slate">
+                    {step.summary}
+                  </p>
+                </div>
 
-                  <div className="relative grid gap-8 lg:grid-cols-[0.68fr_1.32fr]">
-                    <div>
-                      <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
-                        {step.phase}
-                      </p>
-
-                      <h3 className="mt-3 text-[32px] font-black leading-[0.96] tracking-[-0.045em] md:text-[46px]">
-                        {step.title}
-                      </h3>
-                    </div>
-
-                    <p className="font-medium leading-8 text-[#FBF0DE]/82">
-                      {step.summary}
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="rounded-[1.5rem] border border-slate/15 bg-[#FBF0DE]/70 p-6">
+                    <p className="text-xs font-black uppercase tracking-[0.24em] text-ember">
+                      Pioneer
+                    </p>
+                    <p className="mt-4 text-sm font-medium leading-7 text-slate">
+                      {step.pioneer}
                     </p>
                   </div>
-
-                  <div className="relative mt-8 grid gap-5 md:grid-cols-2">
-                    <div className="rounded-[1.5rem] border border-[#FBF0DE]/15 bg-[#151616]/25 p-6">
-                      <p className="text-xs font-extrabold uppercase tracking-[0.25em] text-ember">
-                        Pioneer
-                      </p>
-
-                      <p className="mt-4 text-sm font-medium leading-7 text-[#FBF0DE]/84">
-                        {step.pioneer}
-                      </p>
-                    </div>
-
-                    <div className="rounded-[1.5rem] border border-[#FBF0DE]/15 bg-[#151616]/25 p-6">
-                      <p className="text-xs font-extrabold uppercase tracking-[0.25em] text-ember">
-                        Multiplying church
-                      </p>
-
-                      <p className="mt-4 text-sm font-medium leading-7 text-[#FBF0DE]/84">
-                        {step.church}
-                      </p>
-                    </div>
+                  <div className="rounded-[1.5rem] border border-slate/15 bg-white/45 p-6">
+                    <p className="text-xs font-black uppercase tracking-[0.24em] text-sage">
+                      Church
+                    </p>
+                    <p className="mt-4 text-sm font-medium leading-7 text-slate">
+                      {step.church}
+                    </p>
                   </div>
                 </div>
               </article>
             ))}
           </div>
-        </div>
-      </section>
 
-      <section className="px-5 py-20 lg:px-8">
-        <div className="mx-auto max-w-6xl rounded-[2rem] border border-slate/15 bg-white/55 p-8 shadow-xl shadow-black/5">
-          <div className="grid gap-8 lg:grid-cols-[1fr_.55fr] lg:items-center">
-            <div>
-              <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
-                Begin here
-              </p>
-
-              <h2 className="mt-4 text-[34px] font-black leading-[0.96] tracking-[-0.045em] text-ink md:text-[50px]">
-                Start with Discover.
-              </h2>
-
-              <p className="mt-5 max-w-2xl font-medium leading-8 text-slate">
-                Discover: Church Multiplication 101 is the first step for both potential pioneers and churches exploring multiplication.
-              </p>
-            </div>
-
-            <Link
-              href="/discover"
-              className="button-primary inline-flex items-center justify-center gap-2 rounded-full px-7 py-4 text-sm font-bold transition"
-            >
-              Start Discover <ArrowRight size={18} />
-            </Link>
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+            {[
+              ["No pressure", "Discern the right next step without forcing the timing."],
+              ["No formula", "Choose a model that fits the leader, church, and context."],
+              ["Never alone", "Move with coaching, covering, prayer, and regional support."],
+            ].map(([title, copy]) => (
+              <div key={title} className="border-l-4 border-ember pl-5">
+                <h3 className="text-lg font-black text-ink">{title}</h3>
+                <p className="mt-2 text-sm font-medium leading-7 text-slate">{copy}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
