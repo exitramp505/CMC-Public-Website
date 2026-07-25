@@ -31,7 +31,7 @@ export default function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-ink/10 bg-sand/92 backdrop-blur-xl">
+    <header className="sticky top-0 z-[100] border-b border-slate/15 bg-[#FBF0DE]/[0.97] shadow-lg shadow-black/10 backdrop-blur-2xl backdrop-saturate-150">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8">
         <Link
           href="/"
