@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
+import { Check, Church, Compass, Network, UsersRound } from "lucide-react";
 
 import CTA from "@/components/CTA";
 import teamContent from "@/content/team.json";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About the Church Multiplication Collective",
   description:
-    "Learn how the Church Multiplication Collective serves Open Bible pastors and pioneers through disciple-making, leadership development, and church multiplication.",
+    "Learn why the Church Multiplication Collective exists and how it helps Open Bible pastors, pioneers, and churches discern, prepare for, and pursue multiplication.",
   alternates: { canonical: "/about" },
 };
 
@@ -18,6 +19,34 @@ type TeamMember = {
 };
 
 const leaders = teamContent.team as TeamMember[];
+
+const commitments = [
+  {
+    icon: UsersRound,
+    label: "Disciples before destinations",
+    description:
+      "Multiplication begins with people learning to hear Jesus, obey Jesus, and help others follow him—not simply with launching a service.",
+  },
+  {
+    icon: Compass,
+    label: "Discernment before deployment",
+    description:
+      "A burden matters, but it must be tested. We help pioneers and churches clarify calling, context, readiness, and the right next step.",
+  },
+  {
+    icon: Network,
+    label: "Relationship over isolation",
+    description:
+      "Leaders multiply more faithfully when they are connected to coaches, sending churches, regional leaders, and a shared mission.",
+  },
+];
+
+const waysWeServe = [
+  "Introduce leaders and churches to a biblical vision for multiplication",
+  "Help pioneers discern calling, fit, readiness, and context",
+  "Help churches identify how they can cultivate, send, and support",
+  "Connect people to training, coaching, relationships, and practical next steps",
+];
 
 function PlaceholderPortrait({ name }: { name: string }) {
   const initials = name
@@ -49,134 +78,167 @@ function TeamPortrait({ leader }: { leader: TeamMember }) {
 export default function AboutPage() {
   return (
     <>
-      <section className="px-5 py-20 lg:px-8">
-        <div className="mx-auto max-w-6xl text-center">
-          <div className="accent-line mx-auto" />
+      <section className="brand-panel relative overflow-hidden px-5 py-20 lg:px-8 lg:py-28">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgba(234,159,67,0.2),transparent_28%),radial-gradient(circle_at_88%_76%,rgba(77,167,156,0.18),transparent_32%)]" />
+        <img
+          src="/open-bible-mark-white-transparent.png"
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute -bottom-40 -right-36 w-[620px] max-w-none opacity-[0.08] md:w-[800px]"
+        />
 
-          <p className="mt-6 text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
-            About CMC
-          </p>
-
-          <h1 className="mx-auto mt-5 max-w-5xl text-[42px] font-black leading-[0.94] tracking-[-0.052em] text-ink md:text-[68px]">
-            A pathway for pastors and pioneers who carry a multiplication burden.
-          </h1>
-
-          <p className="mx-auto mt-6 max-w-3xl text-lg font-medium leading-8 text-slate">
-            The Church Multiplication Collective helps leaders recover a sending imagination, form disciple-making communities, and multiply churches into new places.
-          </p>
-        </div>
-      </section>
-
-      <section className="px-5 pb-20 lg:px-8">
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-3">
-          <article className="texture-card rounded-[2rem] p-8">
-            <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
-              Mission
+        <div className="relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.08fr_.92fr] lg:items-end">
+          <div>
+            <div className="accent-line" />
+            <p className="mt-7 text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
+              About the Collective
             </p>
+            <h1 className="mt-6 max-w-4xl text-[3.6rem] font-black leading-[0.88] tracking-[-0.065em] text-[#FBF0DE] sm:text-[5rem] lg:text-[6.3rem]">
+              Multiplication is not a solo journey.
+            </h1>
+          </div>
 
-            <h2 className="mt-5 text-[34px] font-black leading-[0.96] tracking-[-0.045em] text-ink md:text-[44px]">
-              Make disciples.
-            </h2>
-
-            <p className="mt-5 font-medium leading-8 text-slate">
-              Multiplication begins with disciples who hear Jesus, obey Jesus, and help others follow Jesus.
+          <div className="rounded-[2rem] border border-[#FBF0DE]/15 bg-[#151616]/25 p-7 backdrop-blur-sm md:p-9">
+            <p className="text-xl font-bold leading-9 text-[#FBF0DE]">
+              CMC helps Open Bible pastors, pioneers, and churches move from a
+              multiplication burden to a faithful, supported next step.
             </p>
-          </article>
-
-          <article className="texture-card rounded-[2rem] p-8">
-            <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
-              Formation
+            <p className="mt-5 font-medium leading-8 text-[#FBF0DE]/72">
+              We create a pathway for discernment, preparation, relationship,
+              and action—without pretending every person or church has the
+              same calling.
             </p>
-
-            <h2 className="mt-5 text-[34px] font-black leading-[0.96] tracking-[-0.045em] text-ink md:text-[44px]">
-              Develop leaders.
-            </h2>
-
-            <p className="mt-5 font-medium leading-8 text-slate">
-              Healthy multiplication requires leaders who are called, formed, trained, and supported.
-            </p>
-          </article>
-
-          <article className="texture-card rounded-[2rem] p-8">
-            <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
-              Multiplication
-            </p>
-
-            <h2 className="mt-5 text-[34px] font-black leading-[0.96] tracking-[-0.045em] text-ink md:text-[44px]">
-              Multiply churches.
-            </h2>
-
-            <p className="mt-5 font-medium leading-8 text-slate">
-              The goal is faithful new works that worship Jesus, make disciples, and expand the Kingdom.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section className="px-5 pb-20 lg:px-8">
-        <div className="brand-panel relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] px-8 py-10 shadow-2xl shadow-black/10 md:px-12 md:py-14">
-          <img
-            src="/open-bible-mark-white-transparent.png"
-            alt=""
-            aria-hidden="true"
-            className="pointer-events-none absolute -right-20 top-1/2 z-0 w-[520px] max-w-none -translate-y-1/2 opacity-[0.18] md:-right-24 md:w-[680px] lg:-right-28 lg:w-[760px]"
-          />
-
-          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-2/3 bg-gradient-to-l from-[#151616]/30 via-[#151616]/10 to-transparent" />
-
-          <div className="relative z-20 grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
-            <div>
-              <div className="accent-line" />
-
-              <p className="mt-8 text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
-                Part of Open Bible
-              </p>
-
-              <h2 className="mt-5 max-w-xl text-[36px] font-black leading-[0.96] tracking-[-0.045em] md:text-[54px]">
-                Rooted in a shared mission.
-              </h2>
-
-              <p className="mt-6 max-w-md text-base font-semibold leading-8 text-[#FBF0DE] opacity-75">
-                CMC serves within Open Bible, connected to local churches, regional relationships, and accountable leadership.
-              </p>
-            </div>
-
-            <div className="rounded-[1.75rem] border border-[#FBF0DE]/12 bg-[#151616]/30 p-6 md:p-8">
-              <p className="text-xl font-bold leading-9 text-[#FBF0DE] opacity-90">
-                Open Bible Churches exist to globally make disciples, develop leaders, and multiply churches.
-              </p>
-
-              <div className="my-7 h-px w-full bg-[#FBF0DE]/14" />
-
-              <div className="space-y-5 text-base font-medium leading-8 text-[#FBF0DE] opacity-80">
-                <p>
-                  That shared mission gives the Collective its direction and keeps multiplication connected to the church.
-                </p>
-
-                <p>
-                  CMC is a practical pathway that helps Open Bible pastors and pioneers take next steps toward disciple-making communities, new churches, and sending churches across every region.
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
-      <section className="px-5 pb-20 lg:px-8">
+      <section className="px-5 py-20 lg:px-8 lg:py-24">
+        <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[.8fr_1.2fr] lg:items-start">
+          <div>
+            <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
+              Why CMC exists
+            </p>
+            <h2 className="mt-5 text-[42px] font-black leading-[0.94] tracking-[-0.052em] text-ink md:text-[60px]">
+              A burden needs more than encouragement.
+            </h2>
+          </div>
+
+          <div className="space-y-6 text-lg font-medium leading-8 text-slate">
+            <p>
+              Many leaders sense that God may be inviting them to start
+              something new. Many churches want to multiply, but do not yet
+              know how to identify pioneers, choose a model, or become a
+              healthy sending church.
+            </p>
+            <p>
+              CMC exists to close that gap. We help people name what they are
+              sensing, ask better questions, develop the right foundations,
+              and move forward with accountable relationships.
+            </p>
+            <p className="border-l-4 border-ember pl-6 font-bold text-ink">
+              The goal is not activity for its own sake. The goal is faithful
+              disciples, formed leaders, multiplying churches, and communities
+              reached with the gospel.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#F3E4CC] px-5 py-20 lg:px-8 lg:py-24">
+        <div className="mx-auto max-w-6xl">
+          <div className="max-w-4xl">
+            <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
+              Our convictions
+            </p>
+            <h2 className="mt-5 text-[42px] font-black leading-[0.94] tracking-[-0.052em] text-ink md:text-[60px]">
+              How we approach multiplication.
+            </h2>
+          </div>
+
+          <div className="mt-12 grid gap-5 lg:grid-cols-3">
+            {commitments.map(({ icon: Icon, label, description }) => (
+              <article
+                key={label}
+                className="rounded-[2rem] border border-slate/15 bg-[#FBF0DE]/75 p-8 shadow-xl shadow-black/5"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate text-[#FBF0DE]">
+                  <Icon size={24} strokeWidth={2.2} aria-hidden="true" />
+                </div>
+                <h3 className="mt-7 text-[28px] font-black leading-[1] tracking-[-0.04em] text-ink">
+                  {label}
+                </h3>
+                <p className="mt-5 text-sm font-medium leading-7 text-slate">
+                  {description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-5 py-20 lg:px-8 lg:py-24">
+        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-2">
+          <article className="rounded-[2rem] bg-ember p-8 text-ink md:p-10">
+            <p className="text-xs font-black uppercase tracking-[0.28em] text-ink/65">
+              What CMC does
+            </p>
+            <h2 className="mt-5 text-[38px] font-black leading-[0.95] tracking-[-0.05em] md:text-[52px]">
+              We help make the next step clear.
+            </h2>
+            <div className="mt-8 space-y-5">
+              {waysWeServe.map((item) => (
+                <div key={item} className="flex gap-4">
+                  <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-ink text-ember">
+                    <Check size={16} strokeWidth={3} aria-hidden="true" />
+                  </span>
+                  <p className="font-bold leading-7">{item}</p>
+                </div>
+              ))}
+            </div>
+          </article>
+
+          <article className="brand-panel relative overflow-hidden rounded-[2rem] p-8 md:p-10">
+            <Church
+              className="absolute -bottom-10 -right-8 text-sage/10"
+              size={250}
+              strokeWidth={1}
+              aria-hidden="true"
+            />
+            <div className="relative">
+              <p className="text-xs font-black uppercase tracking-[0.28em] text-sage">
+                Part of Open Bible
+              </p>
+              <h2 className="mt-5 text-[38px] font-black leading-[0.95] tracking-[-0.05em] text-[#FBF0DE] md:text-[52px]">
+                Rooted in a shared mission.
+              </h2>
+              <p className="mt-7 text-xl font-bold leading-9 text-[#FBF0DE]">
+                Open Bible Churches exist to globally make disciples, develop
+                leaders, and multiply churches.
+              </p>
+              <p className="mt-6 font-medium leading-8 text-[#FBF0DE]/75">
+                That mission gives CMC its direction. The Collective serves
+                within Open Bible, connected to local churches, regional
+                relationships, and accountable leadership.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section className="px-5 pb-20 lg:px-8 lg:pb-24">
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
             <div className="accent-line mx-auto" />
-
             <p className="mt-6 text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
               CMC Leadership
             </p>
-
             <h2 className="mx-auto mt-5 max-w-4xl text-[40px] font-black leading-[0.94] tracking-[-0.052em] text-ink md:text-[64px]">
-              Led through Open Bible regions.
+              Connected across Open Bible regions.
             </h2>
-
             <p className="mx-auto mt-6 max-w-3xl text-lg font-medium leading-8 text-slate">
-              The Church Multiplication Collective is guided by national and regional leaders who serve pastors, pioneers, and multiplying churches.
+              National and regional leaders help pastors, pioneers, and
+              churches pursue multiplication with relationships and
+              accountability close to home.
             </p>
           </div>
 
@@ -187,16 +249,13 @@ export default function AboutPage() {
                 className="texture-card flex gap-5 rounded-[2rem] p-6"
               >
                 <TeamPortrait leader={leader} />
-
                 <div className="flex flex-col justify-center">
                   <p className="text-sm font-extrabold uppercase tracking-[0.22em] text-ember">
                     {leader.region}
                   </p>
-
                   <h3 className="mt-2 text-2xl font-black tracking-[-0.035em] text-ink">
                     {leader.name}
                   </h3>
-
                   <p className="mt-1 font-semibold leading-7 text-slate">
                     {leader.title}
                   </p>
