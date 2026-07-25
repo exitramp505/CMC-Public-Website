@@ -29,21 +29,24 @@ const essentials = [
 const foundations = [
   {
     icon: Sprout,
+    number: "01",
     title: "Missional community",
     lines: ["Worships Jesus", "Makes disciples", "Expands the Kingdom"],
-    color: "bg-sage",
+    color: "bg-sage text-[#FBF0DE]",
   },
   {
     icon: UsersRound,
+    number: "02",
     title: "Qualified leadership",
     lines: ["Biblically trained", "Spirit appointed", "Elder recognized"],
-    color: "bg-ember",
+    color: "bg-ember text-ink",
   },
   {
     icon: Network,
+    number: "03",
     title: "Relational connection",
     lines: ["Welcomes accountability", "Embraces the network", "Honors commitment"],
-    color: "bg-slate",
+    color: "bg-slate text-[#FBF0DE]",
   },
 ];
 
@@ -52,66 +55,66 @@ const models = [
     number: "01",
     title: "Church Launch",
     short: "Public launch",
+    movement: "Gather · Launch · Establish",
     icon: Church,
     summary:
       "A prepared team gathers people and establishes a visible new congregation in a community.",
     ledBy: "A pioneer and launch team",
     bestWhen: "Public leadership and a clear gathering strategy are present.",
     requires: "A sending church, location, launch plan, and sustained follow-up.",
-    accent: "border-ember",
-    badge: "bg-ember text-ink",
+    panel: "bg-ember text-ink",
   },
   {
     number: "02",
     title: "Missional Church",
     short: "Embedded presence",
+    movement: "Embed · Disciple · Form",
     icon: Compass,
     summary:
       "Leaders live deeply within a community, making disciples and forming church through everyday relationships.",
     ledBy: "A pioneer or embedded team",
     bestWhen: "Trust must be built slowly within a distinct community or culture.",
     requires: "Patience, local presence, relational credibility, and disciple-making rhythms.",
-    accent: "border-sage",
-    badge: "bg-sage text-[#FBF0DE]",
+    panel: "bg-sage text-[#FBF0DE]",
   },
   {
     number: "03",
     title: "Micro Church",
     short: "Reproducible communities",
+    movement: "Gather · Equip · Reproduce",
     icon: CircleDot,
     summary:
       "Small, simple gatherings develop local leaders and reproduce without depending on a large weekly service.",
     ledBy: "Pioneers and local leaders",
     bestWhen: "Simple communities can form and multiply naturally.",
     requires: "Reproducible practices, trained leaders, accountability, and clear doctrine.",
-    accent: "border-ember",
-    badge: "bg-ember text-ink",
+    panel: "bg-slate text-[#FBF0DE]",
   },
   {
     number: "04",
     title: "Multi-Community Church",
     short: "One church, many communities",
+    movement: "Send · Share · Localize",
     icon: UsersRound,
     summary:
       "One established church forms distinct worshiping communities that share mission, leadership, and resources.",
     ledBy: "An established sending church",
     bestWhen: "A church has capacity to reach distinct communities without forcing uniformity.",
     requires: "A leadership pipeline, shared governance, resources, and local ownership.",
-    accent: "border-sage",
-    badge: "bg-sage text-[#FBF0DE]",
+    panel: "bg-sage text-[#FBF0DE]",
   },
   {
     number: "05",
     title: "Church Collective",
     short: "Incubator and covering",
+    movement: "Cover · Coach · Release",
     icon: Network,
     summary:
       "A relational covering helps emerging churches and ministry communities develop before adopting a traditional structure.",
     ledBy: "A network, covering, or leadership team",
     bestWhen: "Fruit is emerging, but leadership and structure are still forming.",
     requires: "Coaching, covering, discernment, accountability, and time.",
-    accent: "border-ember",
-    badge: "bg-ember text-ink",
+    panel: "bg-ember text-ink",
   },
 ];
 
@@ -179,56 +182,128 @@ export default function ModelsPage() {
             </p>
           </div>
 
-          <div className="mt-12 grid gap-5 lg:grid-cols-3">
-            {foundations.map(({ icon: Icon, title, lines, color }) => (
-              <article
-                key={title}
-                className="texture-card rounded-[2rem] p-8 shadow-xl shadow-black/5"
-              >
-                <div
-                  className={`flex h-12 w-12 items-center justify-center rounded-2xl ${color} text-[#FBF0DE]`}
+          <div className="relative mt-14 overflow-hidden rounded-[2.5rem] bg-[#F3E4CC] p-6 shadow-2xl shadow-black/8 md:p-10">
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_44%,rgba(234,159,67,0.22),transparent_28%),radial-gradient(circle_at_12%_88%,rgba(77,167,156,0.16),transparent_24%)]" />
+
+            <div className="relative grid gap-6 lg:grid-cols-[1fr_.72fr_1fr] lg:items-center">
+              {foundations.slice(0, 1).map(({ icon: Icon, number, title, lines, color }) => (
+                <article
+                  key={title}
+                  className="rounded-[2rem] border border-slate/15 bg-[#FBF0DE]/90 p-7 shadow-xl shadow-black/5"
                 >
-                  <Icon size={24} strokeWidth={2.2} aria-hidden="true" />
+                  <div className="flex items-center justify-between">
+                    <span className="text-5xl font-black tracking-[-0.07em] text-slate/15">
+                      {number}
+                    </span>
+                    <span className={`flex h-12 w-12 items-center justify-center rounded-2xl ${color}`}>
+                      <Icon size={24} strokeWidth={2.2} aria-hidden="true" />
+                    </span>
+                  </div>
+                  <h3 className="mt-6 text-[29px] font-black leading-[0.98] tracking-[-0.045em] text-ink">
+                    {title}
+                  </h3>
+                  <div className="mt-5 space-y-3">
+                    {lines.map((line) => (
+                      <p key={line} className="flex items-center gap-3 text-sm font-bold text-slate">
+                        <Check size={16} className="text-sage" strokeWidth={3} aria-hidden="true" />
+                        {line}
+                      </p>
+                    ))}
+                  </div>
+                </article>
+              ))}
+
+              <div className="relative order-first mx-auto flex aspect-square w-full max-w-[270px] items-center justify-center rounded-full border-[10px] border-[#FBF0DE] bg-slate text-center text-[#FBF0DE] shadow-[0_24px_70px_rgba(21,22,22,0.24)] lg:order-none">
+                <div className="absolute -inset-5 rounded-full border border-dashed border-ember/55" />
+                <div>
+                  <p className="text-xs font-black uppercase tracking-[0.28em] text-ember">
+                    The center
+                  </p>
+                  <p className="mt-3 text-[34px] font-black uppercase leading-[0.88] tracking-[-0.055em]">
+                    Christ
+                    <br />
+                    centered
+                  </p>
+                  <p className="mt-4 text-xs font-bold text-[#FBF0DE]/65">
+                    in every expression
+                  </p>
                 </div>
-                <h3 className="mt-7 text-[28px] font-black leading-[1] tracking-[-0.04em] text-ink">
-                  {title}
-                </h3>
-                <div className="mt-6 space-y-3">
-                  {lines.map((line) => (
-                    <div
-                      key={line}
-                      className="flex items-center gap-3 text-sm font-bold text-slate"
-                    >
-                      <Check
-                        size={17}
-                        className="text-ember"
-                        strokeWidth={3}
-                        aria-hidden="true"
-                      />
-                      {line}
+              </div>
+
+              {foundations.slice(1, 2).map(({ icon: Icon, number, title, lines, color }) => (
+                <article
+                  key={title}
+                  className="rounded-[2rem] border border-slate/15 bg-[#FBF0DE]/90 p-7 shadow-xl shadow-black/5"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-5xl font-black tracking-[-0.07em] text-slate/15">
+                      {number}
+                    </span>
+                    <span className={`flex h-12 w-12 items-center justify-center rounded-2xl ${color}`}>
+                      <Icon size={24} strokeWidth={2.2} aria-hidden="true" />
+                    </span>
+                  </div>
+                  <h3 className="mt-6 text-[29px] font-black leading-[0.98] tracking-[-0.045em] text-ink">
+                    {title}
+                  </h3>
+                  <div className="mt-5 space-y-3">
+                    {lines.map((line) => (
+                      <p key={line} className="flex items-center gap-3 text-sm font-bold text-slate">
+                        <Check size={16} className="text-ember" strokeWidth={3} aria-hidden="true" />
+                        {line}
+                      </p>
+                    ))}
+                  </div>
+                </article>
+              ))}
+
+              {foundations.slice(2).map(({ icon: Icon, number, title, lines, color }) => (
+                <article
+                  key={title}
+                  className="rounded-[2rem] border border-slate/15 bg-[#FBF0DE]/90 p-7 shadow-xl shadow-black/5 lg:col-start-2"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-5xl font-black tracking-[-0.07em] text-slate/15">
+                      {number}
+                    </span>
+                    <span className={`flex h-12 w-12 items-center justify-center rounded-2xl ${color}`}>
+                      <Icon size={24} strokeWidth={2.2} aria-hidden="true" />
+                    </span>
+                  </div>
+                  <h3 className="mt-6 text-[29px] font-black leading-[0.98] tracking-[-0.045em] text-ink">
+                    {title}
+                  </h3>
+                  <div className="mt-5 space-y-3">
+                    {lines.map((line) => (
+                      <p key={line} className="flex items-center gap-3 text-sm font-bold text-slate">
+                        <Check size={16} className="text-slate" strokeWidth={3} aria-hidden="true" />
+                        {line}
+                      </p>
+                    ))}
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <div className="relative mt-8 rounded-[1.75rem] bg-[#151616] p-7 text-[#FBF0DE] md:p-8">
+              <div className="grid gap-6 lg:grid-cols-[.55fr_1.45fr] lg:items-center">
+                <div>
+                  <p className="text-xs font-black uppercase tracking-[0.26em] text-ember">
+                    Together, these produce
+                  </p>
+                  <h3 className="mt-3 text-[29px] font-black leading-[0.98] tracking-[-0.04em]">
+                    A recognizable church.
+                  </h3>
+                </div>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {essentials.map((item) => (
+                    <div key={item} className="flex gap-3 text-sm font-bold leading-6">
+                      <span className="text-sage">●</span>
+                      <span>{item}</span>
                     </div>
                   ))}
                 </div>
-              </article>
-            ))}
-          </div>
-
-          <div className="mt-6 grid gap-6 rounded-[2rem] bg-slate p-8 text-[#FBF0DE] md:grid-cols-[.8fr_1.2fr] md:p-10">
-            <div>
-              <p className="text-xs font-black uppercase tracking-[0.26em] text-sage">
-                Church plant essentials
-              </p>
-              <h3 className="mt-4 text-[30px] font-black leading-[0.98] tracking-[-0.045em]">
-                Five minimums we protect.
-              </h3>
-            </div>
-            <div className="grid gap-3 sm:grid-cols-2">
-              {essentials.map((item) => (
-                <div key={item} className="flex gap-3 text-sm font-bold leading-6">
-                  <span className="text-ember">✓</span>
-                  <span>{item}</span>
-                </div>
-              ))}
+              </div>
             </div>
           </div>
         </div>
@@ -256,28 +331,32 @@ export default function ModelsPage() {
               return (
                 <article
                   key={model.title}
-                  className={`overflow-hidden rounded-[2rem] border-l-4 ${model.accent} bg-[#FBF0DE]/80 shadow-xl shadow-black/5`}
+                  className="overflow-hidden rounded-[2rem] border border-slate/10 bg-[#FBF0DE] shadow-[0_22px_55px_rgba(21,22,22,0.10)]"
                 >
                   <div className="grid lg:grid-cols-[.7fr_1.3fr]">
-                    <div className="border-b border-slate/10 p-7 md:p-9 lg:border-b-0 lg:border-r">
+                    <div className={`relative overflow-hidden p-7 md:p-9 ${model.panel}`}>
+                      <span className="pointer-events-none absolute -bottom-12 -right-4 text-[12rem] font-black leading-none tracking-[-0.1em] opacity-[0.09]">
+                        {model.number}
+                      </span>
                       <div className="flex items-start justify-between gap-5">
-                        <span className="text-5xl font-black tracking-[-0.07em] text-slate/20">
+                        <span className="text-5xl font-black tracking-[-0.07em] opacity-35">
                           {model.number}
                         </span>
-                        <span
-                          className={`flex h-12 w-12 items-center justify-center rounded-2xl ${model.badge}`}
-                        >
+                        <span className="flex h-12 w-12 items-center justify-center rounded-2xl border border-current/20 bg-[#FBF0DE]/15">
                           <Icon size={24} strokeWidth={2.2} aria-hidden="true" />
                         </span>
                       </div>
-                      <p className="mt-7 text-xs font-black uppercase tracking-[0.24em] text-ember">
+                      <p className="relative mt-7 text-xs font-black uppercase tracking-[0.24em] opacity-65">
                         {model.short}
                       </p>
-                      <h3 className="mt-3 text-[34px] font-black leading-[0.96] tracking-[-0.045em] text-ink md:text-[44px]">
+                      <h3 className="relative mt-3 text-[36px] font-black leading-[0.94] tracking-[-0.05em] md:text-[48px]">
                         {model.title}
                       </h3>
-                      <p className="mt-5 font-medium leading-7 text-slate">
+                      <p className="relative mt-5 font-medium leading-7 opacity-80">
                         {model.summary}
+                      </p>
+                      <p className="relative mt-7 border-t border-current/20 pt-5 text-xs font-black uppercase tracking-[0.18em]">
+                        {model.movement}
                       </p>
                     </div>
 
