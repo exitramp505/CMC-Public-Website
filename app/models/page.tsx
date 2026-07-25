@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import {
-  Check,
   Church,
   CircleDot,
   Compass,
   Network,
-  Sprout,
   UsersRound,
 } from "lucide-react";
 
@@ -24,30 +22,6 @@ const essentials = [
   "Leaders are established and multiplied",
   "Saints are assembled and equipped",
   "Sacraments are honored and observed",
-];
-
-const foundations = [
-  {
-    icon: Sprout,
-    number: "01",
-    title: "Missional community",
-    lines: ["Worships Jesus", "Makes disciples", "Expands the Kingdom"],
-    color: "bg-sage text-[#FBF0DE]",
-  },
-  {
-    icon: UsersRound,
-    number: "02",
-    title: "Qualified leadership",
-    lines: ["Biblically trained", "Spirit appointed", "Elder recognized"],
-    color: "bg-ember text-ink",
-  },
-  {
-    icon: Network,
-    number: "03",
-    title: "Relational connection",
-    lines: ["Welcomes accountability", "Embraces the network", "Honors commitment"],
-    color: "bg-slate text-[#FBF0DE]",
-  },
 ];
 
 const models = [
@@ -125,6 +99,225 @@ const discernmentQuestions = [
   "Which form can reproduce disciples, leaders, and churches here?",
 ];
 
+function ChurchEssentialsDiagram() {
+  return (
+    <div className="mt-14 overflow-hidden rounded-[2.5rem] border border-slate/10 bg-[#F3E4CC] p-4 shadow-2xl shadow-black/10 md:p-8">
+      <svg
+        viewBox="0 0 1000 820"
+        className="hidden h-auto w-full md:block"
+        role="img"
+        aria-label="Christ-centered church essentials diagram showing missional community, qualified leadership, and relational connection converging in Christ and producing five shared marks of a church"
+      >
+        <defs>
+          <filter id="essentialsShadow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow dx="0" dy="14" stdDeviation="18" floodColor="#151616" floodOpacity=".15" />
+          </filter>
+          <marker
+            id="arrowHead"
+            markerWidth="12"
+            markerHeight="12"
+            refX="6"
+            refY="6"
+            orient="auto"
+          >
+            <path d="M0,0 L12,6 L0,12 Z" fill="#293D48" />
+          </marker>
+        </defs>
+
+        <text
+          x="500"
+          y="48"
+          textAnchor="middle"
+          fill="#151616"
+          fontFamily="Montserrat, Arial, sans-serif"
+          fontSize="25"
+          fontWeight="900"
+          letterSpacing="4"
+        >
+          THREE REALITIES CONVERGE
+        </text>
+
+        <circle cx="500" cy="260" r="220" fill="#4DA79C" fillOpacity=".70" stroke="#4DA79C" strokeWidth="8" />
+        <circle cx="337" cy="455" r="220" fill="#EA9F43" fillOpacity=".70" stroke="#EA9F43" strokeWidth="8" />
+        <circle cx="663" cy="455" r="220" fill="#293D48" fillOpacity=".63" stroke="#293D48" strokeWidth="8" />
+
+        <g fontFamily="Montserrat, Arial, sans-serif" textAnchor="middle">
+          <text x="500" y="135" fill="#151616" fontSize="29" fontWeight="900">
+            MISSIONAL COMMUNITY
+          </text>
+          <text x="500" y="170" fill="#151616" fontSize="18" fontWeight="700">
+            Worship · Disciples · Kingdom
+          </text>
+
+          <text x="245" y="490" fill="#151616" fontSize="29" fontWeight="900">
+            QUALIFIED
+          </text>
+          <text x="245" y="524" fill="#151616" fontSize="29" fontWeight="900">
+            LEADERSHIP
+          </text>
+          <text x="245" y="557" fill="#151616" fontSize="18" fontWeight="700">
+            Trained · Appointed · Recognized
+          </text>
+
+          <text x="755" y="490" fill="#FBF0DE" fontSize="29" fontWeight="900">
+            RELATIONAL
+          </text>
+          <text x="755" y="524" fill="#FBF0DE" fontSize="29" fontWeight="900">
+            CONNECTION
+          </text>
+          <text x="755" y="557" fill="#FBF0DE" fontSize="18" fontWeight="700">
+            Accountable · Networked · Committed
+          </text>
+        </g>
+
+        <g filter="url(#essentialsShadow)">
+          <circle cx="500" cy="390" r="118" fill="#151616" stroke="#FBF0DE" strokeWidth="10" />
+        </g>
+        <g
+          fill="#FBF0DE"
+          fontFamily="Montserrat, Arial, sans-serif"
+          textAnchor="middle"
+          fontWeight="900"
+        >
+          <text x="500" y="372" fontSize="24" letterSpacing="4">
+            CHRIST
+          </text>
+          <text x="500" y="411" fontSize="34">
+            CENTERED
+          </text>
+          <text x="500" y="446" fill="#EA9F43" fontSize="17" letterSpacing="2">
+            THE SHARED CENTER
+          </text>
+        </g>
+
+        <line
+          x1="500"
+          y1="585"
+          x2="500"
+          y2="642"
+          stroke="#293D48"
+          strokeWidth="7"
+          markerEnd="url(#arrowHead)"
+        />
+
+        <text
+          x="500"
+          y="695"
+          textAnchor="middle"
+          fill="#151616"
+          fontFamily="Montserrat, Arial, sans-serif"
+          fontSize="23"
+          fontWeight="900"
+          letterSpacing="3"
+        >
+          PRODUCES A RECOGNIZABLE CHURCH
+        </text>
+
+        {[
+          ["Jesus", "worshiped"],
+          ["Disciples", "developed"],
+          ["Leaders", "multiplied"],
+          ["Saints", "equipped"],
+          ["Sacraments", "honored"],
+        ].map(([top, bottom], index) => {
+          const x = 28 + index * 192;
+          return (
+            <g key={top}>
+              <rect
+                x={x}
+                y="725"
+                width="176"
+                height="72"
+                rx="20"
+                fill={index % 2 === 0 ? "#293D48" : "#FBF0DE"}
+                stroke="#293D48"
+                strokeOpacity=".18"
+                strokeWidth="2"
+              />
+              <text
+                x={x + 88}
+                y="755"
+                textAnchor="middle"
+                fill={index % 2 === 0 ? "#FBF0DE" : "#151616"}
+                fontFamily="Montserrat, Arial, sans-serif"
+                fontSize="18"
+                fontWeight="900"
+              >
+                {top}
+              </text>
+              <text
+                x={x + 88}
+                y="780"
+                textAnchor="middle"
+                fill={index % 2 === 0 ? "#EA9F43" : "#4DA79C"}
+                fontFamily="Montserrat, Arial, sans-serif"
+                fontSize="16"
+                fontWeight="800"
+              >
+                {bottom}
+              </text>
+            </g>
+          );
+        })}
+      </svg>
+
+      <div className="md:hidden">
+        <p className="text-center text-xs font-black uppercase tracking-[0.24em] text-slate">
+          Three realities converge
+        </p>
+
+        <div className="relative mx-auto mt-7 flex h-44 w-44 items-center justify-center rounded-full border-8 border-[#FBF0DE] bg-slate text-center text-[#FBF0DE] shadow-2xl shadow-black/20">
+          <div className="absolute -inset-4 rounded-full border border-dashed border-ember" />
+          <div>
+            <p className="text-xs font-black uppercase tracking-[0.2em] text-ember">
+              Christ
+            </p>
+            <p className="mt-1 text-2xl font-black uppercase leading-none">
+              Centered
+            </p>
+          </div>
+        </div>
+
+        <div className="mx-auto h-8 w-px bg-slate/35" />
+
+        <div className="grid gap-3">
+          {[
+            ["bg-sage text-[#FBF0DE]", "Missional community", "Worship · Disciples · Kingdom"],
+            ["bg-ember text-ink", "Qualified leadership", "Trained · Appointed · Recognized"],
+            ["bg-slate text-[#FBF0DE]", "Relational connection", "Accountable · Networked · Committed"],
+          ].map(([color, title, detail]) => (
+            <div key={title} className={`rounded-[1.5rem] p-5 text-center ${color}`}>
+              <p className="text-lg font-black uppercase tracking-[-0.03em]">
+                {title}
+              </p>
+              <p className="mt-2 text-xs font-bold opacity-75">{detail}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mx-auto h-8 w-px bg-slate/35" />
+        <p className="text-center text-xs font-black uppercase tracking-[0.2em] text-slate">
+          Produces a recognizable church
+        </p>
+        <div className="mt-4 grid grid-cols-2 gap-2">
+          {essentials.map((item, index) => (
+            <div
+              key={item}
+              className={`rounded-2xl px-4 py-4 text-center text-xs font-black ${
+                index % 2 === 0
+                  ? "bg-slate text-[#FBF0DE]"
+                  : "bg-[#FBF0DE] text-ink"
+              }`}
+            >
+              {item}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function ModelsPage() {
   return (
     <>
@@ -182,130 +375,7 @@ export default function ModelsPage() {
             </p>
           </div>
 
-          <div className="relative mt-14 overflow-hidden rounded-[2.5rem] bg-[#F3E4CC] p-6 shadow-2xl shadow-black/8 md:p-10">
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_44%,rgba(234,159,67,0.22),transparent_28%),radial-gradient(circle_at_12%_88%,rgba(77,167,156,0.16),transparent_24%)]" />
-
-            <div className="relative grid gap-6 lg:grid-cols-[1fr_.72fr_1fr] lg:items-center">
-              {foundations.slice(0, 1).map(({ icon: Icon, number, title, lines, color }) => (
-                <article
-                  key={title}
-                  className="rounded-[2rem] border border-slate/15 bg-[#FBF0DE]/90 p-7 shadow-xl shadow-black/5"
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="text-5xl font-black tracking-[-0.07em] text-slate/15">
-                      {number}
-                    </span>
-                    <span className={`flex h-12 w-12 items-center justify-center rounded-2xl ${color}`}>
-                      <Icon size={24} strokeWidth={2.2} aria-hidden="true" />
-                    </span>
-                  </div>
-                  <h3 className="mt-6 text-[29px] font-black leading-[0.98] tracking-[-0.045em] text-ink">
-                    {title}
-                  </h3>
-                  <div className="mt-5 space-y-3">
-                    {lines.map((line) => (
-                      <p key={line} className="flex items-center gap-3 text-sm font-bold text-slate">
-                        <Check size={16} className="text-sage" strokeWidth={3} aria-hidden="true" />
-                        {line}
-                      </p>
-                    ))}
-                  </div>
-                </article>
-              ))}
-
-              <div className="relative order-first mx-auto flex aspect-square w-full max-w-[270px] items-center justify-center rounded-full border-[10px] border-[#FBF0DE] bg-slate text-center text-[#FBF0DE] shadow-[0_24px_70px_rgba(21,22,22,0.24)] lg:order-none">
-                <div className="absolute -inset-5 rounded-full border border-dashed border-ember/55" />
-                <div>
-                  <p className="text-xs font-black uppercase tracking-[0.28em] text-ember">
-                    The center
-                  </p>
-                  <p className="mt-3 text-[34px] font-black uppercase leading-[0.88] tracking-[-0.055em]">
-                    Christ
-                    <br />
-                    centered
-                  </p>
-                  <p className="mt-4 text-xs font-bold text-[#FBF0DE]/65">
-                    in every expression
-                  </p>
-                </div>
-              </div>
-
-              {foundations.slice(1, 2).map(({ icon: Icon, number, title, lines, color }) => (
-                <article
-                  key={title}
-                  className="rounded-[2rem] border border-slate/15 bg-[#FBF0DE]/90 p-7 shadow-xl shadow-black/5"
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="text-5xl font-black tracking-[-0.07em] text-slate/15">
-                      {number}
-                    </span>
-                    <span className={`flex h-12 w-12 items-center justify-center rounded-2xl ${color}`}>
-                      <Icon size={24} strokeWidth={2.2} aria-hidden="true" />
-                    </span>
-                  </div>
-                  <h3 className="mt-6 text-[29px] font-black leading-[0.98] tracking-[-0.045em] text-ink">
-                    {title}
-                  </h3>
-                  <div className="mt-5 space-y-3">
-                    {lines.map((line) => (
-                      <p key={line} className="flex items-center gap-3 text-sm font-bold text-slate">
-                        <Check size={16} className="text-ember" strokeWidth={3} aria-hidden="true" />
-                        {line}
-                      </p>
-                    ))}
-                  </div>
-                </article>
-              ))}
-
-              {foundations.slice(2).map(({ icon: Icon, number, title, lines, color }) => (
-                <article
-                  key={title}
-                  className="rounded-[2rem] border border-slate/15 bg-[#FBF0DE]/90 p-7 shadow-xl shadow-black/5 lg:col-start-2"
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="text-5xl font-black tracking-[-0.07em] text-slate/15">
-                      {number}
-                    </span>
-                    <span className={`flex h-12 w-12 items-center justify-center rounded-2xl ${color}`}>
-                      <Icon size={24} strokeWidth={2.2} aria-hidden="true" />
-                    </span>
-                  </div>
-                  <h3 className="mt-6 text-[29px] font-black leading-[0.98] tracking-[-0.045em] text-ink">
-                    {title}
-                  </h3>
-                  <div className="mt-5 space-y-3">
-                    {lines.map((line) => (
-                      <p key={line} className="flex items-center gap-3 text-sm font-bold text-slate">
-                        <Check size={16} className="text-slate" strokeWidth={3} aria-hidden="true" />
-                        {line}
-                      </p>
-                    ))}
-                  </div>
-                </article>
-              ))}
-            </div>
-
-            <div className="relative mt-8 rounded-[1.75rem] bg-[#151616] p-7 text-[#FBF0DE] md:p-8">
-              <div className="grid gap-6 lg:grid-cols-[.55fr_1.45fr] lg:items-center">
-                <div>
-                  <p className="text-xs font-black uppercase tracking-[0.26em] text-ember">
-                    Together, these produce
-                  </p>
-                  <h3 className="mt-3 text-[29px] font-black leading-[0.98] tracking-[-0.04em]">
-                    A recognizable church.
-                  </h3>
-                </div>
-                <div className="grid gap-3 sm:grid-cols-2">
-                  {essentials.map((item) => (
-                    <div key={item} className="flex gap-3 text-sm font-bold leading-6">
-                      <span className="text-sage">●</span>
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
+          <ChurchEssentialsDiagram />
         </div>
       </section>
 
