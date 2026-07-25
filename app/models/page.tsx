@@ -103,7 +103,7 @@ function ChurchEssentialsDiagram() {
   return (
     <div className="mt-14 overflow-hidden rounded-[2.5rem] border border-slate/10 bg-[#F3E4CC] p-4 shadow-2xl shadow-black/10 md:p-8">
       <svg
-        viewBox="0 0 1000 820"
+        viewBox="0 0 1000 875"
         className="hidden h-auto w-full md:block"
         role="img"
         aria-label="Christ-centered church essentials diagram showing missional community, qualified leadership, and relational connection converging in Christ and producing five shared marks of a church"
@@ -149,23 +149,23 @@ function ChurchEssentialsDiagram() {
             Worship · Disciples · Kingdom
           </text>
 
-          <text x="245" y="490" fill="#151616" fontSize="29" fontWeight="900">
+          <text x="300" y="555" fill="#151616" fontSize="27" fontWeight="900">
             QUALIFIED
           </text>
-          <text x="245" y="524" fill="#151616" fontSize="29" fontWeight="900">
+          <text x="300" y="588" fill="#151616" fontSize="27" fontWeight="900">
             LEADERSHIP
           </text>
-          <text x="245" y="557" fill="#151616" fontSize="18" fontWeight="700">
+          <text x="300" y="620" fill="#151616" fontSize="16" fontWeight="700">
             Trained · Appointed · Recognized
           </text>
 
-          <text x="755" y="490" fill="#FBF0DE" fontSize="29" fontWeight="900">
+          <text x="700" y="555" fill="#FBF0DE" fontSize="27" fontWeight="900">
             RELATIONAL
           </text>
-          <text x="755" y="524" fill="#FBF0DE" fontSize="29" fontWeight="900">
+          <text x="700" y="588" fill="#FBF0DE" fontSize="27" fontWeight="900">
             CONNECTION
           </text>
-          <text x="755" y="557" fill="#FBF0DE" fontSize="18" fontWeight="700">
+          <text x="700" y="620" fill="#FBF0DE" fontSize="16" fontWeight="700">
             Accountable · Networked · Committed
           </text>
         </g>
@@ -192,9 +192,9 @@ function ChurchEssentialsDiagram() {
 
         <line
           x1="500"
-          y1="585"
+          y1="535"
           x2="500"
-          y2="642"
+          y2="692"
           stroke="#293D48"
           strokeWidth="7"
           markerEnd="url(#arrowHead)"
@@ -202,7 +202,7 @@ function ChurchEssentialsDiagram() {
 
         <text
           x="500"
-          y="695"
+          y="740"
           textAnchor="middle"
           fill="#151616"
           fontFamily="Montserrat, Arial, sans-serif"
@@ -225,7 +225,7 @@ function ChurchEssentialsDiagram() {
             <g key={top}>
               <rect
                 x={x}
-                y="725"
+                y="770"
                 width="176"
                 height="72"
                 rx="20"
@@ -236,7 +236,7 @@ function ChurchEssentialsDiagram() {
               />
               <text
                 x={x + 88}
-                y="755"
+                y="800"
                 textAnchor="middle"
                 fill={index % 2 === 0 ? "#FBF0DE" : "#151616"}
                 fontFamily="Montserrat, Arial, sans-serif"
@@ -247,7 +247,7 @@ function ChurchEssentialsDiagram() {
               </text>
               <text
                 x={x + 88}
-                y="780"
+                y="825"
                 textAnchor="middle"
                 fill={index % 2 === 0 ? "#EA9F43" : "#4DA79C"}
                 fontFamily="Montserrat, Arial, sans-serif"
