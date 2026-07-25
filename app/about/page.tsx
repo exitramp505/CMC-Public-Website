@@ -25,19 +25,19 @@ const commitments = [
     icon: UsersRound,
     label: "Disciples before destinations",
     description:
-      "Multiplication begins with people learning to hear Jesus, obey Jesus, and help others follow him—not simply with launching a service.",
+      "Multiplication begins with people following Jesus and helping others do the same—not simply launching a service.",
   },
   {
     icon: Compass,
     label: "Discernment before deployment",
     description:
-      "A burden matters, but it must be tested. We help pioneers and churches clarify calling, context, readiness, and the right next step.",
+      "We help pioneers and churches clarify calling, context, readiness, and the right next step.",
   },
   {
     icon: Network,
     label: "Relationship over isolation",
     description:
-      "Leaders multiply more faithfully when they are connected to coaches, sending churches, regional leaders, and a shared mission.",
+      "Leaders need coaches, sending churches, regional relationships, and a shared mission.",
   },
 ];
 
@@ -91,7 +91,7 @@ export default function AboutPage() {
           <div>
             <div className="accent-line" />
             <p className="mt-7 text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
-              About the Collective
+              About the Church Multiplication Collective
             </p>
             <h1 className="mt-6 max-w-4xl text-[3.6rem] font-black leading-[0.88] tracking-[-0.065em] text-[#FBF0DE] sm:text-[5rem] lg:text-[6.3rem]">
               Multiplication is not a solo journey.
@@ -105,8 +105,7 @@ export default function AboutPage() {
             </p>
             <p className="mt-5 font-medium leading-8 text-[#FBF0DE]/72">
               We create a pathway for discernment, preparation, relationship,
-              and action—without pretending every person or church has the
-              same calling.
+              and action.
             </p>
           </div>
         </div>
@@ -125,15 +124,10 @@ export default function AboutPage() {
 
           <div className="space-y-6 text-lg font-medium leading-8 text-slate">
             <p>
-              Many leaders sense that God may be inviting them to start
-              something new. Many churches want to multiply, but do not yet
-              know how to identify pioneers, choose a model, or become a
-              healthy sending church.
-            </p>
-            <p>
-              CMC exists to close that gap. We help people name what they are
-              sensing, ask better questions, develop the right foundations,
-              and move forward with accountable relationships.
+              Leaders often sense a call to something new, while churches want
+              to multiply but are unsure how to begin. CMC helps them clarify
+              the call, build the right foundations, and move forward with
+              accountable relationships.
             </p>
             <p className="border-l-4 border-ember pl-6 font-bold text-ink">
               The goal is not activity for its own sake. The goal is faithful
@@ -216,9 +210,9 @@ export default function AboutPage() {
                 leaders, and multiply churches.
               </p>
               <p className="mt-6 font-medium leading-8 text-[#FBF0DE]/75">
-                That mission gives CMC its direction. The Collective serves
-                within Open Bible, connected to local churches, regional
-                relationships, and accountable leadership.
+                That mission gives CMC its direction and keeps multiplication
+                connected to local churches, regional relationships, and
+                accountable leadership.
               </p>
             </div>
           </article>
@@ -236,9 +230,8 @@ export default function AboutPage() {
               Connected across Open Bible regions.
             </h2>
             <p className="mx-auto mt-6 max-w-3xl text-lg font-medium leading-8 text-slate">
-              National and regional leaders help pastors, pioneers, and
-              churches pursue multiplication with relationships and
-              accountability close to home.
+              National and regional leaders support multiplication with
+              relationships and accountability close to home.
             </p>
           </div>
 
