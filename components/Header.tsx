@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import LogoMark from "@/components/LogoMark";
 
@@ -20,7 +20,84 @@ const discoverHref = "/discover";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [darkBackground, setDarkBackground] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
   const pathname = usePathname();
+
+  useEffect(() => {
+    let frame = 0;
+
+    function detectBackground() {
+      const header = headerRef.current;
+      if (!header) return;
+
+      const sampleY = Math.min(
+        window.innerHeight - 1,
+        header.getBoundingClientRect().bottom + 2,
+      );
+      const elements = document.elementsFromPoint(
+        window.innerWidth / 2,
+        sampleY,
+      );
+      let element = elements.find((item) => !header.contains(item));
+      let nextDark = false;
+
+      while (element && element !== document.body) {
+        const htmlElement = element as HTMLElement;
+        const classes =
+          typeof htmlElement.className === "string"
+            ? htmlElement.className
+            : "";
+        const styles = window.getComputedStyle(htmlElement);
+
+        if (
+          htmlElement.matches(".brand-panel, [data-header-theme='dark']") ||
+          classes.includes("bg-slate") ||
+          classes.includes("bg-[#293D48]") ||
+          classes.includes("bg-[#151616]") ||
+          (classes.includes("text-[#FBF0DE]") &&
+            styles.backgroundImage !== "none")
+        ) {
+          nextDark = true;
+          break;
+        }
+
+        const colorMatch = styles.backgroundColor.match(
+          /rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/,
+        );
+
+        if (colorMatch && Number(colorMatch[4] ?? 1) > 0.15) {
+          const red = Number(colorMatch[1]);
+          const green = Number(colorMatch[2]);
+          const blue = Number(colorMatch[3]);
+          const luminance =
+            (0.2126 * red + 0.7152 * green + 0.0722 * blue) / 255;
+
+          nextDark = luminance < 0.46;
+          break;
+        }
+
+        element = element.parentElement;
+      }
+
+      setDarkBackground(nextDark);
+    }
+
+    function requestDetection() {
+      window.cancelAnimationFrame(frame);
+      frame = window.requestAnimationFrame(detectBackground);
+    }
+
+    detectBackground();
+    window.addEventListener("scroll", requestDetection, { passive: true });
+    window.addEventListener("resize", requestDetection);
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", requestDetection);
+      window.removeEventListener("resize", requestDetection);
+    };
+  }, [pathname]);
 
   function closeMenu() {
     setOpen(false);
@@ -31,7 +108,14 @@ export default function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-[100] border-b border-slate/15 bg-[#FBF0DE]/[0.97] shadow-lg shadow-black/10 backdrop-blur-2xl backdrop-saturate-150">
+    <header
+      ref={headerRef}
+      className={`sticky top-0 z-[100] border-b shadow-lg backdrop-blur-2xl backdrop-saturate-150 transition-colors duration-300 ${
+        darkBackground
+          ? "border-[#FBF0DE]/15 bg-[#151616]/45 shadow-black/20"
+          : "border-slate/15 bg-[#FBF0DE]/55 shadow-black/10"
+      }`}
+    >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8">
         <Link
           href="/"
@@ -52,8 +136,14 @@ export default function Header() {
                 aria-current={active ? "page" : undefined}
                 className={`relative py-2 text-sm font-extrabold transition after:absolute after:inset-x-0 after:-bottom-1 after:h-0.5 after:rounded-full after:bg-ember after:transition-transform ${
                   active
-                    ? "text-ink after:scale-x-100"
-                    : "text-slate after:scale-x-0 hover:text-ember hover:after:scale-x-100"
+                    ? `${
+                        darkBackground ? "text-[#FBF0DE]" : "text-ink"
+                      } after:scale-x-100`
+                    : `${
+                        darkBackground
+                          ? "text-[#FBF0DE]/85"
+                          : "text-slate"
+                      } after:scale-x-0 hover:text-ember hover:after:scale-x-100`
                 }`}
               >
                 {item.label}
@@ -86,7 +176,11 @@ export default function Header() {
             aria-label={open ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={open}
             onClick={() => setOpen((current) => !current)}
-            className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-slate/15 bg-white/75 text-slate shadow-sm transition hover:bg-white"
+            className={`inline-flex h-12 w-12 items-center justify-center rounded-full border shadow-sm transition ${
+              darkBackground
+                ? "border-[#FBF0DE]/25 bg-[#151616]/45 text-[#FBF0DE] hover:bg-[#151616]/65"
+                : "border-slate/15 bg-white/60 text-slate hover:bg-white/85"
+            }`}
           >
             {open ? <X size={25} strokeWidth={2.3} /> : <Menu size={26} strokeWidth={2.3} />}
           </button>
