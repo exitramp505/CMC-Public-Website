@@ -112,13 +112,6 @@ export default function ContactForm() {
                     Thank you for reaching out. A CMC leader will follow up with
                     you personally.
                   </p>
-                  <button
-                    className="button-primary mt-7 rounded-full px-7 py-4 text-sm font-black"
-                    onClick={() => setStatus("idle")}
-                    type="button"
-                  >
-                    Send another message
-                  </button>
                 </div>
               </div>
             ) : (
