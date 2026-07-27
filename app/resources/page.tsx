@@ -118,7 +118,7 @@ export default function ResourcesPage() {
                 {resourcesContent.heroEyebrow}
               </p>
 
-              <h1 className="mt-5 max-w-5xl text-[42px] font-black leading-[0.94] tracking-[-0.052em] text-ink md:text-[68px]">
+              <h1 className="mt-5 max-w-5xl text-[36px] font-black leading-[0.98] tracking-[-0.045em] text-ink sm:text-[42px] md:text-[68px]">
                 {resourcesContent.heroTitle}
               </h1>
 
