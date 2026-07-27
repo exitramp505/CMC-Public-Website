@@ -90,7 +90,7 @@ function EssentialsCopy({
 
 function ChurchEssentialsDiagram() {
   return (
-    <div className="mt-12 overflow-hidden rounded-[2.5rem] border border-slate/10 bg-[#F3E4CC] shadow-2xl shadow-black/10">
+    <div className="mt-10 overflow-hidden rounded-[1.75rem] border border-slate/10 bg-[#F3E4CC] shadow-2xl shadow-black/10 sm:mt-12 sm:rounded-[2.5rem]">
       <div className="relative hidden min-h-[760px] md:block">
         <div className="absolute left-1/2 top-1/2 h-[460px] w-[520px] -translate-x-1/2 -translate-y-[52%] scale-[1.18] lg:scale-[1.34]">
           {circleContent.map((circle) => (
@@ -161,10 +161,10 @@ export default function ModelsPage() {
         <div className="relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.05fr_.95fr] lg:items-end">
           <div>
             <div className="accent-line" />
-            <p className="mt-7 text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
+            <p className="mt-7 text-xs font-extrabold uppercase leading-5 tracking-[0.2em] text-ember sm:text-sm sm:tracking-[0.3em]">
               Church Multiplication Models
             </p>
-            <h1 className="mt-6 max-w-4xl text-[3.8rem] font-black leading-[0.86] tracking-[-0.07em] text-[#FBF0DE] sm:text-[5.2rem] lg:text-[6.5rem]">
+            <h1 className="mt-6 max-w-4xl text-[2.9rem] font-black leading-[0.92] tracking-[-0.055em] text-[#FBF0DE] sm:text-[5.2rem] sm:leading-[0.86] sm:tracking-[-0.07em] lg:text-[6.5rem]">
               Different shapes.
               <span className="block text-ember">Same center.</span>
             </h1>
@@ -189,7 +189,7 @@ export default function ModelsPage() {
               <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
                 Biblical Church Essentials
               </p>
-              <h2 className="mt-5 max-w-2xl text-[42px] font-black leading-[0.94] tracking-[-0.052em] text-ink md:text-[58px]">
+              <h2 className="mt-5 max-w-2xl text-[36px] font-black leading-[0.98] tracking-[-0.045em] text-ink sm:text-[42px] md:text-[58px]">
                 Christ at the center. Three essentials held together.
               </h2>
             </div>
@@ -209,7 +209,7 @@ export default function ModelsPage() {
             <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
               Biblical Church Marks
             </p>
-            <h2 className="mt-5 max-w-xl text-[42px] font-black leading-[0.94] tracking-[-0.052em] md:text-[60px]">
+            <h2 className="mt-5 max-w-xl text-[36px] font-black leading-[0.98] tracking-[-0.045em] sm:text-[42px] md:text-[60px]">
               Five visible marks of a biblical church.
             </h2>
             <p className="mt-7 max-w-xl text-lg font-semibold leading-8 text-[#FBF0DE]/72">
@@ -245,7 +245,7 @@ export default function ModelsPage() {
               <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
                 Church Models
               </p>
-              <h2 className="mt-5 text-[42px] font-black leading-[0.94] tracking-[-0.052em] text-ink md:text-[60px]">
+              <h2 className="mt-5 text-[36px] font-black leading-[0.98] tracking-[-0.045em] text-ink sm:text-[42px] md:text-[60px]">
                 Different forms. Shared foundation.
               </h2>
             </div>
@@ -320,12 +320,12 @@ export default function ModelsPage() {
             <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
               Choosing a model
             </p>
-            <h2 className="mt-5 text-[42px] font-black leading-[0.94] tracking-[-0.052em] text-ink md:text-[60px]">
+            <h2 className="mt-5 text-[36px] font-black leading-[0.98] tracking-[-0.045em] text-ink sm:text-[42px] md:text-[60px]">
               Discern fit—not popularity.
             </h2>
             <p className="mt-6 font-medium leading-8 text-slate">
-              The biggest or fastest model is not automatically the most
-              faithful. Begin with calling, context, and capacity.
+              Begin with calling, context, and capacity. Those realities point
+              toward the model that can serve the mission faithfully.
             </p>
           </div>
 
