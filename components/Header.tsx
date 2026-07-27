@@ -117,13 +117,13 @@ export default function Header() {
           : "border-slate/15 bg-[#FBF0DE]/55 shadow-black/10"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-4 py-3 sm:gap-4 sm:px-5 sm:py-4 lg:px-8">
         <Link
           href="/"
           aria-label="Church Multiplication Collective home"
           className="inline-flex shrink-0 rounded-xl transition hover:-translate-y-0.5"
         >
-          <LogoMark inverse />
+          <LogoMark inverse className="[&_svg]:h-10 [&_svg]:w-10 sm:[&_svg]:h-11 sm:[&_svg]:w-11" />
         </Link>
 
         <nav className="hidden items-center gap-6 lg:flex" aria-label="Main navigation">
@@ -163,13 +163,13 @@ export default function Header() {
           </Link>
         </div>
 
-        <div className="flex items-center gap-3 lg:hidden">
+        <div className="flex items-center gap-2 sm:gap-3 lg:hidden">
           <Link
             href={discoverHref}
             aria-current={pathname === discoverHref ? "page" : undefined}
-            className="button-primary inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-extrabold leading-none transition"
+            className="button-primary inline-flex min-h-11 items-center justify-center whitespace-nowrap rounded-full px-4 py-2.5 text-xs font-extrabold leading-none transition sm:min-h-12 sm:px-5 sm:py-3 sm:text-sm"
           >
-            Start Discover →
+            Start Discover <span className="hidden min-[360px]:inline">→</span>
           </Link>
 
           <button
@@ -177,7 +177,7 @@ export default function Header() {
             aria-label={open ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={open}
             onClick={() => setOpen((current) => !current)}
-            className={`inline-flex h-12 w-12 items-center justify-center rounded-full border shadow-sm transition ${
+            className={`inline-flex h-11 w-11 items-center justify-center rounded-full border shadow-sm transition sm:h-12 sm:w-12 ${
               darkBackground
                 ? "border-[#FBF0DE]/25 bg-[#151616]/45 text-[#FBF0DE] hover:bg-[#151616]/65"
                 : "border-slate/15 bg-white/60 text-slate hover:bg-white/85"
