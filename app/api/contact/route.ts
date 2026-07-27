@@ -74,9 +74,9 @@ export async function POST(request: Request) {
         from: fromAddress,
         to: [recipient],
         reply_to: email,
-        subject: `New CMC inquiry from ${firstName} ${lastName}`,
+        subject: `CMC website contact: ${firstName} ${lastName}`,
         text: [
-          "New Church Multiplication Collective inquiry",
+          "New message from the CMC website contact page",
           "",
           `Name: ${firstName} ${lastName}`,
           `Email: ${email}`,
