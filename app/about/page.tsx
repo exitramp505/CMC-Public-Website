@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Check, Church, Compass, Network, UsersRound } from "lucide-react";
 
-import CTA from "@/components/CTA";
 import teamContent from "@/content/team.json";
 
 export const metadata: Metadata = {
@@ -23,29 +23,32 @@ const leaders = teamContent.team as TeamMember[];
 const commitments = [
   {
     icon: UsersRound,
-    label: "Disciples before destinations",
+    label: "Disciple-making before launching",
     description:
-      "Multiplication begins with people following Jesus and helping others do the same—not simply launching a service.",
+      "Multiplication begins with people following Jesus and helping others do the same. A public gathering is not the starting point.",
+    iconClass: "bg-slate text-[#FBF0DE]",
   },
   {
     icon: Compass,
     label: "Discernment before deployment",
     description:
-      "We help pioneers and churches clarify calling, context, readiness, and the right next step.",
+      "We help pioneers and churches clarify calling, character, readiness, context, and the wisest next step.",
+    iconClass: "bg-ember text-ink",
   },
   {
     icon: Network,
     label: "Relationship over isolation",
     description:
-      "Leaders need coaches, sending churches, regional relationships, and a shared mission.",
+      "Healthy multiplication depends on coaches, sending churches, regional relationships, and a shared mission.",
+    iconClass: "bg-sage text-[#FBF0DE]",
   },
 ];
 
 const waysWeServe = [
-  "Introduce leaders and churches to a biblical vision for multiplication",
-  "Help pioneers discern calling, fit, readiness, and context",
-  "Help churches identify how they can cultivate, send, and support",
-  "Connect people to training, coaching, relationships, and practical next steps",
+  "Introduce a biblical vision for multiplication",
+  "Help pioneers discern calling and readiness",
+  "Help churches cultivate, send, and support",
+  "Connect leaders with training, coaching, and relationships",
 ];
 
 function PlaceholderPortrait({ name }: { name: string }) {
@@ -100,8 +103,9 @@ export default function AboutPage() {
 
           <div className="rounded-[2rem] border border-[#FBF0DE]/15 bg-[#151616]/25 p-7 backdrop-blur-sm md:p-9">
             <p className="text-xl font-bold leading-9 text-[#FBF0DE]">
-              CMC helps Open Bible pastors, pioneers, and churches move from a
-              multiplication burden to a faithful, supported next step.
+              The Church Multiplication Collective helps Open Bible pastors,
+              pioneers, and churches move from a multiplication burden to a
+              clear, supported next step.
             </p>
             <p className="mt-5 font-medium leading-8 text-[#FBF0DE]/72">
               We create a pathway for discernment, preparation, relationship,
@@ -115,18 +119,18 @@ export default function AboutPage() {
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[.8fr_1.2fr] lg:items-start">
           <div>
             <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
-              Why CMC exists
+              Why the Church Multiplication Collective exists
             </p>
             <h2 className="mt-5 text-[42px] font-black leading-[0.94] tracking-[-0.052em] text-ink md:text-[60px]">
-              A burden needs more than encouragement.
+              A calling needs more than encouragement.
             </h2>
           </div>
 
           <div className="space-y-6 text-lg font-medium leading-8 text-slate">
             <p>
-              Leaders often sense a call to something new, while churches want
-              to multiply but are unsure how to begin. CMC helps them clarify
-              the call, build the right foundations, and move forward with
+              Some leaders sense a call to begin something new. Some churches
+              want to multiply but do not know where to start. We help clarify
+              the call, build healthy foundations, and connect people with
               accountable relationships.
             </p>
             <p className="border-l-4 border-ember pl-6 font-bold text-ink">
@@ -150,12 +154,12 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-12 grid gap-5 lg:grid-cols-3">
-            {commitments.map(({ icon: Icon, label, description }) => (
+            {commitments.map(({ icon: Icon, iconClass, label, description }) => (
               <article
                 key={label}
                 className="rounded-[2rem] border border-slate/15 bg-[#FBF0DE]/75 p-8 shadow-xl shadow-black/5"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate text-[#FBF0DE]">
+                <div className={`flex h-12 w-12 items-center justify-center rounded-2xl ${iconClass}`}>
                   <Icon size={24} strokeWidth={2.2} aria-hidden="true" />
                 </div>
                 <h3 className="mt-7 text-[28px] font-black leading-[1] tracking-[-0.04em] text-ink">
@@ -174,7 +178,7 @@ export default function AboutPage() {
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-2">
           <article className="rounded-[2rem] bg-ember p-8 text-ink md:p-10">
             <p className="text-xs font-black uppercase tracking-[0.28em] text-ink/65">
-              What CMC does
+              What the Church Multiplication Collective does
             </p>
             <h2 className="mt-5 text-[38px] font-black leading-[0.95] tracking-[-0.05em] md:text-[52px]">
               We help make the next step clear.
@@ -210,9 +214,9 @@ export default function AboutPage() {
                 leaders, and multiply churches.
               </p>
               <p className="mt-6 font-medium leading-8 text-[#FBF0DE]/75">
-                That mission gives CMC its direction and keeps multiplication
-                connected to local churches, regional relationships, and
-                accountable leadership.
+                That mission guides the Church Multiplication Collective and
+                keeps multiplication connected to local churches, regional
+                relationships, and accountable leadership.
               </p>
             </div>
           </article>
@@ -224,7 +228,7 @@ export default function AboutPage() {
           <div className="text-center">
             <div className="accent-line mx-auto" />
             <p className="mt-6 text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
-              CMC Leadership
+              Church Multiplication Collective Leadership
             </p>
             <h2 className="mx-auto mt-5 max-w-4xl text-[40px] font-black leading-[0.94] tracking-[-0.052em] text-ink md:text-[64px]">
               Connected across Open Bible regions.
@@ -259,7 +263,29 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <CTA />
+      <section
+        className="bg-ink px-5 py-20 text-center text-[#FBF0DE] lg:px-8 lg:py-24"
+        data-header-theme="dark"
+      >
+        <div className="mx-auto max-w-5xl">
+          <p className="text-xs font-black uppercase tracking-[0.3em] text-ember">
+            The place to begin
+          </p>
+          <h2 className="mx-auto mt-5 text-[2.75rem] font-black leading-[0.92] tracking-[-0.065em] sm:text-[4.2rem] lg:text-[5rem]">
+            You do not need a complete plan to start exploring.
+          </h2>
+          <p className="mx-auto mt-6 max-w-3xl text-lg font-semibold leading-8 text-[#FBF0DE]/75">
+            Discover is a short online course for pioneers, pastors, churches,
+            and anyone who wants to learn more about church multiplication.
+          </p>
+          <Link
+            href="/discover"
+            className="button-primary mt-8 inline-flex min-h-12 items-center justify-center rounded-full px-6 text-sm font-black"
+          >
+            Start Discover →
+          </Link>
+        </div>
+      </section>
     </>
   );
 }
