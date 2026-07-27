@@ -53,10 +53,10 @@ export default function DiscoverPage() {
           <div className="flex items-center px-5 py-20 lg:px-16 lg:py-28 xl:pl-24">
             <div className="max-w-3xl">
               <div className="accent-line" />
-              <p className="mt-7 text-sm font-extrabold uppercase tracking-[0.32em] text-ember">
+              <p className="mt-7 text-xs font-extrabold uppercase leading-5 tracking-[0.2em] text-ember sm:text-sm sm:tracking-[0.32em]">
                 Discover · Church Multiplication 101
               </p>
-              <h1 className="mt-6 text-[4.1rem] font-black uppercase leading-[0.82] tracking-[-0.075em] text-[#FBF0DE] sm:text-[5.7rem] xl:text-[7rem]">
+              <h1 className="mt-6 text-[3.1rem] font-black uppercase leading-[0.88] tracking-[-0.06em] text-[#FBF0DE] sm:text-[5.7rem] sm:leading-[0.82] sm:tracking-[-0.075em] xl:text-[7rem]">
                 Start with
                 <span className="block text-ember">clarity.</span>
               </h1>
@@ -106,7 +106,7 @@ export default function DiscoverPage() {
               <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
                 The purpose
               </p>
-              <h2 className="mt-4 text-[42px] font-black leading-[0.94] tracking-[-0.052em] text-ink md:text-[62px]">
+              <h2 className="mt-4 text-[36px] font-black leading-[0.98] tracking-[-0.045em] text-ink sm:text-[42px] md:text-[62px]">
                 Three questions Discover helps you answer.
               </h2>
             </div>
@@ -146,14 +146,14 @@ export default function DiscoverPage() {
             <p className="mt-6 text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
               What you will explore
             </p>
-            <h2 className="mt-5 text-[42px] font-black leading-[0.94] tracking-[-0.052em] text-ink md:text-[60px]">
+            <h2 className="mt-5 text-[36px] font-black leading-[0.98] tracking-[-0.045em] text-ink sm:text-[42px] md:text-[60px]">
               A foundation for the conversations ahead.
             </h2>
             <p className="mt-6 max-w-xl font-medium leading-8 text-slate">
               You will work through an accessible online introduction to the
               biblical “why,” the people involved, the major multiplication
-              models, and the decisions that come next. The goal is not merely
-              inspiration; it is a clearer framework for a real conversation.
+              models, and the decisions that come next. You will leave with a
+              clearer framework for a real conversation about multiplication.
             </p>
           </div>
 
@@ -185,7 +185,7 @@ export default function DiscoverPage() {
             <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
               Who should begin
             </p>
-            <h2 className="mx-auto mt-4 max-w-4xl text-[42px] font-black leading-[0.94] tracking-[-0.052em] text-ink md:text-[60px]">
+            <h2 className="mx-auto mt-4 max-w-4xl text-[36px] font-black leading-[0.98] tracking-[-0.045em] text-ink sm:text-[42px] md:text-[60px]">
               One course. Two important perspectives.
             </h2>
           </div>
@@ -227,7 +227,7 @@ export default function DiscoverPage() {
             <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
               Begin Discover
             </p>
-            <h2 className="mt-5 text-[42px] font-black leading-[0.94] tracking-[-0.052em] text-[#FBF0DE] md:text-[62px]">
+            <h2 className="mt-5 text-[36px] font-black leading-[0.98] tracking-[-0.045em] text-[#FBF0DE] sm:text-[42px] md:text-[62px]">
               Ready to explore church multiplication?
             </h2>
             <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-[#FBF0DE]/82">
