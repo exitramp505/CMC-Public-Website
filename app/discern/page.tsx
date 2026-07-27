@@ -79,11 +79,11 @@ export default function DiscernPage() {
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[1.05fr_.95fr]">
           <div>
-            <p className="text-sm font-extrabold uppercase tracking-[0.34em] text-ember">
+            <p className="text-xs font-extrabold uppercase leading-5 tracking-[0.2em] text-ember sm:text-sm sm:tracking-[0.34em]">
               {discernContent.heroEyebrow}
             </p>
 
-            <h1 className="poster-type mt-6 text-[4.25rem] text-[#FBF0DE] md:text-[6rem] lg:text-[7.25rem]">
+            <h1 className="poster-type mt-6 text-[3.15rem] text-[#FBF0DE] sm:text-[4.25rem] md:text-[6rem] lg:text-[7.25rem]">
               {discernContent.heroTitle}
             </h1>
 
@@ -169,7 +169,7 @@ export default function DiscernPage() {
             What to Expect
           </p>
 
-          <h2 className="mx-auto mt-5 max-w-4xl text-[40px] font-black leading-[0.94] tracking-[-0.052em] text-ink md:text-[64px]">
+          <h2 className="mx-auto mt-5 max-w-4xl text-[36px] font-black leading-[0.98] tracking-[-0.045em] text-ink sm:text-[40px] md:text-[64px]">
             {discernContent.whatToExpectTitle}
           </h2>
 
@@ -211,7 +211,7 @@ export default function DiscernPage() {
               Evaluation Focus
             </p>
 
-            <h2 className="mx-auto mt-5 max-w-4xl text-[40px] font-black leading-[0.94] tracking-[-0.052em] text-[#FBF0DE] md:text-[64px]">
+            <h2 className="mx-auto mt-5 max-w-4xl text-[36px] font-black leading-[0.98] tracking-[-0.045em] text-[#FBF0DE] sm:text-[40px] md:text-[64px]">
               Four areas help guide the conversation.
             </h2>
 
@@ -247,7 +247,7 @@ export default function DiscernPage() {
             Ready to Begin?
           </p>
 
-          <h2 className="mx-auto mt-5 max-w-3xl text-[40px] font-black leading-[0.94] tracking-[-0.052em] text-[#FBF0DE] md:text-[64px]">
+          <h2 className="mx-auto mt-5 max-w-3xl text-[36px] font-black leading-[0.98] tracking-[-0.045em] text-[#FBF0DE] sm:text-[40px] md:text-[64px]">
             Start your Discernment Center application.
           </h2>
 
