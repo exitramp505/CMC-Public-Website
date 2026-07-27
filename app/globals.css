@@ -10,11 +10,52 @@
 
 html { scroll-behavior: smooth; }
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
 body {
   margin: 0;
   background: #FBF0DE;
   color: #151616;
   font-family: Montserrat, Arial, sans-serif;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+}
+
+main,
+section,
+article,
+aside,
+header,
+footer,
+div {
+  min-width: 0;
+}
+
+h1,
+h2,
+h3,
+p,
+a,
+button {
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 639px) {
+  body::before {
+    background-size: 36px 36px, 36px 36px, 18px 18px;
+  }
+
+  section {
+    scroll-margin-top: 5.5rem;
+  }
 }
 
 body::before {
