@@ -93,23 +93,23 @@ export default function AboutPage() {
         <div className="relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.08fr_.92fr] lg:items-end">
           <div>
             <div className="accent-line" />
-            <p className="mt-7 text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
+            <p className="mt-7 text-xs font-extrabold uppercase leading-5 tracking-[0.2em] text-ember sm:text-sm sm:tracking-[0.3em]">
               About the Church Multiplication Collective
             </p>
-            <h1 className="mt-6 max-w-4xl text-[3.6rem] font-black leading-[0.88] tracking-[-0.065em] text-[#FBF0DE] sm:text-[5rem] lg:text-[6.3rem]">
-              Multiplication is not a solo journey.
+            <h1 className="mt-6 max-w-4xl text-[2.8rem] font-black leading-[0.93] tracking-[-0.05em] text-[#FBF0DE] sm:text-[5rem] sm:leading-[0.88] sm:tracking-[-0.065em] lg:text-[6.3rem]">
+              A shared pathway for multiplying churches.
             </h1>
           </div>
 
           <div className="rounded-[2rem] border border-[#FBF0DE]/15 bg-[#151616]/25 p-7 backdrop-blur-sm md:p-9">
             <p className="text-xl font-bold leading-9 text-[#FBF0DE]">
-              The Church Multiplication Collective helps Open Bible pastors,
-              pioneers, and churches move from a multiplication burden to a
-              clear, supported next step.
+              The Church Multiplication Collective brings Open Bible pioneers,
+              pastors, and sending churches into one process for discerning,
+              preparing, and supporting new works.
             </p>
             <p className="mt-5 font-medium leading-8 text-[#FBF0DE]/72">
-              We create a pathway for discernment, preparation, relationship,
-              and action.
+              Calling is tested in community, leaders are prepared with care,
+              and churches remain connected to the people they send.
             </p>
           </div>
         </div>
@@ -121,22 +121,21 @@ export default function AboutPage() {
             <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
               Why the Church Multiplication Collective exists
             </p>
-            <h2 className="mt-5 text-[42px] font-black leading-[0.94] tracking-[-0.052em] text-ink md:text-[60px]">
-              A calling needs more than encouragement.
+            <h2 className="mt-5 text-[36px] font-black leading-[0.98] tracking-[-0.045em] text-ink sm:text-[42px] md:text-[60px]">
+              Church multiplication requires clarity and preparation.
             </h2>
           </div>
 
           <div className="space-y-6 text-lg font-medium leading-8 text-slate">
             <p>
-              Some leaders sense a call to begin something new. Some churches
-              want to multiply but do not know where to start. We help clarify
-              the call, build healthy foundations, and connect people with
-              accountable relationships.
+              A sense of calling raises practical questions: Is the leader
+              ready? What kind of church should take shape? Who will send,
+              coach, and support the work? The Church Multiplication Collective
+              helps Open Bible leaders answer those questions together.
             </p>
             <p className="border-l-4 border-ember pl-6 font-bold text-ink">
-              The goal is not activity for its own sake. The goal is faithful
-              disciples, formed leaders, multiplying churches, and communities
-              reached with the gospel.
+              We pursue faithful disciples, formed leaders, multiplying
+              churches, and communities reached with the gospel.
             </p>
           </div>
         </div>
@@ -148,7 +147,7 @@ export default function AboutPage() {
             <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
               Our convictions
             </p>
-            <h2 className="mt-5 text-[42px] font-black leading-[0.94] tracking-[-0.052em] text-ink md:text-[60px]">
+            <h2 className="mt-5 text-[36px] font-black leading-[0.98] tracking-[-0.045em] text-ink sm:text-[42px] md:text-[60px]">
               How we approach multiplication.
             </h2>
           </div>
@@ -230,7 +229,7 @@ export default function AboutPage() {
             <p className="mt-6 text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
               Church Multiplication Collective Leadership
             </p>
-            <h2 className="mx-auto mt-5 max-w-4xl text-[40px] font-black leading-[0.94] tracking-[-0.052em] text-ink md:text-[64px]">
+            <h2 className="mx-auto mt-5 max-w-4xl text-[36px] font-black leading-[0.98] tracking-[-0.045em] text-ink sm:text-[40px] md:text-[64px]">
               Connected across Open Bible regions.
             </h2>
             <p className="mx-auto mt-6 max-w-3xl text-lg font-medium leading-8 text-slate">
@@ -271,7 +270,7 @@ export default function AboutPage() {
           <p className="text-xs font-black uppercase tracking-[0.3em] text-ember">
             The place to begin
           </p>
-          <h2 className="mx-auto mt-5 text-[2.75rem] font-black leading-[0.92] tracking-[-0.065em] sm:text-[4.2rem] lg:text-[5rem]">
+          <h2 className="mx-auto mt-5 text-[2.25rem] font-black leading-[0.96] tracking-[-0.05em] sm:text-[4.2rem] sm:leading-[0.92] sm:tracking-[-0.065em] lg:text-[5rem]">
             You do not need a complete plan to start exploring.
           </h2>
           <p className="mx-auto mt-6 max-w-3xl text-lg font-semibold leading-8 text-[#FBF0DE]/75">
