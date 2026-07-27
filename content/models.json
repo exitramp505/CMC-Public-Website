@@ -1,0 +1,39 @@
+{
+  "models": [
+    {
+      "title": "Church Launch",
+      "movement": "Gather · Launch · Establish",
+      "summary": "A prepared leadership team gathers people around a shared vision and forms a visible new congregation with the support of a sending church or network.",
+      "bestSuitedFor": "A pioneer and launch team with a defined community, public-launch vision, and sending relationship.",
+      "whatStrengthensIt": "Prayer, assessment, coaching, launch planning, financial preparation, and accountable leadership."
+    },
+    {
+      "title": "Missional Church",
+      "movement": "Embed · Disciple · Form",
+      "summary": "Leaders enter the everyday life of a community, build genuine relationships, and make disciples where people already live and gather.",
+      "bestSuitedFor": "Communities where relational presence and patient disciple-making should precede a formal public gathering.",
+      "whatStrengthensIt": "Consistent presence, hospitality, spiritual rhythms, local listening, and leaders who recognize when community becomes church."
+    },
+    {
+      "title": "Micro Church",
+      "movement": "Gather · Equip · Reproduce",
+      "summary": "A simple expression of church gathers around mission, discipleship, worship, and shared life without depending on a large weekly service.",
+      "bestSuitedFor": "Homes, neighborhoods, workplaces, campuses, and other contexts where smaller reproducible communities can flourish.",
+      "whatStrengthensIt": "Simple practices, shared participation, local leadership development, relational accountability, and a clear path toward reproduction."
+    },
+    {
+      "title": "Multi-Community Church",
+      "movement": "Send · Share · Localize",
+      "summary": "One established church forms distinct communities in different neighborhoods, cultures, or ministry contexts while sharing identity and support.",
+      "bestSuitedFor": "An established church prepared to extend its mission through multiple contextualized communities rather than one centralized gathering.",
+      "whatStrengthensIt": "Shared vision, distributed leadership, clear decision rights, common resources, and meaningful local expression."
+    },
+    {
+      "title": "Church Collective",
+      "movement": "Cover · Coach · Release",
+      "summary": "Several emerging church expressions grow within a shared relational and organizational covering as leaders develop toward maturity.",
+      "bestSuitedFor": "A network of pioneers or developing communities that benefit from common covering without becoming identical expressions.",
+      "whatStrengthensIt": "Trusted relationships, coaching, theological alignment, shared accountability, adaptable support, and a clear process for releasing leaders."
+    }
+  ]
+}
