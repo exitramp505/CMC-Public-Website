@@ -114,7 +114,7 @@ export default function HomePage() {
             <p className="mt-7 max-w-full text-[0.68rem] font-black uppercase leading-5 tracking-[0.18em] text-ember sm:text-xs sm:tracking-[0.3em]">
               Church Multiplication Collective · Open Bible
             </p>
-            <h1 className="mt-5 max-w-5xl text-[3.15rem] font-black uppercase leading-[0.88] tracking-[-0.065em] text-[#FBF0DE] min-[420px]:text-[3.55rem] sm:text-[6.2rem] sm:leading-[0.82] sm:tracking-[-0.085em] lg:text-[8rem]">
+            <h1 className="mt-5 max-w-5xl text-[2.35rem] font-black uppercase leading-[0.88] tracking-[-0.065em] text-[#FBF0DE] min-[420px]:text-[3.55rem] sm:text-[6.2rem] sm:leading-[0.82] sm:tracking-[-0.085em] lg:text-[8rem]">
               From calling to multiplication.
             </h1>
             <p className="mt-7 max-w-[710px] text-lg font-bold leading-7 text-[#FBF0DE] sm:text-xl sm:leading-[1.5] md:text-2xl">
