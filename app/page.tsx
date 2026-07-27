@@ -1,152 +1,176 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Mission to Multiply",
+  title: "From Calling to Multiplication",
   description:
-    "CMC equips pastors, pioneers, and sending churches to form new works and multiply churches through a clear ministry pathway.",
+    "The Church Multiplication Collective helps pioneers, pastors, and sending churches discern calling and take faithful next steps toward multiplying disciples, leaders, and churches.",
   alternates: { canonical: "/" },
 };
+
+const audiences = [
+  {
+    title: "Pioneers",
+    description:
+      "You sense a call to form a new disciple-making community or church and need help clarifying calling, context, and readiness.",
+    tone: "bg-slate",
+    mark: "bg-[#FBF0DE]",
+  },
+  {
+    title: "Pastors",
+    description:
+      "You want to understand church multiplication, recognize potential pioneers, or explore what multiplication could mean for your church.",
+    tone: "bg-ember",
+    mark: "bg-ink",
+  },
+  {
+    title: "Sending churches",
+    description:
+      "Your church is ready to develop, release, and support leaders who can carry the gospel into new communities and contexts.",
+    tone: "bg-sage",
+    mark: "bg-[#FBF0DE]",
+  },
+];
 
 const pathwaySteps = [
   {
     number: "01",
+    label: "Start here",
     title: "Discover",
-    description: "Clarify calling, language, and the first conversation around multiplication.",
+    description:
+      "Learn the biblical foundation, shared language, models, and first questions of church multiplication.",
   },
   {
     number: "02",
     title: "Discern",
-    description: "Assess readiness, context, character, capacity, and the wisest next step.",
+    description:
+      "Clarify calling, character, capacity, context, and readiness with trusted leaders.",
   },
   {
     number: "03",
     title: "Develop",
-    description: "Form leaders, teams, practices, and disciple-making rhythms.",
+    description:
+      "Build the leader, team, practices, and plan required for a healthy new work.",
   },
   {
     number: "04",
     title: "Deploy",
-    description: "Send pioneers and churches toward faithful multiplication.",
+    description:
+      "Move into the field with sending relationships, coaching, support, and accountability.",
   },
 ];
 
-const essentials = [
-  "Make Disciples",
-  "Develop Leaders",
-  "Multiply Churches",
+const discoverAudiences = [
+  "You sense a pioneering call",
+  "You are a pastor exploring multiplication",
+  "Your church wants to become a sending church",
+  "You are interested and want to learn more",
 ];
 
-const marks = [
-  "", "ember", "", "sage", "", "", "sage", "", "ember",
-  "", "sage", "", "ember", "", "", "sage", "", "ember",
-  "sage", "", "", "ember", "", "sage", "", "", "ember",
-  "", "", "sage", "", "ember", "", "", "sage", "",
-];
+function AudienceMark({
+  tone,
+  mark,
+}: {
+  tone: string;
+  mark: string;
+}) {
+  return (
+    <span
+      aria-hidden="true"
+      className={`relative block h-[62px] w-[62px] shrink-0 rounded-[1.25rem] ${tone}`}
+    >
+      <span
+        className={`absolute left-1/2 top-1/2 h-8 w-1.5 -translate-x-1/2 -translate-y-1/2 rotate-45 rounded-full ${mark}`}
+      />
+      <span
+        className={`absolute left-1/2 top-1/2 h-8 w-1.5 -translate-x-1/2 -translate-y-1/2 -rotate-45 rounded-full ${mark}`}
+      />
+    </span>
+  );
+}
 
 export default function HomePage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-[linear-gradient(135deg,#293D48_0%,#23343D_48%,#151616_100%)] text-[#FBF0DE]">
-        <img
+      <section
+        className="relative min-h-[720px] overflow-hidden bg-slate text-[#FBF0DE]"
+        data-header-theme="dark"
+      >
+        <Image
           src="/hero-community-gathering-v3.webp"
           alt=""
-          aria-hidden="true"
-          fetchPriority="high"
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover object-[68%_center] opacity-55 grayscale lg:object-center lg:opacity-65"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[68%_center] opacity-[0.58] grayscale lg:object-center"
         />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(21,22,22,0.98)_0%,rgba(35,52,61,0.92)_45%,rgba(35,52,61,0.35)_76%,rgba(21,22,22,0.2)_100%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,rgba(21,22,22,0.46),transparent_50%)]" />
 
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(21,22,22,0.98)_0%,rgba(35,52,61,0.92)_42%,rgba(35,52,61,0.46)_72%,rgba(21,22,22,0.28)_100%)]" />
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,rgba(21,22,22,0.46)_0%,transparent_46%)]" />
-
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(234,159,67,0.16),transparent_28%),radial-gradient(circle_at_92%_72%,rgba(77,167,156,0.16),transparent_34%)]" />
-
-        <div className="pointer-events-none absolute inset-0 opacity-35 [background-image:linear-gradient(rgba(251,240,222,0.048)_1px,transparent_1px),linear-gradient(90deg,rgba(251,240,222,0.038)_1px,transparent_1px)] [background-size:42px_42px]" />
-
-        <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-40">
-          <div className="hero-light-orb hero-light-orb-one" />
-          <div className="hero-light-orb hero-light-orb-two" />
-
-          <div className="hero-mark-field">
-            {marks.map((tone, index) => (
-              <span
-                key={index}
-                className={`hero-small-mark ${tone ? `hero-small-mark-${tone}` : ""}`}
-              />
-            ))}
-          </div>
-        </div>
-
-        <div className="relative z-10 mx-auto grid min-h-[calc(100vh-79px)] max-w-7xl items-center px-5 py-20 sm:py-24 lg:min-h-[calc(88vh-79px)] lg:items-start lg:px-8 lg:pb-24 lg:pt-24 xl:pt-28">
-          <div className="max-w-[860px]">
-            <div className="h-1 w-[86px] rounded-full bg-[linear-gradient(90deg,#EA9F43,#4DA79C)]" />
-
-            <p className="mt-8 text-xs font-black uppercase tracking-[0.24em] text-[#EA9F43] sm:text-sm sm:tracking-[0.33em]">
-              A ministry pathway of Open Bible Churches
+        <div className="relative mx-auto flex min-h-[720px] max-w-7xl items-center px-5 py-20 lg:px-8 lg:py-24">
+          <div className="max-w-[800px]">
+            <div className="h-1 w-[82px] rounded-full bg-[linear-gradient(90deg,#EA9F43,#4DA79C)]" />
+            <p className="mt-7 text-xs font-black uppercase tracking-[0.25em] text-ember sm:tracking-[0.3em]">
+              Church Multiplication Collective · Open Bible
             </p>
-
-            <h1 className="mt-5 max-w-5xl text-[4.55rem] font-black uppercase leading-[0.78] tracking-[-0.095em] text-[#FBF0DE] sm:text-[6.4rem] md:text-[7.4rem] lg:text-[9.25rem] xl:text-[10.5rem]">
-              Mission to Multiply.
+            <h1 className="mt-5 max-w-5xl text-[4.25rem] font-black uppercase leading-[0.82] tracking-[-0.085em] text-[#FBF0DE] sm:text-[6.2rem] lg:text-[8rem]">
+              From calling to multiplication.
             </h1>
-
-            <p className="mt-8 max-w-[680px] text-[1.06rem] font-semibold leading-[1.55] text-[#FBF0DE]/90 sm:text-xl md:text-2xl">
-              For pastors and pioneers called to form new works and multiply churches.
+            <p className="mt-8 max-w-[710px] text-xl font-bold leading-[1.5] text-[#FBF0DE] md:text-2xl">
+              We help pioneers, pastors, and churches discern what God is
+              stirring and take a faithful next step.
             </p>
-
-            <div className="mt-9 grid gap-3 sm:flex sm:flex-wrap">
+            <p className="mt-4 max-w-[700px] font-semibold leading-8 text-[#FBF0DE]/76">
+              Clear guidance, practical preparation, and trusted relationships
+              for multiplying disciples, leaders, and churches.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/discover"
-                className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#EA9F43] px-6 text-sm font-black text-[#151616] shadow-[0_16px_34px_rgba(234,159,67,0.22)] transition hover:-translate-y-0.5 hover:brightness-105"
+                className="button-primary inline-flex min-h-12 items-center justify-center rounded-full px-6 text-sm font-black"
               >
-                Start Discover →
+                Start with Discover →
               </Link>
-
               <Link
                 href="/pathways"
-                className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#FBF0DE]/35 px-6 text-sm font-black text-[#FBF0DE] transition hover:-translate-y-0.5 hover:border-[#EA9F43]/60"
+                className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#FBF0DE]/40 px-6 text-sm font-black text-[#FBF0DE] transition hover:-translate-y-0.5 hover:border-ember"
               >
-                Explore the Pathway
+                See the pathway
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="px-5 py-16 lg:px-8 lg:py-20">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
+      <section className="px-5 py-20 lg:px-8 lg:py-28">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
           <div>
-            <p className="text-xs font-black uppercase tracking-[0.3em] text-[#EA9F43]">
-              The Pathway
+            <p className="text-xs font-black uppercase tracking-[0.3em] text-ember">
+              Who we serve
             </p>
-
-            <h2 className="mt-4 max-w-xl text-[2.65rem] font-black leading-[0.9] tracking-[-0.075em] text-[#151616] sm:text-[4rem] lg:text-[5.2rem]">
-              A clear path from burden to multiplication.
+            <h2 className="mt-5 max-w-xl text-[2.75rem] font-black leading-[0.92] tracking-[-0.065em] text-ink sm:text-[4.2rem] lg:text-[5rem]">
+              A pathway for people and churches exploring multiplication.
             </h2>
-
-            <p className="mt-6 max-w-xl text-base font-semibold leading-8 text-[#293D48] sm:text-lg">
-              The invitation is simple. The pathway gives pastors, pioneers, and sending churches a clear next step.
+            <p className="mt-7 max-w-xl text-lg font-semibold leading-8 text-slate">
+              Whether you are sensing a call, leading a church, or preparing to
+              send, you do not have to navigate the next step alone.
             </p>
           </div>
 
-          <div className="grid gap-4">
-            {pathwaySteps.map((step) => (
+          <div className="overflow-hidden rounded-[2rem] border border-slate/10 bg-slate/10">
+            {audiences.map((audience) => (
               <article
-                key={step.number}
-                className="relative grid gap-5 overflow-hidden rounded-[1.65rem] border border-[#293D48]/10 bg-white/55 p-5 shadow-[0_14px_40px_rgba(21,22,22,0.075)] sm:grid-cols-[86px_1fr] sm:items-center sm:p-6"
+                key={audience.title}
+                className="grid grid-cols-[62px_1fr] items-center gap-6 border-b border-slate/10 bg-white/55 p-6 last:border-b-0 sm:p-8"
               >
-                <div className="absolute inset-x-0 bottom-0 h-1 bg-[linear-gradient(90deg,#EA9F43,#4DA79C)] opacity-75" />
-
-                <div className="flex h-[62px] w-[62px] items-center justify-center rounded-[1.25rem] bg-[#293D48] text-lg font-black tracking-[-0.04em] text-[#FBF0DE] sm:h-[72px] sm:w-[72px] sm:text-xl">
-                  {step.number}
-                </div>
-
+                <AudienceMark tone={audience.tone} mark={audience.mark} />
                 <div>
-                  <h3 className="text-3xl font-black leading-none tracking-[-0.055em] text-[#151616]">
-                    {step.title}
+                  <h3 className="text-[1.75rem] font-black leading-none tracking-[-0.045em] text-ink">
+                    {audience.title}
                   </h3>
-
-                  <p className="mt-2 text-[0.95rem] font-semibold leading-7 text-[#293D48]">
-                    {step.description}
+                  <p className="mt-3 text-sm font-semibold leading-7 text-slate">
+                    {audience.description}
                   </p>
                 </div>
               </article>
@@ -155,173 +179,143 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-[#293D48] px-5 py-16 text-[#FBF0DE] lg:px-8 lg:py-20">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-20">
-          <div>
-            <p className="text-xs font-black uppercase tracking-[0.3em] text-[#EA9F43]">
-              Essentials
+      <section
+        className="bg-slate px-5 py-20 text-[#FBF0DE] lg:px-8 lg:py-28"
+        data-header-theme="dark"
+      >
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-end lg:gap-20">
+            <div>
+              <p className="text-xs font-black uppercase tracking-[0.3em] text-ember">
+                How we help
+              </p>
+              <h2 className="mt-5 max-w-3xl text-[2.75rem] font-black leading-[0.92] tracking-[-0.065em] sm:text-[4.2rem] lg:text-[5rem]">
+                Clarity for every stage of the journey.
+              </h2>
+            </div>
+            <p className="text-lg font-semibold leading-8 text-[#FBF0DE]/78">
+              The Church Multiplication Collective connects spiritual
+              discernment with practical preparation. Each stage has a purpose,
+              a decision, and the relationships needed to move forward wisely.
             </p>
-
-            <h2 className="mt-4 max-w-3xl text-[2.65rem] font-black leading-[0.91] tracking-[-0.075em] text-[#FBF0DE] sm:text-[4rem] lg:text-[5rem]">
-              Every model keeps the same center.
-            </h2>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-3">
-            {essentials.map((essential, index) => (
-              <div
-                key={essential}
-                className="rounded-[1.65rem] border border-[#FBF0DE]/15 bg-[#151616]/25 p-6"
+          <div className="mt-14 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {pathwaySteps.map((step, index) => (
+              <article
+                key={step.number}
+                className={`relative min-h-[280px] rounded-[1.65rem] border p-7 ${
+                  index === 0
+                    ? "border-ember/70 bg-ember/10"
+                    : "border-[#FBF0DE]/15 bg-ink/25"
+                }`}
               >
-                <strong className="block text-xs font-black uppercase tracking-[0.22em] text-[#EA9F43]">
-                  {String(index + 1).padStart(2, "0")}
-                </strong>
-
-                <span className="mt-4 block text-[1.55rem] font-black leading-none tracking-[-0.055em] text-[#FBF0DE]">
-                  {essential}
-                </span>
-              </div>
+                <p className="text-xs font-black uppercase tracking-[0.2em] text-ember">
+                  {step.number}
+                  {step.label ? ` · ${step.label}` : ""}
+                </p>
+                {index < pathwaySteps.length - 1 && (
+                  <span
+                    aria-hidden="true"
+                    className="absolute right-7 top-6 text-2xl font-bold text-sage"
+                  >
+                    →
+                  </span>
+                )}
+                <h3 className="mt-16 text-3xl font-black tracking-[-0.05em]">
+                  {step.title}
+                </h3>
+                <p className="mt-4 text-sm font-semibold leading-7 text-[#FBF0DE]/72">
+                  {step.description}
+                </p>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      <style>{`
-        .hero-light-orb {
-          position: absolute;
-          width: 420px;
-          height: 420px;
-          border-radius: 999px;
-          filter: blur(62px);
-          opacity: 0.3;
-          animation: hero-orb-float 7s ease-in-out infinite alternate;
-        }
+      <section className="bg-[#F3E4CC] px-5 py-20 lg:px-8 lg:py-28">
+        <div className="mx-auto grid max-w-7xl overflow-hidden rounded-[2.5rem] bg-[#FBF0DE] shadow-[0_28px_80px_rgba(21,22,22,0.1)] lg:grid-cols-[1fr_0.85fr]">
+          <div className="p-8 sm:p-12 lg:p-16">
+            <p className="text-xs font-black uppercase tracking-[0.3em] text-ember">
+              The place to begin
+            </p>
+            <h2 className="mt-5 text-[3rem] font-black leading-[0.92] tracking-[-0.065em] text-ink sm:text-[4.5rem]">
+              Start with Discover.
+            </h2>
+            <p className="mt-6 max-w-2xl text-lg font-semibold leading-8 text-slate">
+              Discover: Church Multiplication 101 is a short online course for
+              anyone who wants to understand church multiplication before
+              deciding what comes next.
+            </p>
+            <div className="mt-7 grid gap-3">
+              {discoverAudiences.map((item) => (
+                <div
+                  key={item}
+                  className="flex items-center gap-3 text-sm font-extrabold text-slate"
+                >
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-sage text-sm text-[#FBF0DE]">
+                    ✓
+                  </span>
+                  {item}
+                </div>
+              ))}
+            </div>
+            <Link
+              href="/discover"
+              className="button-primary mt-8 inline-flex min-h-12 items-center justify-center rounded-full px-6 text-sm font-black"
+            >
+              Learn about Discover →
+            </Link>
+          </div>
 
-        .hero-light-orb-one {
-          left: -120px;
-          bottom: -160px;
-          background: rgba(77, 167, 156, 0.42);
-        }
+          <div className="relative min-h-[430px] bg-slate lg:min-h-[560px]">
+            <Image
+              src="/discover-online-course.webp"
+              alt="A pastor taking an online course at a laptop"
+              fill
+              sizes="(min-width: 1024px) 46vw, 100vw"
+              className="object-cover opacity-75 grayscale"
+            />
+            <div className="absolute inset-x-7 bottom-7 rounded-[1.4rem] border border-[#FBF0DE]/15 bg-ink/65 p-6 text-lg font-black leading-7 text-[#FBF0DE] backdrop-blur-xl">
+              A short online course. No commitment to launch.
+            </div>
+          </div>
+        </div>
+      </section>
 
-        .hero-light-orb-two {
-          right: -160px;
-          top: 120px;
-          background: rgba(234, 159, 67, 0.34);
-          animation-duration: 8s;
-          animation-direction: alternate-reverse;
-        }
-
-        .hero-mark-field {
-          position: absolute;
-          inset: -14%;
-          display: grid;
-          grid-template-columns: repeat(9, 1fr);
-          grid-auto-rows: 118px;
-          gap: 28px;
-          transform: rotate(-3deg);
-          animation: hero-field-drift 8s ease-in-out infinite alternate;
-        }
-
-        .hero-small-mark {
-          position: relative;
-          width: 45px;
-          height: 45px;
-          margin: auto;
-          border: 2px solid rgba(251, 240, 222, 0.12);
-          border-radius: 12px;
-          opacity: 0.72;
-        }
-
-        .hero-small-mark::before,
-        .hero-small-mark::after {
-          content: "";
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          width: 3px;
-          height: 25px;
-          border-radius: 99px;
-          background: rgba(251, 240, 222, 0.16);
-          transform-origin: center;
-        }
-
-        .hero-small-mark::before {
-          transform: translate(-50%, -50%) rotate(45deg);
-        }
-
-        .hero-small-mark::after {
-          transform: translate(-50%, -50%) rotate(-45deg);
-        }
-
-        .hero-small-mark-ember {
-          border-color: rgba(234, 159, 67, 0.2);
-        }
-
-        .hero-small-mark-ember::before,
-        .hero-small-mark-ember::after {
-          background: rgba(234, 159, 67, 0.22);
-        }
-
-        .hero-small-mark-sage {
-          border-color: rgba(77, 167, 156, 0.18);
-        }
-
-        .hero-small-mark-sage::before,
-        .hero-small-mark-sage::after {
-          background: rgba(77, 167, 156, 0.2);
-        }
-
-        @keyframes hero-field-drift {
-          from {
-            transform: translate3d(0, 0, 0) rotate(-3deg);
-          }
-
-          to {
-            transform: translate3d(-38px, 30px, 0) rotate(-3deg);
-          }
-        }
-
-        @keyframes hero-orb-float {
-          from {
-            transform: translate3d(0, 0, 0) scale(1);
-          }
-
-          to {
-            transform: translate3d(42px, -34px, 0) scale(1.1);
-          }
-        }
-
-        @media (max-width: 980px) {
-          .hero-mark-field {
-            grid-template-columns: repeat(6, 1fr);
-          }
-        }
-
-        @media (max-width: 680px) {
-          .hero-mark-field {
-            inset: -24%;
-            grid-template-columns: repeat(4, 1fr);
-            grid-auto-rows: 96px;
-          }
-
-          .hero-small-mark {
-            width: 40px;
-            height: 40px;
-          }
-
-          .hero-light-orb {
-            width: 280px;
-            height: 280px;
-          }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          .hero-mark-field,
-          .hero-light-orb {
-            animation: none;
-          }
-        }
-      `}</style>
+      <section
+        className="bg-ink px-5 py-20 text-center text-[#FBF0DE] lg:px-8 lg:py-24"
+        data-header-theme="dark"
+      >
+        <div className="mx-auto max-w-5xl">
+          <p className="text-xs font-black uppercase tracking-[0.3em] text-ember">
+            Church Multiplication Collective
+          </p>
+          <h2 className="mx-auto mt-5 text-[2.75rem] font-black leading-[0.92] tracking-[-0.065em] sm:text-[4.2rem] lg:text-[5rem]">
+            You do not have to have everything figured out to begin.
+          </h2>
+          <p className="mx-auto mt-6 max-w-3xl text-lg font-semibold leading-8 text-[#FBF0DE]/75">
+            Discover is the place to start for pioneers, pastors, sending
+            churches, and anyone interested in learning more about church
+            multiplication.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Link
+              href="/discover"
+              className="button-primary inline-flex min-h-12 items-center justify-center rounded-full px-6 text-sm font-black"
+            >
+              Start Discover →
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#FBF0DE]/35 px-6 text-sm font-black text-[#FBF0DE] transition hover:-translate-y-0.5 hover:border-ember"
+            >
+              Start a conversation
+            </Link>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
