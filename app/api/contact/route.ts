@@ -68,6 +68,7 @@ export async function POST(request: Request) {
       headers: {
         Authorization: `Bearer ${resendKey}`,
         "Content-Type": "application/json",
+        "User-Agent": "cmcopenbible.netlify.app/1.0",
       },
       body: JSON.stringify({
         from: fromAddress,
