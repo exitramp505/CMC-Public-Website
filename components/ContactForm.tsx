@@ -66,7 +66,7 @@ export default function ContactForm() {
 
       <section className="px-5 py-20 lg:px-8 lg:py-28">
         <div className="mx-auto grid max-w-6xl items-start gap-14 lg:grid-cols-[.72fr_1.28fr]">
-          <aside className="lg:sticky lg:top-28">
+          <aside className="min-w-0 lg:sticky lg:top-28">
             <p className="text-xs font-black uppercase tracking-[.27em] text-ember">
               A personal response
             </p>
@@ -83,7 +83,7 @@ export default function ContactForm() {
                 ["Tell us what you are exploring", "Share your questions, ideas, or sense of calling in your own words."],
                 ["We will follow up", "A CMC leader will respond and help you consider what comes next."],
               ].map(([title, text], index) => (
-                <div className="grid grid-cols-[44px_1fr] items-center gap-4" key={title}>
+                <div className="grid min-w-0 grid-cols-[44px_minmax(0,1fr)] items-center gap-4" key={title}>
                   <span className="grid h-11 w-11 place-items-center rounded-[14px] bg-slate text-xs font-black text-sand">
                     {String(index + 1).padStart(2, "0")}
                   </span>
@@ -98,7 +98,7 @@ export default function ContactForm() {
             </div>
           </aside>
 
-          <div className="texture-card rounded-[2.25rem] p-6 shadow-[0_28px_75px_rgba(41,61,72,.1)] md:p-10">
+          <div className="texture-card min-w-0 rounded-[2.25rem] p-6 shadow-[0_28px_75px_rgba(41,61,72,.1)] md:p-10">
             {status === "success" ? (
               <div className="grid min-h-[430px] place-items-center px-4 text-center">
                 <div>
@@ -134,7 +134,7 @@ export default function ContactForm() {
 
                     <label className="grid gap-2 text-[11px] font-black uppercase tracking-[.08em] text-slate">
                       State *
-                      <select className="h-14 rounded-2xl border border-slate/20 bg-white/70 px-4 text-base font-medium normal-case tracking-normal text-ink outline-none focus:border-sage focus:ring-4 focus:ring-sage/10" name="state" required defaultValue="">
+                      <select className="h-14 w-full min-w-0 rounded-2xl border border-slate/20 bg-white/70 px-4 text-base font-medium normal-case tracking-normal text-ink outline-none focus:border-sage focus:ring-4 focus:ring-sage/10" name="state" required defaultValue="">
                         <option value="" disabled>Select your state</option>
                         {Object.entries(stateNames)
                           .sort((a, b) => a[1].localeCompare(b[1]))
@@ -146,7 +146,7 @@ export default function ContactForm() {
 
                     <label className="grid gap-2 text-[11px] font-black uppercase tracking-[.08em] text-slate md:col-span-2">
                       What would you like to explore? *
-                      <select className="h-14 rounded-2xl border border-slate/20 bg-white/70 px-4 text-base font-medium normal-case tracking-normal text-ink outline-none focus:border-sage focus:ring-4 focus:ring-sage/10" name="interest" required defaultValue="">
+                      <select className="h-14 w-full min-w-0 rounded-2xl border border-slate/20 bg-white/70 px-4 text-base font-medium normal-case tracking-normal text-ink outline-none focus:border-sage focus:ring-4 focus:ring-sage/10" name="interest" required defaultValue="">
                         <option value="" disabled>Choose the closest option</option>
                         {interests.map((interest) => <option value={interest} key={interest}>{interest}</option>)}
                       </select>
@@ -155,7 +155,7 @@ export default function ContactForm() {
                     <label className="grid gap-2 text-[11px] font-black uppercase tracking-[.08em] text-slate md:col-span-2">
                       Tell us what you are thinking *
                       <textarea
-                        className="min-h-36 resize-y rounded-2xl border border-slate/20 bg-white/70 p-4 text-base font-medium leading-6 normal-case tracking-normal text-ink outline-none focus:border-sage focus:ring-4 focus:ring-sage/10"
+                        className="min-h-36 w-full min-w-0 resize-y rounded-2xl border border-slate/20 bg-white/70 p-4 text-base font-medium leading-6 normal-case tracking-normal text-ink outline-none focus:border-sage focus:ring-4 focus:ring-sage/10"
                         name="message"
                         placeholder="Share what you are sensing, considering, or hoping to understand."
                         required
@@ -199,7 +199,7 @@ function Field({
     <label className="grid gap-2 text-[11px] font-black uppercase tracking-[.08em] text-slate">
       {label}
       <input
-        className="h-14 rounded-2xl border border-slate/20 bg-white/70 px-4 text-base font-medium normal-case tracking-normal text-ink outline-none focus:border-sage focus:ring-4 focus:ring-sage/10"
+        className="h-14 w-full min-w-0 rounded-2xl border border-slate/20 bg-white/70 px-4 text-base font-medium normal-case tracking-normal text-ink outline-none focus:border-sage focus:ring-4 focus:ring-sage/10"
         {...props}
       />
     </label>
