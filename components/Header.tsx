@@ -39,7 +39,8 @@ export default function Header() {
         window.innerWidth / 2,
         sampleY,
       );
-      let element = elements.find((item) => !header.contains(item));
+      let element: Element | null =
+        elements.find((item) => !header.contains(item)) ?? null;
       let nextDark = false;
 
       while (element && element !== document.body) {
