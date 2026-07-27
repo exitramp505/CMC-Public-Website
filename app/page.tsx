@@ -111,13 +111,13 @@ export default function HomePage() {
         <div className="relative mx-auto flex min-h-[720px] max-w-7xl items-center px-5 py-20 lg:px-8 lg:py-24">
           <div className="max-w-[800px]">
             <div className="h-1 w-[82px] rounded-full bg-[linear-gradient(90deg,#EA9F43,#4DA79C)]" />
-            <p className="mt-7 text-xs font-black uppercase tracking-[0.25em] text-ember sm:tracking-[0.3em]">
+            <p className="mt-7 max-w-full text-[0.68rem] font-black uppercase leading-5 tracking-[0.18em] text-ember sm:text-xs sm:tracking-[0.3em]">
               Church Multiplication Collective · Open Bible
             </p>
-            <h1 className="mt-5 max-w-5xl text-[4.25rem] font-black uppercase leading-[0.82] tracking-[-0.085em] text-[#FBF0DE] sm:text-[6.2rem] lg:text-[8rem]">
+            <h1 className="mt-5 max-w-5xl text-[3.15rem] font-black uppercase leading-[0.88] tracking-[-0.065em] text-[#FBF0DE] min-[420px]:text-[3.55rem] sm:text-[6.2rem] sm:leading-[0.82] sm:tracking-[-0.085em] lg:text-[8rem]">
               From calling to multiplication.
             </h1>
-            <p className="mt-8 max-w-[710px] text-xl font-bold leading-[1.5] text-[#FBF0DE] md:text-2xl">
+            <p className="mt-7 max-w-[710px] text-lg font-bold leading-7 text-[#FBF0DE] sm:text-xl sm:leading-[1.5] md:text-2xl">
               We help pioneers, pastors, and churches discern what God is
               stirring and take a faithful next step.
             </p>
@@ -125,16 +125,16 @@ export default function HomePage() {
               Clear guidance, practical preparation, and trusted relationships
               for multiplying disciples, leaders, and churches.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8 grid gap-3 sm:flex sm:flex-wrap">
               <Link
                 href="/discover"
-                className="button-primary inline-flex min-h-12 items-center justify-center rounded-full px-6 text-sm font-black"
+                className="button-primary inline-flex min-h-12 w-full items-center justify-center rounded-full px-6 text-sm font-black sm:w-auto"
               >
                 Start with Discover →
               </Link>
               <Link
                 href="/pathways"
-                className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#FBF0DE]/40 px-6 text-sm font-black text-[#FBF0DE] transition hover:-translate-y-0.5 hover:border-ember"
+                className="inline-flex min-h-12 w-full items-center justify-center rounded-full border border-[#FBF0DE]/40 px-6 text-sm font-black text-[#FBF0DE] transition hover:-translate-y-0.5 hover:border-ember sm:w-auto"
               >
                 See the pathway
               </Link>
@@ -149,7 +149,7 @@ export default function HomePage() {
             <p className="text-xs font-black uppercase tracking-[0.3em] text-ember">
               Who we serve
             </p>
-            <h2 className="mt-5 max-w-xl text-[2.75rem] font-black leading-[0.92] tracking-[-0.065em] text-ink sm:text-[4.2rem] lg:text-[5rem]">
+              <h2 className="mt-5 max-w-xl text-[2.25rem] font-black leading-[0.96] tracking-[-0.05em] text-ink sm:text-[4.2rem] sm:leading-[0.92] sm:tracking-[-0.065em] lg:text-[5rem]">
               A pathway for people and churches exploring multiplication.
             </h2>
             <p className="mt-7 max-w-xl text-lg font-semibold leading-8 text-slate">
@@ -162,7 +162,7 @@ export default function HomePage() {
             {audiences.map((audience) => (
               <article
                 key={audience.title}
-                className="grid grid-cols-[62px_1fr] items-center gap-6 border-b border-slate/10 bg-white/55 p-6 last:border-b-0 sm:p-8"
+                className="grid grid-cols-[48px_minmax(0,1fr)] items-start gap-4 border-b border-slate/10 bg-white/55 p-5 last:border-b-0 sm:grid-cols-[62px_1fr] sm:items-center sm:gap-6 sm:p-8"
               >
                 <AudienceMark tone={audience.tone} mark={audience.mark} />
                 <div>
@@ -189,7 +189,7 @@ export default function HomePage() {
               <p className="text-xs font-black uppercase tracking-[0.3em] text-ember">
                 How we help
               </p>
-              <h2 className="mt-5 max-w-3xl text-[2.75rem] font-black leading-[0.92] tracking-[-0.065em] sm:text-[4.2rem] lg:text-[5rem]">
+              <h2 className="mt-5 max-w-3xl text-[2.25rem] font-black leading-[0.96] tracking-[-0.05em] sm:text-[4.2rem] sm:leading-[0.92] sm:tracking-[-0.065em] lg:text-[5rem]">
                 Clarity for every stage of the journey.
               </h2>
             </div>
@@ -219,7 +219,8 @@ export default function HomePage() {
                     aria-hidden="true"
                     className="absolute right-7 top-6 text-2xl font-bold text-sage"
                   >
-                    →
+                    <span className="md:hidden">↓</span>
+                    <span className="hidden md:inline">→</span>
                   </span>
                 )}
                 <h3 className="mt-16 text-3xl font-black tracking-[-0.05em]">
@@ -240,7 +241,7 @@ export default function HomePage() {
             <p className="text-xs font-black uppercase tracking-[0.3em] text-ember">
               The place to begin
             </p>
-            <h2 className="mt-5 text-[3rem] font-black leading-[0.92] tracking-[-0.065em] text-ink sm:text-[4.5rem]">
+            <h2 className="mt-5 text-[2.35rem] font-black leading-[0.96] tracking-[-0.05em] text-ink sm:text-[4.5rem] sm:leading-[0.92] sm:tracking-[-0.065em]">
               Start with Discover.
             </h2>
             <p className="mt-6 max-w-2xl text-lg font-semibold leading-8 text-slate">
@@ -292,7 +293,7 @@ export default function HomePage() {
           <p className="text-xs font-black uppercase tracking-[0.3em] text-ember">
             Church Multiplication Collective
           </p>
-          <h2 className="mx-auto mt-5 text-[2.75rem] font-black leading-[0.92] tracking-[-0.065em] sm:text-[4.2rem] lg:text-[5rem]">
+          <h2 className="mx-auto mt-5 text-[2.25rem] font-black leading-[0.96] tracking-[-0.05em] sm:text-[4.2rem] sm:leading-[0.92] sm:tracking-[-0.065em] lg:text-[5rem]">
             You do not have to have everything figured out to begin.
           </h2>
           <p className="mx-auto mt-6 max-w-3xl text-lg font-semibold leading-8 text-[#FBF0DE]/75">
