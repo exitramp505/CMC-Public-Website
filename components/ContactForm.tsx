@@ -54,7 +54,7 @@ export default function ContactForm() {
           <p className="mt-6 text-xs font-black uppercase tracking-[.27em] text-ember">
             Contact the Collective
           </p>
-          <h1 className="mt-5 max-w-5xl text-[clamp(3.5rem,8vw,6.5rem)] font-black uppercase leading-[.87] tracking-[-.075em]">
+          <h1 className="mt-5 max-w-5xl text-[3rem] font-black uppercase leading-[.92] tracking-[-.06em] sm:text-[clamp(3.5rem,8vw,6.5rem)] sm:leading-[.87] sm:tracking-[-.075em]">
             Let&apos;s find your next step.
           </h1>
           <p className="mt-7 max-w-3xl text-lg font-semibold leading-8 text-sand/80 md:text-xl">
@@ -70,7 +70,7 @@ export default function ContactForm() {
             <p className="text-xs font-black uppercase tracking-[.27em] text-ember">
               A personal response
             </p>
-            <h2 className="mt-4 text-5xl font-black leading-[.94] tracking-[-.06em] md:text-6xl">
+            <h2 className="mt-4 text-4xl font-black leading-[.96] tracking-[-.05em] sm:text-5xl md:text-6xl">
               Begin the conversation.
             </h2>
             <p className="mt-6 font-semibold leading-8 text-slate">
@@ -98,7 +98,7 @@ export default function ContactForm() {
             </div>
           </aside>
 
-          <div className="texture-card min-w-0 rounded-[2.25rem] p-6 shadow-[0_28px_75px_rgba(41,61,72,.1)] md:p-10">
+          <div className="texture-card min-w-0 rounded-[1.5rem] p-4 shadow-[0_28px_75px_rgba(41,61,72,.1)] sm:rounded-[2.25rem] sm:p-6 md:p-10">
             {status === "success" ? (
               <div className="grid min-h-[430px] place-items-center px-4 text-center">
                 <div>
