@@ -1,94 +1,57 @@
 import type { Metadata } from "next";
-import {
-  Church,
-  CircleDot,
-  Compass,
-  Network,
-  UsersRound,
-} from "lucide-react";
 
 import CTA from "@/components/CTA";
+import modelsContent from "@/content/models.json";
 
 export const metadata: Metadata = {
   title: "Church Multiplication Models",
   description:
-    "Compare five church multiplication models and the biblical essentials shared by every Open Bible church expression.",
+    "Explore the biblical essentials, visible marks, and adaptable church models shared by Open Bible church expressions.",
   alternates: { canonical: "/models" },
 };
 
-const essentials = [
-  "Jesus is worshiped and obeyed",
-  "Disciples are reached and developed",
-  "Leaders are established and multiplied",
-  "Saints are assembled and equipped",
-  "Sacraments are honored and observed",
+const marks = [
+  "Jesus is worshiped and obeyed.",
+  "Disciples are reached and developed.",
+  "Leaders are established and multiplied.",
+  "Saints are assembled and equipped.",
+  "Sacraments are honored and observed.",
 ];
 
-const models = [
+const markerStyles = [
+  "bg-slate text-[#FBF0DE] shadow-[7px_7px_0_rgba(234,159,67,.35)]",
+  "bg-ember text-ink shadow-[7px_7px_0_rgba(41,61,72,.22)]",
+  "bg-sage text-ink shadow-[7px_7px_0_rgba(41,61,72,.22)]",
+];
+
+const circleContent = [
   {
-    number: "01",
-    title: "Church Launch",
-    short: "Public launch",
-    movement: "Gather · Launch · Establish",
-    icon: Church,
-    summary:
-      "A prepared team gathers people and establishes a visible new congregation in a community.",
-    ledBy: "A pioneer and launch team",
-    bestWhen: "Public leadership and a clear gathering strategy are present.",
-    requires: "A sending church, location, launch plan, and sustained follow-up.",
-    panel: "bg-ember text-ink",
+    title: "Missional community",
+    lines: ["Worships Jesus", "Makes Disciples", "Expands Kingdom"],
+    className:
+      "left-[120px] top-0 bg-sage/80 text-[#FBF0DE]",
+    copyClassName:
+      "left-1/2 top-[38px] w-[210px] -translate-x-1/2",
   },
   {
-    number: "02",
-    title: "Missional Church",
-    short: "Embedded presence",
-    movement: "Embed · Disciple · Form",
-    icon: Compass,
-    summary:
-      "Leaders live deeply within a community, making disciples and forming church through everyday relationships.",
-    ledBy: "A pioneer or embedded team",
-    bestWhen: "Trust must be built slowly within a distinct community or culture.",
-    requires: "Patience, local presence, relational credibility, and disciple-making rhythms.",
-    panel: "bg-sage text-[#FBF0DE]",
+    title: "Qualified leadership",
+    lines: ["Biblically Trained", "Spirit Appointed", "Elder Recognized"],
+    className:
+      "bottom-[8px] left-[20px] bg-ember/80 text-ink",
+    copyClassName:
+      "bottom-[78px] left-[6px] w-[180px]",
   },
   {
-    number: "03",
-    title: "Micro Church",
-    short: "Reproducible communities",
-    movement: "Gather · Equip · Reproduce",
-    icon: CircleDot,
-    summary:
-      "Small, simple gatherings develop local leaders and reproduce without depending on a large weekly service.",
-    ledBy: "Pioneers and local leaders",
-    bestWhen: "Simple communities can form and multiply naturally.",
-    requires: "Reproducible practices, trained leaders, accountability, and clear doctrine.",
-    panel: "bg-slate text-[#FBF0DE]",
-  },
-  {
-    number: "04",
-    title: "Multi-Community Church",
-    short: "One church, many communities",
-    movement: "Send · Share · Localize",
-    icon: UsersRound,
-    summary:
-      "One established church forms distinct worshiping communities that share mission, leadership, and resources.",
-    ledBy: "An established sending church",
-    bestWhen: "A church has capacity to reach distinct communities without forcing uniformity.",
-    requires: "A leadership pipeline, shared governance, resources, and local ownership.",
-    panel: "bg-sage text-[#FBF0DE]",
-  },
-  {
-    number: "05",
-    title: "Church Collective",
-    short: "Incubator and covering",
-    movement: "Cover · Coach · Release",
-    icon: Network,
-    summary:
-      "A relational covering helps emerging churches and ministry communities develop before adopting a traditional structure.",
-    ledBy: "A network, covering, or leadership team",
-    bestWhen: "Fruit is emerging, but leadership and structure are still forming.",
-    requires: "Coaching, covering, discernment, accountability, and time.",
-    panel: "bg-ember text-ink",
+    title: "Relational connection",
+    lines: [
+      "Desires Accountability",
+      "Embraces Network",
+      "Honors Commitment",
+    ],
+    className:
+      "bottom-[8px] right-[20px] bg-slate/80 text-[#FBF0DE]",
+    copyClassName:
+      "bottom-[75px] right-[4px] w-[184px]",
   },
 ];
 
@@ -99,231 +62,102 @@ const discernmentQuestions = [
   "Which form can reproduce disciples, leaders, and churches here?",
 ];
 
+function EssentialsCopy({
+  title,
+  lines,
+  className,
+}: {
+  title: string;
+  lines: string[];
+  className: string;
+}) {
+  return (
+    <div className={`absolute z-[2] text-center ${className}`}>
+      <p className="text-[20px] font-black capitalize leading-none tracking-[-.03em] first:[&]:text-[20px]">
+        {title}
+      </p>
+      <div className="mx-auto mt-[9px] h-0.5 w-[72%] bg-current opacity-60" />
+      <p className="mt-[7px] text-[10.5px] font-extrabold leading-[1.42] opacity-85">
+        {lines.map((line) => (
+          <span key={line} className="block">
+            {line}
+          </span>
+        ))}
+      </p>
+    </div>
+  );
+}
+
 function ChurchEssentialsDiagram() {
   return (
-    <div className="mt-14 overflow-hidden rounded-[2.5rem] border border-slate/10 bg-[#F3E4CC] p-4 shadow-2xl shadow-black/10 md:p-8">
-      <svg
-        viewBox="0 0 1000 875"
-        className="hidden h-auto w-full md:block"
-        role="img"
-        aria-label="Christ-centered church essentials diagram showing missional community, qualified leadership, and relational connection converging in Christ and producing five shared marks of a church"
-      >
-        <defs>
-          <filter id="essentialsShadow" x="-30%" y="-30%" width="160%" height="160%">
-            <feDropShadow dx="0" dy="14" stdDeviation="18" floodColor="#151616" floodOpacity=".15" />
-          </filter>
-          <marker
-            id="arrowHead"
-            markerWidth="12"
-            markerHeight="12"
-            refX="6"
-            refY="6"
-            orient="auto"
-          >
-            <path d="M0,0 L12,6 L0,12 Z" fill="#293D48" />
-          </marker>
-        </defs>
-
-        <text
-          x="500"
-          y="48"
-          textAnchor="middle"
-          fill="#151616"
-          fontFamily="Montserrat, Arial, sans-serif"
-          fontSize="25"
-          fontWeight="900"
-          letterSpacing="4"
-        >
-          THREE REALITIES CONVERGE
-        </text>
-
-        <circle cx="500" cy="260" r="220" fill="#4DA79C" fillOpacity=".70" stroke="#4DA79C" strokeWidth="8" />
-        <circle cx="337" cy="455" r="220" fill="#EA9F43" fillOpacity=".70" stroke="#EA9F43" strokeWidth="8" />
-        <circle cx="663" cy="455" r="220" fill="#293D48" fillOpacity=".63" stroke="#293D48" strokeWidth="8" />
-
-        <g fontFamily="Montserrat, Arial, sans-serif" textAnchor="middle">
-          <text x="500" y="135" fill="#151616" fontSize="29" fontWeight="900">
-            MISSIONAL COMMUNITY
-          </text>
-          <text x="500" y="170" fill="#151616" fontSize="18" fontWeight="700">
-            Worship · Disciples · Kingdom
-          </text>
-
-          <text x="300" y="555" fill="#151616" fontSize="27" fontWeight="900">
-            QUALIFIED
-          </text>
-          <text x="300" y="588" fill="#151616" fontSize="27" fontWeight="900">
-            LEADERSHIP
-          </text>
-          <text x="300" y="620" fill="#151616" fontSize="16" fontWeight="700">
-            Trained · Appointed · Recognized
-          </text>
-
-          <text x="700" y="555" fill="#FBF0DE" fontSize="27" fontWeight="900">
-            RELATIONAL
-          </text>
-          <text x="700" y="588" fill="#FBF0DE" fontSize="27" fontWeight="900">
-            CONNECTION
-          </text>
-          <text x="700" y="620" fill="#FBF0DE" fontSize="16" fontWeight="700">
-            Accountable · Networked · Committed
-          </text>
-        </g>
-
-        <g filter="url(#essentialsShadow)">
-          <circle cx="500" cy="390" r="118" fill="#151616" stroke="#FBF0DE" strokeWidth="10" />
-        </g>
-        <g
-          fill="#FBF0DE"
-          fontFamily="Montserrat, Arial, sans-serif"
-          textAnchor="middle"
-          fontWeight="900"
-        >
-          <text x="500" y="372" fontSize="24" letterSpacing="4">
-            CHRIST
-          </text>
-          <text x="500" y="411" fontSize="34">
-            CENTERED
-          </text>
-          <text x="500" y="446" fill="#EA9F43" fontSize="17" letterSpacing="2">
-            THE SHARED CENTER
-          </text>
-        </g>
-
-        <line
-          x1="500"
-          y1="535"
-          x2="500"
-          y2="692"
-          stroke="#293D48"
-          strokeWidth="7"
-          markerEnd="url(#arrowHead)"
-        />
-
-        <text
-          x="500"
-          y="740"
-          textAnchor="middle"
-          fill="#151616"
-          fontFamily="Montserrat, Arial, sans-serif"
-          fontSize="23"
-          fontWeight="900"
-          letterSpacing="3"
-        >
-          PRODUCES A RECOGNIZABLE CHURCH
-        </text>
-
-        {[
-          ["Jesus", "worshiped"],
-          ["Disciples", "developed"],
-          ["Leaders", "multiplied"],
-          ["Saints", "equipped"],
-          ["Sacraments", "honored"],
-        ].map(([top, bottom], index) => {
-          const x = 28 + index * 192;
-          return (
-            <g key={top}>
-              <rect
-                x={x}
-                y="770"
-                width="176"
-                height="72"
-                rx="20"
-                fill={index % 2 === 0 ? "#293D48" : "#FBF0DE"}
-                stroke="#293D48"
-                strokeOpacity=".18"
-                strokeWidth="2"
+    <div className="mt-12 overflow-hidden rounded-[2.5rem] border border-slate/10 bg-[#F3E4CC] shadow-2xl shadow-black/10">
+      <div className="relative hidden min-h-[760px] md:block">
+        <div className="absolute left-1/2 top-1/2 h-[460px] w-[520px] -translate-x-1/2 -translate-y-[52%] scale-[1.18] lg:scale-[1.34]">
+          {circleContent.map((circle) => (
+            <div
+              key={circle.title}
+              className={`absolute h-[280px] w-[280px] rounded-full border-[5px] border-[#FBF0DE]/80 shadow-[0_18px_45px_rgba(21,22,22,.09)] ${circle.className}`}
+            >
+              <EssentialsCopy
+                title={circle.title}
+                lines={circle.lines}
+                className={circle.copyClassName}
               />
-              <text
-                x={x + 88}
-                y="800"
-                textAnchor="middle"
-                fill={index % 2 === 0 ? "#FBF0DE" : "#151616"}
-                fontFamily="Montserrat, Arial, sans-serif"
-                fontSize="18"
-                fontWeight="900"
-              >
-                {top}
-              </text>
-              <text
-                x={x + 88}
-                y="825"
-                textAnchor="middle"
-                fill={index % 2 === 0 ? "#EA9F43" : "#4DA79C"}
-                fontFamily="Montserrat, Arial, sans-serif"
-                fontSize="16"
-                fontWeight="800"
-              >
-                {bottom}
-              </text>
-            </g>
-          );
-        })}
-      </svg>
+            </div>
+          ))}
 
-      <div className="md:hidden">
-        <p className="text-center text-xs font-black uppercase tracking-[0.24em] text-slate">
-          Three realities converge
-        </p>
-
-        <div className="relative mx-auto mt-7 flex h-44 w-44 items-center justify-center rounded-full border-8 border-[#FBF0DE] bg-slate text-center text-[#FBF0DE] shadow-2xl shadow-black/20">
-          <div className="absolute -inset-4 rounded-full border border-dashed border-ember" />
-          <div>
-            <p className="text-xs font-black uppercase tracking-[0.2em] text-ember">
+          <div className="absolute left-1/2 top-[52%] z-[4] grid h-[154px] w-[154px] -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border-[7px] border-[#FBF0DE] bg-slate text-center text-[#FBF0DE] shadow-[0_20px_55px_rgba(21,22,22,.24)]">
+            <div className="absolute -inset-[15px] rounded-full border-2 border-dashed border-ember/70" />
+            <p className="text-[22px] font-black uppercase leading-[.98]">
               Christ
-            </p>
-            <p className="mt-1 text-2xl font-black uppercase leading-none">
-              Centered
+              <br />
+              centered
             </p>
           </div>
         </div>
+      </div>
 
-        <div className="mx-auto h-8 w-px bg-slate/35" />
-
-        <div className="grid gap-3">
-          {[
-            ["bg-sage text-[#FBF0DE]", "Missional community", "Worship · Disciples · Kingdom"],
-            ["bg-ember text-ink", "Qualified leadership", "Trained · Appointed · Recognized"],
-            ["bg-slate text-[#FBF0DE]", "Relational connection", "Accountable · Networked · Committed"],
-          ].map(([color, title, detail]) => (
-            <div key={title} className={`rounded-[1.5rem] p-5 text-center ${color}`}>
-              <p className="text-lg font-black uppercase tracking-[-0.03em]">
-                {title}
-              </p>
-              <p className="mt-2 text-xs font-bold opacity-75">{detail}</p>
-            </div>
-          ))}
+      <div className="grid gap-3 p-5 md:hidden">
+        <div className="relative mx-auto mb-3 grid h-44 w-44 place-items-center rounded-full border-8 border-[#FBF0DE] bg-slate text-center text-[#FBF0DE] shadow-2xl shadow-black/20">
+          <div className="absolute -inset-4 rounded-full border-2 border-dashed border-ember/70" />
+          <p className="text-2xl font-black uppercase leading-none">
+            Christ
+            <br />
+            centered
+          </p>
         </div>
-
-        <div className="mx-auto h-8 w-px bg-slate/35" />
-        <p className="text-center text-xs font-black uppercase tracking-[0.2em] text-slate">
-          Produces a recognizable church
-        </p>
-        <div className="mt-4 grid grid-cols-2 gap-2">
-          {essentials.map((item, index) => (
-            <div
-              key={item}
-              className={`rounded-2xl px-4 py-4 text-center text-xs font-black ${
-                index % 2 === 0
-                  ? "bg-slate text-[#FBF0DE]"
-                  : "bg-[#FBF0DE] text-ink"
-              }`}
-            >
-              {item}
-            </div>
-          ))}
-        </div>
+        {circleContent.map((circle) => (
+          <div
+            key={circle.title}
+            className={`rounded-[1.5rem] p-5 text-center ${
+              circle.title === "Missional community"
+                ? "bg-sage text-[#FBF0DE]"
+                : circle.title === "Qualified leadership"
+                  ? "bg-ember text-ink"
+                  : "bg-slate text-[#FBF0DE]"
+            }`}
+          >
+            <p className="text-xl font-black capitalize leading-none">
+              {circle.title}
+            </p>
+            <div className="mx-auto mt-3 h-0.5 w-32 bg-current opacity-50" />
+            <p className="mt-3 text-xs font-extrabold leading-5 opacity-85">
+              {circle.lines.join(" · ")}
+            </p>
+          </div>
+        ))}
       </div>
     </div>
   );
 }
 
 export default function ModelsPage() {
+  const models = modelsContent.models;
+
   return (
     <>
       <section className="brand-panel relative overflow-hidden px-5 py-20 lg:px-8 lg:py-28">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(234,159,67,0.2),transparent_30%),radial-gradient(circle_at_88%_82%,rgba(77,167,156,0.18),transparent_32%)]" />
-
         <div className="relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.05fr_.95fr] lg:items-end">
           <div>
             <div className="accent-line" />
@@ -335,131 +169,147 @@ export default function ModelsPage() {
               <span className="block text-ember">Same center.</span>
             </h1>
           </div>
-
           <div className="rounded-[2rem] border border-[#FBF0DE]/15 bg-[#151616]/25 p-7 backdrop-blur-sm md:p-9">
             <p className="text-xl font-bold leading-9 text-[#FBF0DE]">
-              Context changes the shape of a church—not its biblical center.
+              Every faithful expression begins with the same biblical
+              essentials.
             </p>
-            <p className="mt-5 font-medium leading-8 text-[#FBF0DE]/72">
-              These five models give pioneers and churches practical language
-              for discerning what God may be forming.
+            <p className="mt-5 font-medium leading-8 text-[#FBF0DE]/75">
+              Context may shape how a church gathers and multiplies, but it
+              does not change the center or the marks of a biblical church.
             </p>
-            <div className="mt-7 flex items-center gap-4 border-t border-[#FBF0DE]/15 pt-6">
-              <span className="text-5xl font-black tracking-[-0.07em] text-ember">
-                5
-              </span>
-              <span className="text-sm font-extrabold uppercase tracking-[0.2em] text-[#FBF0DE]/70">
-                models
-                <br />
-                one mission
-              </span>
-            </div>
           </div>
         </div>
       </section>
 
-      <section className="px-5 py-20 lg:px-8 lg:py-24">
+      <section className="px-5 pb-10 pt-20 lg:px-8 lg:pb-10 lg:pt-24">
         <div className="mx-auto max-w-6xl">
-          <div className="grid gap-8 lg:grid-cols-[.78fr_1.22fr] lg:items-end">
+          <div className="grid gap-8 lg:grid-cols-[1.08fr_.92fr] lg:items-end">
             <div>
               <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
-                The essentials
+                Biblical Church Essentials
               </p>
-              <h2 className="mt-5 text-[42px] font-black leading-[0.94] tracking-[-0.052em] text-ink md:text-[60px]">
-                Shape can flex. The center cannot.
+              <h2 className="mt-5 max-w-2xl text-[42px] font-black leading-[0.94] tracking-[-0.052em] text-ink md:text-[58px]">
+                Christ at the center. Three essentials held together.
               </h2>
             </div>
-            <p className="max-w-2xl text-lg font-medium leading-8 text-slate">
-              Every model must remain Christ-centered, led well, and
-              relationally connected.
+            <p className="max-w-2xl text-lg font-semibold leading-8 text-slate">
+              These essentials describe the biblical foundation of a church.
+              They belong together and provide the foundation from which every
+              faithful church expression can grow.
             </p>
           </div>
-
           <ChurchEssentialsDiagram />
         </div>
       </section>
 
-      <section className="bg-[#F3E4CC] px-5 py-20 lg:px-8 lg:py-24">
-        <div className="mx-auto max-w-6xl">
-          <div className="max-w-4xl">
+      <section className="bg-slate px-5 py-20 text-[#FBF0DE] lg:px-8 lg:py-24">
+        <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[.82fr_1.18fr] lg:gap-20">
+          <div>
             <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
-              Compare the models
+              Biblical Church Marks
             </p>
-            <h2 className="mt-5 text-[42px] font-black leading-[0.94] tracking-[-0.052em] text-ink md:text-[60px]">
-              Five ways multiplication can take shape.
+            <h2 className="mt-5 max-w-xl text-[42px] font-black leading-[0.94] tracking-[-0.052em] md:text-[60px]">
+              Five visible marks of a biblical church.
             </h2>
-            <p className="mt-6 max-w-3xl text-lg font-medium leading-8 text-slate">
-              A model is a starting framework—not a formula. The right one
-              fits the people, place, leader, and sending capacity.
+            <p className="mt-7 max-w-xl text-lg font-semibold leading-8 text-[#FBF0DE]/72">
+              When Christ remains at the center and the three essentials are
+              held together, these marks become visible in the worship,
+              discipleship, leadership, shared life, and practices of the
+              church.
             </p>
           </div>
 
-          <div className="mt-14 grid gap-6">
-            {models.map((model) => {
-              const Icon = model.icon;
+          <div className="border-t border-[#FBF0DE]/20">
+            {marks.map((mark, index) => (
+              <div
+                key={mark}
+                className="grid min-h-[105px] grid-cols-[52px_1fr] items-center gap-5 border-b border-[#FBF0DE]/20 py-5"
+              >
+                <span className="grid h-11 w-11 place-items-center rounded-full border-2 border-ember/70 text-[11px] font-black tracking-[.12em] text-ember">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <p className="text-[22px] font-black leading-[1.13]">
+                  {mark}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-              return (
-                <article
-                  key={model.title}
-                  className="overflow-hidden rounded-[2rem] border border-slate/10 bg-[#FBF0DE] shadow-[0_22px_55px_rgba(21,22,22,0.10)]"
-                >
-                  <div className="grid lg:grid-cols-[.7fr_1.3fr]">
-                    <div className={`relative overflow-hidden p-7 md:p-9 ${model.panel}`}>
-                      <span className="pointer-events-none absolute -bottom-12 -right-4 text-[12rem] font-black leading-none tracking-[-0.1em] opacity-[0.09]">
-                        {model.number}
-                      </span>
-                      <div className="flex items-start justify-between gap-5">
-                        <span className="text-5xl font-black tracking-[-0.07em] opacity-35">
-                          {model.number}
-                        </span>
-                        <span className="flex h-12 w-12 items-center justify-center rounded-2xl border border-current/20 bg-[#FBF0DE]/15">
-                          <Icon size={24} strokeWidth={2.2} aria-hidden="true" />
-                        </span>
-                      </div>
-                      <p className="relative mt-7 text-xs font-black uppercase tracking-[0.24em] opacity-65">
-                        {model.short}
-                      </p>
-                      <h3 className="relative mt-3 text-[36px] font-black leading-[0.94] tracking-[-0.05em] md:text-[48px]">
-                        {model.title}
-                      </h3>
-                      <p className="relative mt-5 font-medium leading-7 opacity-80">
-                        {model.summary}
-                      </p>
-                      <p className="relative mt-7 border-t border-current/20 pt-5 text-xs font-black uppercase tracking-[0.18em]">
-                        {model.movement}
-                      </p>
-                    </div>
+      <section className="bg-[radial-gradient(circle_at_92%_8%,rgba(77,167,156,.13),transparent_25%),radial-gradient(circle_at_8%_92%,rgba(234,159,67,.14),transparent_25%)] px-5 py-20 lg:px-8 lg:py-24">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid gap-8 lg:grid-cols-[.9fr_1.1fr] lg:items-end">
+            <div>
+              <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
+                Church Models
+              </p>
+              <h2 className="mt-5 text-[42px] font-black leading-[0.94] tracking-[-0.052em] text-ink md:text-[60px]">
+                Different forms. Shared foundation.
+              </h2>
+            </div>
+            <p className="text-lg font-semibold leading-8 text-slate">
+              The essentials and marks remain consistent, but a church can
+              take different forms depending on its mission, context,
+              leadership, and stage of development. This collection can grow
+              as additional models emerge.
+            </p>
+          </div>
 
-                    <div className="grid gap-px bg-slate/10 sm:grid-cols-3">
-                      <div className="bg-[#FBF0DE] p-6 md:p-8">
-                        <p className="text-xs font-black uppercase tracking-[0.2em] text-ember">
-                          Usually led by
-                        </p>
-                        <p className="mt-4 font-bold leading-7 text-slate">
-                          {model.ledBy}
-                        </p>
-                      </div>
-                      <div className="bg-[#FBF0DE] p-6 md:p-8">
-                        <p className="text-xs font-black uppercase tracking-[0.2em] text-ember">
-                          Best when
-                        </p>
-                        <p className="mt-4 font-bold leading-7 text-slate">
-                          {model.bestWhen}
-                        </p>
-                      </div>
-                      <div className="bg-[#FBF0DE] p-6 md:p-8">
-                        <p className="text-xs font-black uppercase tracking-[0.2em] text-ember">
-                          Requires
-                        </p>
-                        <p className="mt-4 font-bold leading-7 text-slate">
-                          {model.requires}
-                        </p>
-                      </div>
-                    </div>
+          <div className="mt-14 grid gap-4">
+            {models.map((model, index) => (
+              <details
+                key={`${model.title}-${index}`}
+                className="group overflow-hidden rounded-[1.8rem] border border-slate/15 bg-[#FBF0DE]/85 shadow-[0_14px_34px_rgba(21,22,22,.06)] transition duration-200 hover:-translate-y-1 hover:border-ember/65 hover:shadow-[0_22px_46px_rgba(21,22,22,.11)] open:border-ember/65 open:shadow-[0_22px_46px_rgba(21,22,22,.11)]"
+              >
+                <summary className="grid min-h-[150px] cursor-pointer list-none grid-cols-[58px_1fr] items-center gap-x-5 gap-y-2 p-5 text-left marker:content-none sm:grid-cols-[76px_1fr_44px] sm:p-7 lg:min-h-[190px] lg:grid-cols-[86px_minmax(220px,.75fr)_1.25fr_44px] lg:gap-x-8 lg:px-9 [&::-webkit-details-marker]:hidden">
+                  <span
+                    className={`row-span-2 grid h-[54px] w-[54px] place-items-center rounded-[17px] text-sm font-black sm:h-[68px] sm:w-[68px] sm:rounded-[21px] sm:text-lg ${markerStyles[index % markerStyles.length]}`}
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  <span className="self-end text-[25px] font-black leading-[.98] tracking-[-.035em] text-ink sm:text-[30px] lg:self-center">
+                    {model.title}
+                  </span>
+
+                  <span className="col-start-2 text-[10px] font-black uppercase tracking-[.12em] text-ember lg:self-start">
+                    {model.movement}
+                  </span>
+
+                  <span className="col-span-2 mt-3 font-semibold leading-7 text-slate sm:col-span-1 sm:col-start-2 lg:col-start-3 lg:row-span-2 lg:row-start-1 lg:mt-0">
+                    {model.summary}
+                  </span>
+
+                  <span
+                    aria-hidden="true"
+                    className="col-start-2 row-start-4 ml-auto grid h-10 w-10 place-items-center rounded-full border-2 border-slate/20 text-2xl leading-none text-slate transition group-open:rotate-45 group-open:bg-slate group-open:text-[#FBF0DE] sm:col-start-3 sm:row-span-2 sm:row-start-1 sm:ml-0 lg:col-start-4"
+                  >
+                    +
+                  </span>
+                </summary>
+
+                <div className="mx-5 mb-5 grid gap-4 border-t border-slate/15 pt-6 sm:mx-7 sm:mb-7 sm:grid-cols-2 lg:ml-[152px] lg:mr-9">
+                  <div className="rounded-[1.25rem] bg-[#F3E4CC]/75 p-5">
+                    <p className="text-[11px] font-black uppercase tracking-[.13em] text-ember">
+                      Best suited for
+                    </p>
+                    <p className="mt-2 text-sm font-semibold leading-6 text-slate">
+                      {model.bestSuitedFor}
+                    </p>
                   </div>
-                </article>
-              );
-            })}
+                  <div className="rounded-[1.25rem] bg-[#F3E4CC]/75 p-5">
+                    <p className="text-[11px] font-black uppercase tracking-[.13em] text-ember">
+                      What strengthens it
+                    </p>
+                    <p className="mt-2 text-sm font-semibold leading-6 text-slate">
+                      {model.whatStrengthensIt}
+                    </p>
+                  </div>
+                </div>
+              </details>
+            ))}
           </div>
         </div>
       </section>
@@ -488,7 +338,9 @@ export default function ModelsPage() {
                 <span className="text-sm font-black text-ember">
                   0{index + 1}
                 </span>
-                <p className="mt-3 font-bold leading-7 text-slate">{question}</p>
+                <p className="mt-3 font-bold leading-7 text-slate">
+                  {question}
+                </p>
               </div>
             ))}
           </div>
