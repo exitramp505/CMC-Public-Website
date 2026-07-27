@@ -95,10 +95,10 @@ export default function PathwaysPage() {
         <div className="relative mx-auto flex min-h-[700px] max-w-7xl items-center px-5 py-20 lg:px-8 lg:py-24">
           <div className="max-w-[850px]">
             <div className="h-1 w-[82px] rounded-full bg-[linear-gradient(90deg,#EA9F43,#4DA79C)]" />
-            <p className="mt-7 text-xs font-black uppercase tracking-[0.28em] text-ember">
+            <p className="mt-7 text-[0.68rem] font-black uppercase leading-5 tracking-[0.18em] text-ember sm:text-xs sm:tracking-[0.28em]">
               The Church Multiplication Collective pathway
             </p>
-            <h1 className="mt-5 text-[4.1rem] font-black uppercase leading-[0.84] tracking-[-0.08em] text-[#FBF0DE] sm:text-[6rem] lg:text-[7.4rem]">
+            <h1 className="mt-5 text-[3rem] font-black uppercase leading-[0.9] tracking-[-0.06em] text-[#FBF0DE] min-[420px]:text-[3.4rem] sm:text-[6rem] sm:leading-[0.84] sm:tracking-[-0.08em] lg:text-[7.4rem]">
               A clear path from calling to sending.
             </h1>
             <p className="mt-8 max-w-[710px] text-xl font-bold leading-[1.5] md:text-2xl">
@@ -109,16 +109,16 @@ export default function PathwaysPage() {
               Discover the vision. Discern the calling. Develop what is needed.
               Deploy with support.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8 grid gap-3 sm:flex sm:flex-wrap">
               <Link
                 href="/discover"
-                className="button-primary inline-flex min-h-12 items-center justify-center rounded-full px-6 text-sm font-black"
+                className="button-primary inline-flex min-h-12 w-full items-center justify-center rounded-full px-6 text-sm font-black sm:w-auto"
               >
                 Start with Discover →
               </Link>
               <a
                 href="#journey"
-                className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#FBF0DE]/40 px-6 text-sm font-black text-[#FBF0DE] transition hover:-translate-y-0.5 hover:border-ember"
+                className="inline-flex min-h-12 w-full items-center justify-center rounded-full border border-[#FBF0DE]/40 px-6 text-sm font-black text-[#FBF0DE] transition hover:-translate-y-0.5 hover:border-ember sm:w-auto"
               >
                 See all four stages
               </a>
@@ -134,7 +134,7 @@ export default function PathwaysPage() {
               <p className="text-xs font-black uppercase tracking-[0.3em] text-ember">
                 Two roles in the journey
               </p>
-              <h2 className="mt-5 text-[2.75rem] font-black leading-[0.92] tracking-[-0.065em] text-ink sm:text-[4.2rem] lg:text-[5rem]">
+              <h2 className="mt-5 text-[2.3rem] font-black leading-[0.96] tracking-[-0.05em] text-ink sm:text-[4.2rem] sm:leading-[0.92] sm:tracking-[-0.065em] lg:text-[5rem]">
                 Are you pioneering or preparing to send?
               </h2>
             </div>
@@ -195,7 +195,7 @@ export default function PathwaysPage() {
               <p className="text-xs font-black uppercase tracking-[0.3em] text-ember">
                 The pathway
               </p>
-              <h2 className="mt-5 text-[2.75rem] font-black leading-[0.92] tracking-[-0.065em] text-ink sm:text-[4.2rem] lg:text-[5rem]">
+              <h2 className="mt-5 text-[2.3rem] font-black leading-[0.96] tracking-[-0.05em] text-ink sm:text-[4.2rem] sm:leading-[0.92] sm:tracking-[-0.065em] lg:text-[5rem]">
                 Each stage answers a different question.
               </h2>
             </div>
@@ -227,15 +227,15 @@ export default function PathwaysPage() {
                   key={stage.number}
                   className="relative grid gap-4 md:grid-cols-[104px_0.78fr_1.22fr] md:gap-6"
                 >
-                  <div className="relative z-10 flex h-[104px] w-[104px] items-center justify-center rounded-[1.9rem] border-[10px] border-[#F3E4CC] bg-slate text-3xl font-black text-[#FBF0DE]">
+                  <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-[1.25rem] border-[6px] border-[#F3E4CC] bg-slate text-xl font-black text-[#FBF0DE] md:h-[104px] md:w-[104px] md:rounded-[1.9rem] md:border-[10px] md:text-3xl">
                     {stage.number}
                   </div>
 
-                  <div className="rounded-[1.9rem] bg-slate p-7 text-[#FBF0DE] md:p-8">
+                  <div className="rounded-[1.5rem] bg-slate p-6 text-[#FBF0DE] sm:rounded-[1.9rem] md:p-8">
                     <p className="text-[0.65rem] font-black uppercase tracking-[0.22em] text-ember">
                       {stage.phase} · {stage.label}
                     </p>
-                    <h3 className="mt-4 text-[2.35rem] font-black leading-none tracking-[-0.055em]">
+                    <h3 className="mt-4 text-[2rem] font-black leading-none tracking-[-0.05em] sm:text-[2.35rem]">
                       {stage.phase}
                     </h3>
                     <p className="mt-5 text-lg font-black leading-7">
@@ -247,7 +247,7 @@ export default function PathwaysPage() {
                   </div>
 
                   <div className="grid gap-4 sm:grid-cols-2">
-                    <div className="rounded-[1.75rem] border border-slate/10 border-t-[5px] border-t-ember bg-[#FBF0DE]/80 p-7">
+                    <div className="rounded-[1.5rem] border border-slate/10 border-t-[5px] border-t-ember bg-[#FBF0DE]/80 p-6 sm:rounded-[1.75rem] sm:p-7">
                       <p className="text-[0.65rem] font-black uppercase tracking-[0.22em] text-[#A85F08]">
                         Pioneer
                       </p>
@@ -255,7 +255,7 @@ export default function PathwaysPage() {
                         {stage.pioneer}
                       </p>
                     </div>
-                    <div className="rounded-[1.75rem] border border-slate/10 border-t-[5px] border-t-sage bg-[#FBF0DE]/80 p-7">
+                    <div className="rounded-[1.5rem] border border-slate/10 border-t-[5px] border-t-sage bg-[#FBF0DE]/80 p-6 sm:rounded-[1.75rem] sm:p-7">
                       <p className="text-[0.65rem] font-black uppercase tracking-[0.22em] text-[#277B71]">
                         Church
                       </p>
@@ -279,7 +279,7 @@ export default function PathwaysPage() {
           <p className="text-xs font-black uppercase tracking-[0.3em] text-ember">
             How we move
           </p>
-          <h2 className="mt-5 text-[2.75rem] font-black leading-[0.92] tracking-[-0.065em] sm:text-[4.2rem] lg:text-[5rem]">
+          <h2 className="mt-5 text-[2.3rem] font-black leading-[0.96] tracking-[-0.05em] sm:text-[4.2rem] sm:leading-[0.92] sm:tracking-[-0.065em] lg:text-[5rem]">
             Clarity before momentum.
           </h2>
 
@@ -306,7 +306,7 @@ export default function PathwaysPage() {
 
       <section className="px-5 py-20 lg:px-8 lg:py-28">
         <div className="mx-auto grid max-w-7xl overflow-hidden rounded-[2.5rem] bg-slate text-[#FBF0DE] shadow-[0_28px_80px_rgba(21,22,22,0.1)] lg:grid-cols-[1fr_0.72fr]">
-          <div className="p-8 sm:p-12 lg:p-16">
+          <div className="p-6 sm:p-12 lg:p-16">
             <p className="text-xs font-black uppercase tracking-[0.3em] text-ember">
               The place to begin
             </p>
