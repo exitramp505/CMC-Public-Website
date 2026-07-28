@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
+import {
+  CMC_PATHWAY_LOGIN_URL,
+  CMC_PATHWAY_SIGNUP_URL,
+} from "@/lib/cmc-pathway";
 
 export const metadata: Metadata = {
   title: "Discover: Church Multiplication 101",
@@ -9,9 +13,6 @@ export const metadata: Metadata = {
     "Take a short online introductory course exploring the biblical foundation, shared language, models, and practical first steps of church multiplication.",
   alternates: { canonical: "/discover" },
 };
-
-const discoverLink =
-  "https://acquire.pathwright.com/library/discover-church-multiplication-101-238879/register/725954/?ic=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbnZpdGVfdHlwZSI6MSwic2VuZGVyX2lkIjoxOTM0MjI5LCJzY2hvb2xfaWQiOjEzOTk3LCJvZmZlcmluZ19pZCI6NzI1OTU0LCJyb2xlIjo1LCJpYXQiOjE3ODA2MTMzMzh9.l14elqh19_R804wFNo_kAOknqOFEVtNNpwidthjWVeY";
 
 const questions = [
   {
@@ -66,17 +67,16 @@ export default function DiscoverPage() {
                 and a practical introduction to church multiplication.
               </p>
 
-              <a
-                href={discoverLink}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href={CMC_PATHWAY_SIGNUP_URL}
                 className="button-primary mt-10 inline-flex items-center gap-2 rounded-full px-7 py-4 text-sm font-extrabold transition"
               >
-                Open the Discover course
-                <ArrowUpRight size={18} aria-hidden="true" />
-              </a>
+                Create your CMC Pathway account
+                <ArrowRight size={18} aria-hidden="true" />
+              </Link>
               <p className="mt-3 text-xs font-semibold text-[#FBF0DE]/60">
-                Opens the course registration page in Pathwright.
+                Your account gives you access to Discover and keeps your next
+                steps in one place.
               </p>
             </div>
           </div>
@@ -231,25 +231,29 @@ export default function DiscoverPage() {
               Ready to explore church multiplication?
             </h2>
             <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-[#FBF0DE]/82">
-              Continue to Pathwright to register for the short online course,
-              Discover: Church Multiplication 101. Completing it prepares you
-              to decide whether Discern should be your next stage.
+              Create your CMC Pathway account first. Discover will be available
+              on your dashboard, along with your progress and any next steps
+              assigned by your regional leader.
             </p>
           </div>
 
           <div className="rounded-[2rem] border border-[#FBF0DE]/15 bg-[#FBF0DE]/8 p-7">
-            <a
-              href={discoverLink}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href={CMC_PATHWAY_SIGNUP_URL}
               className="button-primary inline-flex w-full items-center justify-center gap-2 rounded-full px-7 py-4 text-sm font-extrabold transition"
             >
-              Open the Discover course
-              <ArrowUpRight size={18} aria-hidden="true" />
-            </a>
+              Create your CMC Pathway account
+              <ArrowRight size={18} aria-hidden="true" />
+            </Link>
             <p className="mt-4 text-center text-xs font-semibold leading-6 text-[#FBF0DE]/65">
-              This button opens the external Pathwright registration page.
+              Already have a CMC Pathway account?
             </p>
+            <Link
+              href={CMC_PATHWAY_LOGIN_URL}
+              className="mt-2 inline-flex w-full items-center justify-center text-sm font-bold text-[#FBF0DE] underline decoration-ember/70 underline-offset-4 transition hover:text-ember"
+            >
+              Log in to continue
+            </Link>
             <Link
               href="/pathways"
               className="mt-5 inline-flex w-full items-center justify-center gap-2 text-sm font-bold text-[#FBF0DE]/80 transition hover:text-[#FBF0DE]"
