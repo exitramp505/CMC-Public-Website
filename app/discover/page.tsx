@@ -193,7 +193,7 @@ export default function DiscoverPage() {
           <div className="mt-12 grid gap-5 lg:grid-cols-2">
             <article className="rounded-[2rem] border border-ember/35 border-t-4 bg-white/55 p-8 shadow-xl shadow-black/5 md:p-10">
               <p className="text-xs font-black uppercase tracking-[0.28em] text-ember">
-                Pioneer · Orange
+                For pioneers
               </p>
               <h3 className="mt-5 text-[32px] font-black leading-[0.98] tracking-[-0.045em] text-ink md:text-[42px]">
                 You sense a call toward something new.
@@ -207,7 +207,7 @@ export default function DiscoverPage() {
               <div className="pointer-events-none absolute -right-16 -top-16 h-52 w-52 rounded-full bg-sage/20 blur-2xl" />
               <div className="relative">
                 <p className="text-xs font-black uppercase tracking-[0.28em] text-sage">
-                  Church · Teal
+                  For pastors and churches
                 </p>
                 <h3 className="mt-5 text-[32px] font-black leading-[0.98] tracking-[-0.045em] md:text-[42px]">
                   Your church wants to multiply and send.
