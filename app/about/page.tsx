@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Check, Church, Compass, Network, UsersRound } from "lucide-react";
 
 import teamContent from "@/content/team.json";
+import { CMC_PATHWAY_SIGNUP_URL } from "@/lib/cmc-pathway";
 
 export const metadata: Metadata = {
   title: "About the Church Multiplication Collective",
@@ -16,6 +17,8 @@ type TeamMember = {
   title: string;
   region: string;
   image?: string;
+  imagePositionX?: number;
+  imagePositionY?: number;
 };
 
 const leaders = teamContent.team as TeamMember[];
@@ -66,11 +69,15 @@ function PlaceholderPortrait({ name }: { name: string }) {
 
 function TeamPortrait({ leader }: { leader: TeamMember }) {
   if (leader.image) {
+    const positionX = Math.min(100, Math.max(0, leader.imagePositionX ?? 50));
+    const positionY = Math.min(100, Math.max(0, leader.imagePositionY ?? 30));
+
     return (
       <img
         src={leader.image}
         alt={leader.name}
         className="h-24 w-24 shrink-0 rounded-[1.5rem] object-cover shadow-lg shadow-black/5"
+        style={{ objectPosition: `${positionX}% ${positionY}%` }}
       />
     );
   }
@@ -278,7 +285,7 @@ export default function AboutPage() {
             and anyone who wants to learn more about church multiplication.
           </p>
           <Link
-            href="/discover"
+            href={CMC_PATHWAY_SIGNUP_URL}
             className="button-primary mt-8 inline-flex min-h-12 items-center justify-center rounded-full px-6 text-sm font-black"
           >
             Start Discover →
