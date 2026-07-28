@@ -4,37 +4,49 @@
       "region": "Open Bible Churches",
       "name": "Michael Nortune",
       "title": "President",
-      "image": ""
+      "image": "",
+      "imagePositionX": 50,
+      "imagePositionY": 30
     },
     {
       "region": "Southeast Region",
       "name": "Mike Dickey",
       "title": "Director of Multiplication",
-      "image": ""
+      "image": "",
+      "imagePositionX": 50,
+      "imagePositionY": 30
     },
     {
       "region": "Pacific Region",
       "name": "Aaron Sutherland",
       "title": "Director of Multiplication",
-      "image": ""
+      "image": "",
+      "imagePositionX": 50,
+      "imagePositionY": 30
     },
     {
       "region": "Central Region",
       "name": "Terry Dreyer",
       "title": "Director of Multiplication",
-      "image": ""
+      "image": "",
+      "imagePositionX": 50,
+      "imagePositionY": 30
     },
     {
       "region": "Mountain Plains Region",
       "name": "Rob Bray",
       "title": "Director of Multiplication",
-      "image": ""
+      "image": "",
+      "imagePositionX": 50,
+      "imagePositionY": 30
     },
     {
       "region": "East Region",
       "name": "George Williams",
       "title": "Director of Multiplication",
-      "image": "/uploads/williamsfamily-2.jpeg"
+      "image": "/uploads/williamsfamily-2.jpeg",
+      "imagePositionX": 50,
+      "imagePositionY": 25
     }
   ]
 }
