@@ -145,7 +145,7 @@ export default function EventsPage() {
                         Featured Event
                       </p>
 
-                      <h2 className="mt-5 text-[36px] font-black leading-[0.98] tracking-[-0.045em] text-[#FBF0DE] sm:text-[40px] md:text-[64px]">
+                      <h2 className="mt-5 text-[36px] font-black leading-[0.98] tracking-[-0.045em] text-[#FBF0DE] [overflow-wrap:normal] sm:text-[40px] md:text-[52px] xl:text-[64px]">
                         {event.title}
                       </h2>
                     </div>
