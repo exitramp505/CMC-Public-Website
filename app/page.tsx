@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { CMC_PATHWAY_SIGNUP_URL } from "@/lib/cmc-pathway";
 
 export const metadata: Metadata = {
   title: "From Calling to Multiplication",
@@ -127,7 +128,7 @@ export default function HomePage() {
             </p>
             <div className="mt-8 grid gap-3 sm:flex sm:flex-wrap">
               <Link
-                href="/discover"
+                href={CMC_PATHWAY_SIGNUP_URL}
                 className="button-primary inline-flex min-h-12 w-full items-center justify-center rounded-full px-6 text-sm font-black sm:w-auto"
               >
                 Start with Discover →
@@ -303,7 +304,7 @@ export default function HomePage() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
-              href="/discover"
+              href={CMC_PATHWAY_SIGNUP_URL}
               className="button-primary inline-flex min-h-12 items-center justify-center rounded-full px-6 text-sm font-black"
             >
               Start Discover →
