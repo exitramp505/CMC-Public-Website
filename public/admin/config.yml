@@ -27,6 +27,8 @@ collections:
               - { label: "Name", name: "name", widget: "string" }
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Picture", name: "image", widget: "image", required: false }
+              - { label: "Picture Focus — Left/Right", name: "imagePositionX", widget: "number", value_type: "int", min: 0, max: 100, step: 5, default: 50, hint: "50 centers the picture. Lower numbers move the visible area left; higher numbers move it right." }
+              - { label: "Picture Focus — Up/Down", name: "imagePositionY", widget: "number", value_type: "int", min: 0, max: 100, step: 5, default: 30, hint: "Lower numbers move the visible area upward; higher numbers move it downward. Start around 30 for portraits." }
 
       - name: "events"
         label: "Events Page"
