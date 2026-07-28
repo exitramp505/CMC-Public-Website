@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import LogoMark from './LogoMark';
+import { CMC_PATHWAY_SIGNUP_URL } from '@/lib/cmc-pathway';
 
 export default function Footer() {
   return (
@@ -24,7 +25,8 @@ export default function Footer() {
           <div>
             <p className="text-sm font-extrabold uppercase tracking-[0.24em] text-ember">Begin</p>
             <div className="mt-4 grid gap-3 text-sm text-sand/74">
-              <Link href="/discover" className="hover:text-ember">Discover: Church Multiplication 101</Link>
+              <Link href="/discover" className="hover:text-ember">Learn about Discover</Link>
+              <Link href={CMC_PATHWAY_SIGNUP_URL} className="hover:text-ember">Create a CMC Pathway account</Link>
               <Link href="/contact" className="hover:text-ember">Start a Conversation</Link>
             </div>
           </div>
