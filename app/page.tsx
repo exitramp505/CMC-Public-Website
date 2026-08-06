@@ -115,7 +115,7 @@ export default function HomePage() {
             <p className="mt-7 max-w-full text-[0.68rem] font-black uppercase leading-5 tracking-[0.18em] text-ember sm:text-xs sm:tracking-[0.3em]">
               Church Multiplication Collective · Open Bible
             </p>
-            <h1 className="mt-5 max-w-5xl text-[2.35rem] font-black uppercase leading-[0.88] tracking-[-0.065em] text-[#FBF0DE] min-[420px]:text-[3.55rem] sm:text-[6.2rem] sm:leading-[0.82] sm:tracking-[-0.085em] lg:text-[8rem]">
+            <h1 className="mt-5 max-w-[950px] text-[clamp(2.35rem,8.4vw,7.15rem)] font-black uppercase leading-[0.86] tracking-[-0.075em] text-[#FBF0DE]">
               From calling to multiplication.
             </h1>
             <p className="mt-7 max-w-[710px] text-lg font-bold leading-7 text-[#FBF0DE] sm:text-xl sm:leading-[1.5] md:text-2xl">
@@ -145,13 +145,13 @@ export default function HomePage() {
       </section>
 
       <section className="px-5 py-20 lg:px-8 lg:py-28">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
+        <div className="mx-auto grid max-w-7xl items-start gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
           <div>
             <p className="text-xs font-black uppercase tracking-[0.3em] text-ember">
               Who we serve
             </p>
-              <h2 className="mt-5 max-w-xl text-[2.25rem] font-black leading-[0.96] tracking-[-0.05em] text-ink sm:text-[4.2rem] sm:leading-[0.92] sm:tracking-[-0.065em] lg:text-[5rem]">
-              A pathway for people and churches exploring multiplication.
+            <h2 className="mt-5 max-w-xl text-[2.25rem] font-black leading-[0.96] tracking-[-0.05em] text-ink sm:text-[3.8rem] sm:leading-[0.92] sm:tracking-[-0.06em] lg:text-[3.35rem] xl:text-[3.75rem]">
+              A pathway for pioneers, pastors, and sending churches.
             </h2>
             <p className="mt-7 max-w-xl text-lg font-semibold leading-8 text-slate">
               Whether you are sensing a call, leading a church, or preparing to
@@ -159,7 +159,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="overflow-hidden rounded-[2rem] border border-slate/10 bg-slate/10">
+          <div className="self-start overflow-hidden rounded-[2rem] border border-slate/10 bg-slate/10">
             {audiences.map((audience) => (
               <article
                 key={audience.title}

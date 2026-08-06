@@ -108,7 +108,7 @@ function ChurchEssentialsDiagram() {
 
           <div className="absolute left-1/2 top-[52%] z-[4] grid h-[154px] w-[154px] -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border-[7px] border-[#FBF0DE] bg-slate text-center text-[#FBF0DE] shadow-[0_20px_55px_rgba(21,22,22,.24)]">
             <div className="absolute -inset-[15px] rounded-full border-2 border-dashed border-ember/70" />
-            <p className="text-[22px] font-black uppercase leading-[.98]">
+            <p className="px-2 text-[20px] font-black uppercase leading-[.98] tracking-[-0.025em]">
               Christ
               <br />
               centered
@@ -120,7 +120,7 @@ function ChurchEssentialsDiagram() {
       <div className="grid gap-3 p-5 md:hidden">
         <div className="relative mx-auto mb-3 grid h-44 w-44 place-items-center rounded-full border-8 border-[#FBF0DE] bg-slate text-center text-[#FBF0DE] shadow-2xl shadow-black/20">
           <div className="absolute -inset-4 rounded-full border-2 border-dashed border-ember/70" />
-          <p className="text-2xl font-black uppercase leading-none">
+          <p className="px-2 text-[1.35rem] font-black uppercase leading-none tracking-[-0.02em]">
             Christ
             <br />
             centered

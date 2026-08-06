@@ -171,7 +171,7 @@ export default function PathwaysPage() {
               <div className="relative">
                 <p className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.25em] text-[#73C8BD]">
                   <span className="h-3 w-3 rounded-full bg-sage" />
-                  For the church
+                  For the sending church
                 </p>
                 <h3 className="mt-8 max-w-xl text-[2.1rem] font-black leading-[0.98] tracking-[-0.05em] md:text-[2.65rem]">
                   We want to become a sending church.
@@ -206,21 +206,26 @@ export default function PathwaysPage() {
                 simply because time has passed. Each stage has a purpose and a
                 decision.
               </p>
-              <div className="mt-6 flex flex-wrap gap-6 text-xs font-black text-slate">
-                <span className="flex items-center gap-2">
-                  <span className="h-1.5 w-8 rounded-full bg-ember" />
-                  Pioneer
-                </span>
-                <span className="flex items-center gap-2">
-                  <span className="h-1.5 w-8 rounded-full bg-sage" />
-                  Church
-                </span>
-              </div>
             </div>
           </div>
 
-          <div className="relative mt-16">
+          <div className="relative mt-12">
             <div className="pointer-events-none absolute bottom-16 left-[51px] top-16 hidden w-1 rounded-full bg-[linear-gradient(#EA9F43,#4DA79C)] md:block" />
+
+            <div className="mb-5 grid gap-4 md:grid-cols-[104px_0.78fr_1.22fr] md:gap-6">
+              <div className="hidden md:block" aria-hidden="true" />
+              <div className="hidden md:block" aria-hidden="true" />
+              <div className="grid grid-cols-2 gap-4 text-xs font-black text-slate">
+                <span className="flex flex-col gap-2">
+                  <span className="h-1.5 w-full rounded-full bg-ember" />
+                  Pioneer
+                </span>
+                <span className="flex flex-col gap-2">
+                  <span className="h-1.5 w-full rounded-full bg-sage" />
+                  Sending church
+                </span>
+              </div>
+            </div>
 
             <div className="grid gap-7">
               {stages.map((stage) => (
@@ -258,7 +263,7 @@ export default function PathwaysPage() {
                     </div>
                     <div className="rounded-[1.5rem] border border-slate/10 border-t-[5px] border-t-sage bg-[#FBF0DE]/80 p-6 sm:rounded-[1.75rem] sm:p-7">
                       <p className="text-[0.65rem] font-black uppercase tracking-[0.22em] text-[#277B71]">
-                        Church
+                        Sending church
                       </p>
                       <p className="mt-4 text-sm font-semibold leading-7 text-slate">
                         {stage.church}
