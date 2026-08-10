@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 
 import discernContent from "@/content/discern.json";
+import { getPublicContent } from "@/lib/public-content";
 
 export const metadata: Metadata = {
   title: "Discernment Center",
@@ -70,7 +71,8 @@ const outcomes = [
   "Identify areas of strength, growth, and support",
 ];
 
-export default function DiscernPage() {
+export default async function DiscernPage() {
+  const content = await getPublicContent("discern", discernContent);
   return (
     <>
       <section className="relative overflow-hidden px-5 py-20 lg:px-8 lg:py-28">
@@ -80,15 +82,15 @@ export default function DiscernPage() {
         <div className="relative mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[1.05fr_.95fr]">
           <div>
             <p className="text-xs font-extrabold uppercase leading-5 tracking-[0.2em] text-ember sm:text-sm sm:tracking-[0.34em]">
-              {discernContent.heroEyebrow}
+              {content.heroEyebrow}
             </p>
 
             <h1 className="poster-type mt-6 text-[3.15rem] text-[#FBF0DE] sm:text-[4.25rem] md:text-[6rem] lg:text-[7.25rem]">
-              {discernContent.heroTitle}
+              {content.heroTitle}
             </h1>
 
             <p className="mt-8 max-w-3xl text-lg font-medium leading-8 text-[#FBF0DE] md:text-xl">
-              {discernContent.heroDescription}
+              {content.heroDescription}
             </p>
 
             <div className="mt-8 grid max-w-3xl gap-3 sm:grid-cols-2">
@@ -98,7 +100,7 @@ export default function DiscernPage() {
                   <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#FBF0DE] opacity-60">
                     Dates
                   </p>
-                  <p className="mt-1 text-base font-black">{discernContent.dates}</p>
+                  <p className="mt-1 text-base font-black">{content.dates}</p>
                 </div>
               </div>
 
@@ -108,14 +110,14 @@ export default function DiscernPage() {
                   <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#FBF0DE] opacity-60">
                     Location
                   </p>
-                  <p className="mt-1 text-base font-black">{discernContent.location}</p>
+                  <p className="mt-1 text-base font-black">{content.location}</p>
                 </div>
               </div>
             </div>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Link
-                href={discernContent.applicationUrl}
+                href={content.applicationUrl}
                 className="button-primary inline-flex items-center justify-center gap-2 rounded-full px-7 py-4 text-sm font-extrabold transition"
               >
                 Talk With a CMC Leader <ArrowRight size={18} />
@@ -170,12 +172,12 @@ export default function DiscernPage() {
           </p>
 
           <h2 className="mx-auto mt-5 max-w-4xl text-[36px] font-black leading-[0.98] tracking-[-0.045em] text-ink sm:text-[40px] md:text-[64px]">
-            {discernContent.whatToExpectTitle}
+            {content.whatToExpectTitle}
           </h2>
 
           <div className="mx-auto mt-7 max-w-4xl space-y-5 text-lg font-medium leading-9 text-slate">
-            <p>{discernContent.whatToExpectParagraphOne}</p>
-            <p>{discernContent.whatToExpectParagraphTwo}</p>
+            <p>{content.whatToExpectParagraphOne}</p>
+            <p>{content.whatToExpectParagraphTwo}</p>
           </div>
         </div>
 
@@ -258,7 +260,7 @@ export default function DiscernPage() {
 
           <div className="mt-10">
             <Link
-              href={discernContent.applicationUrl}
+              href={content.applicationUrl}
               className="button-primary inline-flex items-center justify-center gap-2 rounded-full px-7 py-4 text-sm font-extrabold transition"
             >
               Contact the CMC Team <ArrowRight size={18} />

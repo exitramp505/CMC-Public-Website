@@ -1,19 +1,17 @@
-# Netlify Identity Fix
+# Church Multiplication Collective public website
 
-Upload these files to the matching paths in your repo:
+This Next.js site is the public-facing CMC website. Its people, resources,
+church models, and Discernment event content are managed by national
+administrators from the **Website** area of CMC Pathway.
 
-app/layout.tsx
-public/admin/index.html
+The public site reads only published content from CMC Pathway. Checked-in JSON
+remains as a resilient fallback if the Pathway content feed is temporarily
+unavailable.
 
-This adds the Netlify Identity widget to the main site and the admin page.
+The former Decap CMS and Netlify Identity admin have been retired. Visiting
+`/admin/` now directs administrators to the unified CMC Pathway website editor.
 
-After deploy, password reset links like:
+Optional environment variables:
 
-https://cmcopenbible.netlify.app/#recovery_token=...
-
-should open the Netlify password reset modal instead of just showing the homepage.
-
-You can also try:
-
-https://cmcopenbible.netlify.app/admin/#recovery_token=...
-
+- `CMC_PATHWAY_CONTENT_URL` overrides the published content feed.
+- `CMC_PATHWAY_EVENTS_URL` overrides the public events feed.

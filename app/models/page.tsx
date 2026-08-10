@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import CTA from "@/components/CTA";
 import modelsContent from "@/content/models.json";
+import { getPublicContent } from "@/lib/public-content";
 
 export const metadata: Metadata = {
   title: "Church Multiplication Models",
@@ -151,8 +152,9 @@ function ChurchEssentialsDiagram() {
   );
 }
 
-export default function ModelsPage() {
-  const models = modelsContent.models;
+export default async function ModelsPage() {
+  const content = await getPublicContent("models", modelsContent);
+  const models = content.models;
 
   return (
     <>

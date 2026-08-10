@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 
 import resourcesContent from "@/content/resources.json";
+import { getPublicContent } from "@/lib/public-content";
 
 export const metadata: Metadata = {
   title: "Resources",
@@ -29,10 +30,6 @@ type ResourceItem = {
 };
 
 const icons = [BookOpen, Compass, FileText, Layers, LibraryBig, Sparkles];
-
-const resources = resourcesContent.resources as ResourceItem[];
-const featuredResources = resources.filter((resource) => resource.featured);
-const regularResources = resources.filter((resource) => !resource.featured);
 
 function ResourceCard({
   resource,
@@ -103,7 +100,11 @@ function ResourceCard({
   );
 }
 
-export default function ResourcesPage() {
+export default async function ResourcesPage() {
+  const content = await getPublicContent("resources", resourcesContent);
+  const resources = content.resources as ResourceItem[];
+  const featuredResources = resources.filter((resource) => resource.featured);
+  const regularResources = resources.filter((resource) => !resource.featured);
   return (
     <>
       <section className="relative overflow-hidden px-5 py-20 lg:px-8">
@@ -115,15 +116,15 @@ export default function ResourcesPage() {
               <div className="accent-line" />
 
               <p className="mt-6 text-sm font-extrabold uppercase tracking-[0.3em] text-ember">
-                {resourcesContent.heroEyebrow}
+                {content.heroEyebrow}
               </p>
 
               <h1 className="mt-5 max-w-5xl text-[36px] font-black leading-[0.98] tracking-[-0.045em] text-ink sm:text-[42px] md:text-[68px]">
-                {resourcesContent.heroTitle}
+                {content.heroTitle}
               </h1>
 
               <p className="mt-6 max-w-3xl text-lg font-medium leading-8 text-slate">
-                {resourcesContent.heroDescription}
+                {content.heroDescription}
               </p>
             </div>
 
@@ -153,11 +154,11 @@ export default function ResourcesPage() {
               </p>
 
               <h2 className="mt-4 text-[38px] font-black leading-[0.96] tracking-[-0.048em] text-ink md:text-[56px]">
-                {resourcesContent.featuredTitle}
+                {content.featuredTitle}
               </h2>
 
               <p className="mt-4 text-lg font-medium leading-8 text-slate">
-                {resourcesContent.featuredDescription}
+                {content.featuredDescription}
               </p>
             </div>
 

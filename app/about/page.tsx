@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Check, Church, Compass, Network, UsersRound } from "lucide-react";
 
 import teamContent from "@/content/team.json";
+import { getPublicContent } from "@/lib/public-content";
 
 export const metadata: Metadata = {
   title: "About the Church Multiplication Collective",
@@ -19,8 +20,6 @@ type TeamMember = {
   imagePositionX?: number;
   imagePositionY?: number;
 };
-
-const leaders = teamContent.team as TeamMember[];
 
 const commitments = [
   {
@@ -84,7 +83,9 @@ function TeamPortrait({ leader }: { leader: TeamMember }) {
   return <PlaceholderPortrait name={leader.name} />;
 }
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const content = await getPublicContent("team", teamContent);
+  const leaders = content.team as TeamMember[];
   return (
     <>
       <section className="brand-panel relative overflow-hidden px-5 py-20 lg:px-8 lg:py-28">

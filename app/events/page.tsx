@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight, CalendarDays, MapPin } from "lucide-react";
 
 import eventsContent from "@/content/events.json";
-import PathwayPublicEvents from "@/components/PathwayPublicEvents";
+import { getPublicEvents, type PublicEvent } from "@/lib/public-events";
 
 export const metadata: Metadata = {
   title: "Events",
@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 };
 
 type EventItem = {
+  id?: string;
   title: string;
   date: string;
   startDate?: string;
@@ -24,6 +25,35 @@ type EventItem = {
   featured?: boolean;
 };
 
+function formatDateRange(startValue: string, endValue?: string | null) {
+  const start = new Date(startValue);
+  const end = endValue ? new Date(endValue) : null;
+  const formatter = new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+  if (!end || start.toDateString() === end.toDateString()) return formatter.format(start);
+  if (start.getFullYear() === end.getFullYear() && start.getMonth() === end.getMonth()) {
+    return `${start.toLocaleDateString("en-US", { month: "short" })} ${start.getDate()}–${end.getDate()}, ${end.getFullYear()}`;
+  }
+  return `${formatter.format(start)} – ${formatter.format(end)}`;
+}
+
+function pathwayEventToItem(event: PublicEvent): EventItem {
+  return {
+    id: event.id,
+    title: event.title,
+    date: formatDateRange(event.startsAt, event.endsAt),
+    startDate: event.startsAt,
+    endDate: event.endsAt || undefined,
+    location: event.location || (event.region ? `${event.region} Region` : undefined),
+    description: event.summary || event.description || "Learn more about this CMC gathering.",
+    buttonText: event.publicUrl ? "Event Details" : "Contact CMC",
+    buttonUrl: event.publicUrl || "/contact",
+  };
+}
+
 function startOfToday() {
   const today = new Date();
 
@@ -32,6 +62,11 @@ function startOfToday() {
 
 function parseLocalDate(value?: string) {
   if (!value) return null;
+
+  if (value.includes("T")) {
+    const parsed = new Date(value);
+    return Number.isNaN(parsed.getTime()) ? null : parsed;
+  }
 
   const [year, month, day] = value.split("-").map(Number);
 
@@ -49,9 +84,8 @@ function isUpcoming(event: EventItem) {
   return comparisonDate >= today;
 }
 
-const upcomingEvents = (eventsContent.events as EventItem[])
-  .filter(isUpcoming)
-  .sort((a, b) => {
+function sortEvents(events: EventItem[]) {
+  return events.filter(isUpcoming).sort((a, b) => {
     const aDate = parseLocalDate(a.startDate) || parseLocalDate(a.endDate);
     const bDate = parseLocalDate(b.startDate) || parseLocalDate(b.endDate);
 
@@ -59,8 +93,10 @@ const upcomingEvents = (eventsContent.events as EventItem[])
 
     return aDate.getTime() - bDate.getTime();
   });
+}
 
-const eventSchema = upcomingEvents.map((event) => ({
+function eventSchema(events: EventItem[]) {
+  return events.map((event) => ({
   "@context": "https://schema.org",
   "@type": "Event",
   name: event.title,
@@ -76,15 +112,26 @@ const eventSchema = upcomingEvents.map((event) => ({
       }
     : undefined,
   description: event.description,
-  url: `https://cmcopenbible.netlify.app${event.buttonUrl || "/events"}`,
+  url: event.buttonUrl?.startsWith("http")
+    ? event.buttonUrl
+    : `https://cmcopenbible.netlify.app${event.buttonUrl || "/events"}`,
   organizer: {
     "@type": "Organization",
     name: "Church Multiplication Collective",
     url: "https://cmcopenbible.netlify.app",
   },
-}));
+  }));
+}
 
-export default function EventsPage() {
+export default async function EventsPage() {
+  const pathwayEvents = await getPublicEvents();
+  // The checked-in JSON is retained only as an outage fallback. Once the
+  // Pathway feed responds, even an empty list is authoritative.
+  const upcomingEvents = sortEvents(
+    pathwayEvents === null
+      ? (eventsContent.events as EventItem[])
+      : pathwayEvents.map(pathwayEventToItem),
+  );
   const featured = upcomingEvents.filter((event) => event.featured);
   const regular = upcomingEvents.filter((event) => !event.featured);
 
@@ -92,7 +139,7 @@ export default function EventsPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema(upcomingEvents)) }}
       />
 
       <section className="px-5 py-20 lg:px-8">
@@ -200,8 +247,6 @@ export default function EventsPage() {
           </div>
         </section>
       )}
-
-      <PathwayPublicEvents staticTitles={upcomingEvents.map((event) => event.title)} />
 
       {regular.length > 0 && (
         <section className="px-5 pb-20 lg:px-8">
