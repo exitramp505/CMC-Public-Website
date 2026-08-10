@@ -23,8 +23,8 @@ export const metadata: Metadata = {
 
 const process = [
   {
-    title: "Apply",
-    text: "Begin by completing the application so regional leaders can learn more about your calling, ministry experience, and current context.",
+    title: "Connect",
+    text: "Begin with a conversation so a CMC leader can learn about your calling, ministry experience, and current context.",
     icon: ClipboardCheck,
   },
   {
@@ -118,7 +118,7 @@ export default function DiscernPage() {
                 href={discernContent.applicationUrl}
                 className="button-primary inline-flex items-center justify-center gap-2 rounded-full px-7 py-4 text-sm font-extrabold transition"
               >
-                Start Your Application <ArrowRight size={18} />
+                Talk With a CMC Leader <ArrowRight size={18} />
               </Link>
 
               <a
@@ -248,11 +248,12 @@ export default function DiscernPage() {
           </p>
 
           <h2 className="mx-auto mt-5 max-w-3xl text-[36px] font-black leading-[0.98] tracking-[-0.045em] text-[#FBF0DE] sm:text-[40px] md:text-[64px]">
-            Start your Discernment Center application.
+            Begin a conversation about the Discernment Center.
           </h2>
 
           <p className="mx-auto mt-6 max-w-3xl text-lg font-medium leading-8 text-[#FBF0DE]">
-            The application gives regional leaders the information needed to understand your story, your sense of call, and the next step you are exploring.
+            A CMC leader can answer your questions, explain the gathering, and
+            help you determine whether it is the right next step.
           </p>
 
           <div className="mt-10">
@@ -260,7 +261,7 @@ export default function DiscernPage() {
               href={discernContent.applicationUrl}
               className="button-primary inline-flex items-center justify-center gap-2 rounded-full px-7 py-4 text-sm font-extrabold transition"
             >
-              Get Started on Your Application <ArrowRight size={18} />
+              Contact the CMC Team <ArrowRight size={18} />
             </Link>
           </div>
         </div>

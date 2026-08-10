@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Check, Church, Compass, Network, UsersRound } from "lucide-react";
 
 import teamContent from "@/content/team.json";
-import { CMC_PATHWAY_SIGNUP_URL } from "@/lib/cmc-pathway";
 
 export const metadata: Metadata = {
   title: "About the Church Multiplication Collective",
@@ -110,9 +109,10 @@ export default function AboutPage() {
 
           <div className="rounded-[2rem] border border-[#FBF0DE]/15 bg-[#151616]/25 p-7 backdrop-blur-sm md:p-9">
             <p className="text-xl font-bold leading-9 text-[#FBF0DE]">
-              The Church Multiplication Collective brings Open Bible pioneers,
-              pastors, and sending churches into one process for discerning,
-              preparing, and supporting new works.
+              The Church Multiplication Collective brings pastors, sending
+              churches, and pioneers—including those exploring a future with
+              Open Bible—into one process for discerning, preparing, and
+              supporting new works.
             </p>
             <p className="mt-5 font-medium leading-8 text-[#FBF0DE]/72">
               Calling is tested in community, leaders are prepared with care,
@@ -285,7 +285,7 @@ export default function AboutPage() {
             and anyone who wants to learn more about church multiplication.
           </p>
           <Link
-            href={CMC_PATHWAY_SIGNUP_URL}
+            href="/discover"
             className="button-primary mt-8 inline-flex min-h-12 items-center justify-center rounded-full px-6 text-sm font-black"
           >
             Start Discover →

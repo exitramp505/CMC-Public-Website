@@ -93,7 +93,7 @@ collections:
         file: "content/discern.json"
         format: "json"
         fields:
-          - { label: "Application Button Link", name: "applicationUrl", widget: "string" }
+          - { label: "Contact Button Link", name: "applicationUrl", widget: "string", hint: "Where visitors should go to speak with a CMC leader about the Discernment Center." }
           - { label: "Dates", name: "dates", widget: "string" }
           - { label: "Location", name: "location", widget: "string" }
           - { label: "Hero Eyebrow", name: "heroEyebrow", widget: "string" }

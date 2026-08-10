@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, CalendarDays, MapPin } from "lucide-react";
 
 import eventsContent from "@/content/events.json";
+import PathwayPublicEvents from "@/components/PathwayPublicEvents";
 
 export const metadata: Metadata = {
   title: "Events",
@@ -199,6 +200,8 @@ export default function EventsPage() {
           </div>
         </section>
       )}
+
+      <PathwayPublicEvents staticTitles={upcomingEvents.map((event) => event.title)} />
 
       {regular.length > 0 && (
         <section className="px-5 pb-20 lg:px-8">

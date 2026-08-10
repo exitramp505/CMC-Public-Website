@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 import LogoMark from "@/components/LogoMark";
-import { CMC_PATHWAY_SIGNUP_URL } from "@/lib/cmc-pathway";
 
 const navItems = [
   { label: "About", href: "/about" },
@@ -154,7 +153,7 @@ export default function Header() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <Link
-            href={CMC_PATHWAY_SIGNUP_URL}
+            href="/discover"
             className="button-primary inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-extrabold transition"
           >
             Start Discover →
@@ -163,7 +162,7 @@ export default function Header() {
 
         <div className="flex items-center gap-2 sm:gap-3 lg:hidden">
           <Link
-            href={CMC_PATHWAY_SIGNUP_URL}
+            href="/discover"
             className="button-primary inline-flex min-h-11 items-center justify-center whitespace-nowrap rounded-full px-4 py-2.5 text-xs font-extrabold leading-none transition sm:min-h-12 sm:px-5 sm:py-3 sm:text-sm"
           >
             Start Discover <span className="hidden min-[360px]:inline">→</span>
