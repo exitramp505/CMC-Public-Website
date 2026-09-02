@@ -1,6 +1,6 @@
 const CONTENT_ENDPOINT =
   process.env.CMC_PATHWAY_CONTENT_URL ||
-  "https://cmc-pathway.netlify.app/.netlify/functions/public-site-content";
+  "https://pathway.openbiblecmc.org/.netlify/functions/public-site-content";
 
 export async function getPublicContent<T>(key: string, fallback: T): Promise<T> {
   try {
