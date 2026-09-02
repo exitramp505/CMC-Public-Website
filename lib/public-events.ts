@@ -13,7 +13,7 @@ export type PublicEvent = {
 
 const EVENT_ENDPOINT =
   process.env.CMC_PATHWAY_EVENTS_URL ||
-  "https://cmc-pathway.netlify.app/.netlify/functions/public-events";
+  "https://pathway.openbiblecmc.org/.netlify/functions/public-events";
 
 export async function getPublicEvents(): Promise<PublicEvent[] | null> {
   try {
