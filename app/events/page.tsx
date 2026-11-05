@@ -114,11 +114,11 @@ function eventSchema(events: EventItem[]) {
   description: event.description,
   url: event.buttonUrl?.startsWith("http")
     ? event.buttonUrl
-    : `https://cmcopenbible.netlify.app${event.buttonUrl || "/events"}`,
+    : `https://openbiblecmc.org${event.buttonUrl || "/events"}`,
   organizer: {
     "@type": "Organization",
     name: "Church Multiplication Collective",
-    url: "https://cmcopenbible.netlify.app",
+    url: "https://openbiblecmc.org",
   },
   }));
 }

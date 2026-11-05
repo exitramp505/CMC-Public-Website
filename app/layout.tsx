@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://cmcopenbible.netlify.app"),
+  metadataBase: new URL("https://openbiblecmc.org"),
   title: {
     default: "Church Multiplication Collective",
     template: "%s | Church Multiplication Collective",
@@ -37,8 +37,8 @@ const organizationSchema = {
   "@type": "Organization",
   name: "Church Multiplication Collective",
   alternateName: "CMC",
-  url: "https://cmcopenbible.netlify.app",
-  logo: "https://cmcopenbible.netlify.app/cmc-logo-mark.svg",
+  url: "https://openbiblecmc.org",
+  logo: "https://openbiblecmc.org/cmc-logo-mark.svg",
   description:
     "A ministry pathway helping pastors, pioneers, and sending churches make disciples, develop leaders, and multiply churches.",
   email: "george@openbibleeast.org",
